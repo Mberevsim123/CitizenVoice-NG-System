@@ -1,0 +1,28 @@
+{
+ "labels": {
+  "sentiment": [
+   "Negative",
+   "Neutral",
+   "Positive"
+  ],
+  "urgency": [
+   "High",
+   "Medium",
+   "Low"
+  ],
+  "category": [
+   "Corruption",
+   "Education",
+   "Electricity",
+   "Environment",
+   "Fire",
+   "Flood/Emergency",
+   "Health",
+   "Roads",
+   "Security",
+   "Water"
+  ]
+ },
+ "max_len": 96,
+ "base_model": "sentence-transformers/all-MiniLM-L6-v2"
+}

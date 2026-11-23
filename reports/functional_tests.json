@@ -1,0 +1,107 @@
+[
+ [
+  "TC01",
+  "Register a new citizen account",
+  "Account created, token issued",
+  "HTTP 200",
+  "Pass"
+ ],
+ [
+  "TC02",
+  "Register with an existing phone number",
+  "Request rejected",
+  "Phone number already registered",
+  "Pass"
+ ],
+ [
+  "TC03",
+  "Login with wrong password",
+  "Access denied",
+  "Invalid phone number or password",
+  "Pass"
+ ],
+ [
+  "TC04",
+  "Greet the chatbot",
+  "Agent greets citizen",
+  "GREET",
+  "Pass"
+ ],
+ [
+  "TC05",
+  "Send a too-short complaint",
+  "Agent asks for more details",
+  "ASK_DETAILS",
+  "Pass"
+ ],
+ [
+  "TC06",
+  "Complaint without a location",
+  "Agent asks for the LGA",
+  "ASK_LOCATION",
+  "Pass"
+ ],
+ [
+  "TC07",
+  "Provide LGA",
+  "Agent shows summary for confirmation",
+  "CONFIRM: Water, Medium",
+  "Pass"
+ ],
+ [
+  "TC08",
+  "Confirm submission",
+  "Complaint saved, reference issued, routed to Water Board",
+  "CV-2026-00151",
+  "Pass"
+ ],
+ [
+  "TC09",
+  "Report a life-threatening incident",
+  "Immediate HIGH filing and emergency escalation",
+  "ESCALATE_EMERGENCY, Security, score 82.7",
+  "Pass"
+ ],
+ [
+  "TC10",
+  "Report a routine request",
+  "Classified LOW and routed to Ministry of Works",
+  "Roads, Low",
+  "Pass"
+ ],
+ [
+  "TC11",
+  "Track complaint by reference in chat",
+  "Current status returned",
+  "CV-2026-00151: Forwarded. Priority MEDIUM, handled by Nasara",
+  "Pass"
+ ],
+ [
+  "TC12",
+  "Track complaint on public page",
+  "Timeline returned",
+  "2 timeline events",
+  "Pass"
+ ],
+ [
+  "TC13",
+  "Citizen opens officer endpoint",
+  "Access forbidden",
+  "HTTP 403",
+  "Pass"
+ ],
+ [
+  "TC14",
+  "Officer views triage queue",
+  "Open complaints ordered High, Medium, Low",
+  "58 open complaints ordered",
+  "Pass"
+ ],
+ [
+  "TC15",
+  "Officer updates complaint status",
+  "Status saved and added to timeline",
+  "Acknowledged",
+  "Pass"
+ ]
+]

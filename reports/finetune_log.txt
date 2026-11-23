@@ -1,0 +1,52 @@
+[08:39:28] budget 30 min | train 2400  dev 300  test 600
+[08:39:32] classical word 1-2             LR C=1.0  sentiment=0.717 urgency=0.830 category=0.861
+[08:39:32] classical word 1-2             LR C=4.0  sentiment=0.744 urgency=0.838 category=0.861
+[08:39:33] classical word 1-2             LR C=12.0 sentiment=0.744 urgency=0.848 category=0.861
+[08:39:33] classical word 1-2             SVM C=0.3 sentiment=0.772 urgency=0.848 category=0.868
+[08:39:34] classical word 1-2             SVM C=1.0 sentiment=0.772 urgency=0.848 category=0.868
+[08:39:38] classical word 1-2 + char 2-5  LR C=1.0  sentiment=0.772 urgency=0.848 category=0.885
+[08:39:40] classical word 1-2 + char 2-5  LR C=4.0  sentiment=0.772 urgency=0.848 category=0.885
+[08:39:42] classical word 1-2 + char 2-5  LR C=12.0 sentiment=0.772 urgency=0.855 category=0.886
+[08:39:45] classical word 1-2 + char 2-5  SVM C=0.3 sentiment=0.772 urgency=0.855 category=0.886
+[08:39:48] classical word 1-2 + char 2-5  SVM C=1.0 sentiment=0.772 urgency=0.855 category=0.886
+[08:39:48] classical done: sentiment: SVM C=0.3, word 1-2 dev F1 0.772, urgency: LR C=12.0, word 1-2 + char 2-5 dev F1 0.855, category: SVM C=0.3, word 1-2 + char 2-5 dev F1 0.886
+[08:39:48] transformer fine-tuning for 27.2 min
+[08:39:51] loading sentence-transformers/all-MiniLM-L6-v2
+[08:42:19] epoch  1 (  2.4 min, 2400/2400 ex) loss 3.142 dev F1 sentiment=0.892 urgency=0.814 category=0.931
+[08:45:03] epoch  2 (  5.2 min, 2400/2400 ex) loss 1.262 dev F1 sentiment=0.881 urgency=0.883 category=0.943
+[08:47:52] epoch  3 (  8.0 min, 2400/2400 ex) loss 1.144 dev F1 sentiment=0.903 urgency=0.912 category=0.951
+[08:50:08] epoch  4 ( 10.2 min, 2400/2400 ex) loss 1.071 dev F1 sentiment=0.889 urgency=0.913 category=0.944
+[08:52:20] epoch  5 ( 12.4 min, 2400/2400 ex) loss 1.027 dev F1 sentiment=0.904 urgency=0.913 category=0.938
+[08:54:44] epoch  6 ( 14.8 min, 2400/2400 ex) loss 0.983 dev F1 sentiment=0.893 urgency=0.910 category=0.931
+[08:57:19] epoch  7 ( 17.4 min, 2400/2400 ex) loss 0.945 dev F1 sentiment=0.916 urgency=0.920 category=0.938
+[08:59:42] epoch  8 ( 19.8 min, 2400/2400 ex) loss 0.899 dev F1 sentiment=0.895 urgency=0.927 category=0.938
+[09:02:00] epoch  9 ( 22.1 min, 2400/2400 ex) loss 0.880 dev F1 sentiment=0.909 urgency=0.932 category=0.941
+[09:04:03] epoch 10 ( 24.1 min, 2400/2400 ex) loss 0.863 dev F1 sentiment=0.900 urgency=0.931 category=0.938
+[09:06:05] epoch 11 ( 26.2 min, 2400/2400 ex) loss 0.851 dev F1 sentiment=0.902 urgency=0.928 category=0.938
+[09:07:08] epoch 12 ( 27.2 min, 1184/2400 ex) loss 0.857 dev F1 sentiment=0.902 urgency=0.931 category=0.938
+[09:07:14] blend sentiment: w_transformer=1.0 dev F1 0.909
+[09:07:15] blend urgency: w_transformer=1.0 dev F1 0.932
+[09:07:15] blend category: w_transformer=0.7 dev F1 0.941
+[09:08:28] triage thresholds {'high': 47.5, 'medium': 18.0} {'dev_macro_f1': 0.9376, 'dev_high_recall': 0.9744, 'high_recall_floor': 0.9573}
+[09:08:36] test sentiment: Baseline TF-IDF=0.811 Tuned TF-IDF=0.826 Fine-tuned MiniLM=0.927 Served (blend)=0.927
+[09:08:36] test urgency: Baseline TF-IDF=0.801 Tuned TF-IDF=0.816 Fine-tuned MiniLM=0.879 Served (blend)=0.879
+[09:08:37] test category: Baseline TF-IDF=0.849 Tuned TF-IDF=0.869 Fine-tuned MiniLM=0.900 Served (blend)=0.902
+[09:09:08] triage FCFS (no triage): F1 0.140 High recall 0.000
+[09:09:08] triage Keyword rule only: F1 0.372 High recall 0.543
+[09:09:08] triage Hybrid triage (baseline models): F1 0.767 High recall 0.925
+[09:09:08] triage Hybrid triage (fine-tuned models): F1 0.861 High recall 0.972
+[09:09:10] done in 29.7 min -> models/selection.json, models/transformer/, reports/finetune.json
+[09:10:58] budget 30 min | train 2400  dev 300  test 600
+[09:11:10] reblend: reusing saved models
+[09:11:10] blend sentiment: w_transformer=0.7 dev F1 0.892
+[09:11:11] blend urgency: w_transformer=0.8 dev F1 0.920
+[09:11:11] blend category: w_transformer=0.7 dev F1 0.941
+[09:12:36] triage thresholds {'high': 46.0, 'medium': 18.0} {'dev_macro_f1': 0.9264, 'dev_high_recall': 0.9744, 'high_recall_floor': 0.9573}
+[09:12:45] test sentiment: Baseline TF-IDF=0.811 Tuned TF-IDF=0.826 Fine-tuned MiniLM=0.927 Served (blend)=0.936
+[09:12:45] test urgency: Baseline TF-IDF=0.801 Tuned TF-IDF=0.816 Fine-tuned MiniLM=0.879 Served (blend)=0.882
+[09:12:46] test category: Baseline TF-IDF=0.849 Tuned TF-IDF=0.869 Fine-tuned MiniLM=0.900 Served (blend)=0.902
+[09:13:23] triage FCFS (no triage): F1 0.140 High recall 0.000
+[09:13:23] triage Keyword rule only: F1 0.372 High recall 0.543
+[09:13:23] triage Hybrid triage (baseline models): F1 0.767 High recall 0.925
+[09:13:23] triage Hybrid triage (fine-tuned models): F1 0.848 High recall 0.976
+[09:13:25] done in 29.7 min -> models/selection.json, models/transformer/, reports/finetune.json

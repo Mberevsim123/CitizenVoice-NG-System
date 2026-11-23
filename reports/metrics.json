@@ -1,0 +1,513 @@
+{
+  "n_train": 2400,
+  "n_test": 600,
+  "label_dist": {
+    "sentiment": {
+      "Negative": 1230,
+      "Neutral": 810,
+      "Positive": 360
+    },
+    "urgency": {
+      "High": 1035,
+      "Low": 742,
+      "Medium": 623
+    },
+    "category": {
+      "Environment": 267,
+      "Roads": 253,
+      "Security": 252,
+      "Water": 246,
+      "Electricity": 238,
+      "Corruption": 236,
+      "Fire": 235,
+      "Health": 231,
+      "Education": 227,
+      "Flood/Emergency": 215
+    }
+  },
+  "label_dist_test": {
+    "sentiment": {
+      "Negative": 318,
+      "Neutral": 192,
+      "Positive": 90
+    },
+    "urgency": {
+      "High": 254,
+      "Low": 187,
+      "Medium": 159
+    },
+    "category": {
+      "Education": 67,
+      "Water": 65,
+      "Fire": 64,
+      "Corruption": 63,
+      "Flood/Emergency": 61,
+      "Health": 60,
+      "Security": 58,
+      "Roads": 57,
+      "Electricity": 55,
+      "Environment": 50
+    }
+  },
+  "tasks": {
+    "sentiment": {
+      "Naive Bayes": {
+        "cv_f1": 0.879,
+        "cv_std": 0.0071,
+        "accuracy": 0.8167,
+        "precision": 0.8522,
+        "recall": 0.7541,
+        "f1": 0.787,
+        "fit_seconds": 0.132
+      },
+      "Logistic Regression": {
+        "cv_f1": 0.9636,
+        "cv_std": 0.0104,
+        "accuracy": 0.8383,
+        "precision": 0.8946,
+        "recall": 0.7623,
+        "f1": 0.8043,
+        "fit_seconds": 0.252
+      },
+      "Linear SVM": {
+        "cv_f1": 0.9659,
+        "cv_std": 0.0094,
+        "accuracy": 0.845,
+        "precision": 0.9015,
+        "recall": 0.7692,
+        "f1": 0.8115,
+        "fit_seconds": 0.28
+      },
+      "selected": "Linear SVM",
+      "report": {
+        "Negative": {
+          "precision": 0.8005115089514067,
+          "recall": 0.9842767295597484,
+          "f1-score": 0.8829337094499294,
+          "support": 318.0
+        },
+        "Neutral": {
+          "precision": 0.9038461538461539,
+          "recall": 0.734375,
+          "f1-score": 0.8103448275862069,
+          "support": 192.0
+        },
+        "Positive": {
+          "precision": 1.0,
+          "recall": 0.5888888888888889,
+          "f1-score": 0.7412587412587412,
+          "support": 90.0
+        },
+        "accuracy": 0.845,
+        "macro avg": {
+          "precision": 0.9014525542658536,
+          "recall": 0.7691802061495459,
+          "f1-score": 0.8115124260982925,
+          "support": 600.0
+        },
+        "weighted avg": {
+          "precision": 0.8635018689750147,
+          "recall": 0.845,
+          "f1-score": 0.83845402202486,
+          "support": 600.0
+        }
+      },
+      "confusion": {
+        "labels": [
+          "Negative",
+          "Neutral",
+          "Positive"
+        ],
+        "matrix": [
+          [
+            313,
+            5,
+            0
+          ],
+          [
+            51,
+            141,
+            0
+          ],
+          [
+            27,
+            10,
+            53
+          ]
+        ]
+      }
+    },
+    "urgency": {
+      "Naive Bayes": {
+        "cv_f1": 0.8837,
+        "cv_std": 0.01,
+        "accuracy": 0.83,
+        "precision": 0.8282,
+        "recall": 0.8277,
+        "f1": 0.8254,
+        "fit_seconds": 0.149
+      },
+      "Logistic Regression": {
+        "cv_f1": 0.8979,
+        "cv_std": 0.0113,
+        "accuracy": 0.81,
+        "precision": 0.8151,
+        "recall": 0.7957,
+        "f1": 0.801,
+        "fit_seconds": 0.255
+      },
+      "Linear SVM": {
+        "cv_f1": 0.8952,
+        "cv_std": 0.0111,
+        "accuracy": 0.8067,
+        "precision": 0.8105,
+        "recall": 0.7921,
+        "f1": 0.7976,
+        "fit_seconds": 0.271
+      },
+      "selected": "Logistic Regression",
+      "report": {
+        "High": {
+          "precision": 0.8035087719298246,
+          "recall": 0.9015748031496063,
+          "f1-score": 0.849721706864564,
+          "support": 254.0
+        },
+        "Low": {
+          "precision": 0.9266666666666666,
+          "recall": 0.7433155080213903,
+          "f1-score": 0.8249258160237388,
+          "support": 187.0
+        },
+        "Medium": {
+          "precision": 0.7151515151515152,
+          "recall": 0.7421383647798742,
+          "f1-score": 0.7283950617283951,
+          "support": 159.0
+        },
+        "accuracy": 0.81,
+        "macro avg": {
+          "precision": 0.8151089845826688,
+          "recall": 0.7956762253169569,
+          "f1-score": 0.8010141948722326,
+          "support": 600.0
+        },
+        "weighted avg": {
+          "precision": 0.8184783094098884,
+          "recall": 0.81,
+          "f1-score": 0.8098420932580888,
+          "support": 600.0
+        }
+      },
+      "confusion": {
+        "labels": [
+          "High",
+          "Medium",
+          "Low"
+        ],
+        "matrix": [
+          [
+            229,
+            24,
+            1
+          ],
+          [
+            31,
+            118,
+            10
+          ],
+          [
+            25,
+            23,
+            139
+          ]
+        ]
+      }
+    },
+    "category": {
+      "Naive Bayes": {
+        "cv_f1": 0.9996,
+        "cv_std": 0.0008,
+        "accuracy": 0.8267,
+        "precision": 0.8347,
+        "recall": 0.8258,
+        "f1": 0.8263,
+        "fit_seconds": 0.138
+      },
+      "Logistic Regression": {
+        "cv_f1": 1.0,
+        "cv_std": 0.0,
+        "accuracy": 0.85,
+        "precision": 0.8545,
+        "recall": 0.8483,
+        "f1": 0.8491,
+        "fit_seconds": 0.374
+      },
+      "Linear SVM": {
+        "cv_f1": 1.0,
+        "cv_std": 0.0,
+        "accuracy": 0.86,
+        "precision": 0.8632,
+        "recall": 0.8575,
+        "f1": 0.858,
+        "fit_seconds": 0.499
+      },
+      "selected": "Logistic Regression",
+      "report": {
+        "Corruption": {
+          "precision": 0.8666666666666667,
+          "recall": 0.8253968253968254,
+          "f1-score": 0.8455284552845529,
+          "support": 63.0
+        },
+        "Education": {
+          "precision": 0.8194444444444444,
+          "recall": 0.8805970149253731,
+          "f1-score": 0.8489208633093526,
+          "support": 67.0
+        },
+        "Electricity": {
+          "precision": 0.86,
+          "recall": 0.7818181818181819,
+          "f1-score": 0.819047619047619,
+          "support": 55.0
+        },
+        "Environment": {
+          "precision": 0.7272727272727273,
+          "recall": 0.8,
+          "f1-score": 0.7619047619047619,
+          "support": 50.0
+        },
+        "Fire": {
+          "precision": 0.8787878787878788,
+          "recall": 0.90625,
+          "f1-score": 0.8923076923076924,
+          "support": 64.0
+        },
+        "Flood/Emergency": {
+          "precision": 0.9215686274509803,
+          "recall": 0.7704918032786885,
+          "f1-score": 0.8392857142857143,
+          "support": 61.0
+        },
+        "Health": {
+          "precision": 0.9827586206896551,
+          "recall": 0.95,
+          "f1-score": 0.9661016949152542,
+          "support": 60.0
+        },
+        "Roads": {
+          "precision": 0.864406779661017,
+          "recall": 0.8947368421052632,
+          "f1-score": 0.8793103448275862,
+          "support": 57.0
+        },
+        "Security": {
+          "precision": 0.676056338028169,
+          "recall": 0.8275862068965517,
+          "f1-score": 0.7441860465116279,
+          "support": 58.0
+        },
+        "Water": {
+          "precision": 0.9482758620689655,
+          "recall": 0.8461538461538461,
+          "f1-score": 0.8943089430894309,
+          "support": 65.0
+        },
+        "accuracy": 0.85,
+        "macro avg": {
+          "precision": 0.8545237945070504,
+          "recall": 0.848303072057473,
+          "f1-score": 0.8490902135483592,
+          "support": 600.0
+        },
+        "weighted avg": {
+          "precision": 0.8578507116342033,
+          "recall": 0.85,
+          "f1-score": 0.8516210531586776,
+          "support": 600.0
+        }
+      },
+      "confusion": {
+        "labels": [
+          "Corruption",
+          "Education",
+          "Electricity",
+          "Environment",
+          "Fire",
+          "Flood/Emergency",
+          "Health",
+          "Roads",
+          "Security",
+          "Water"
+        ],
+        "matrix": [
+          [
+            52,
+            1,
+            2,
+            6,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            59,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            43,
+            0,
+            4,
+            0,
+            0,
+            0,
+            7,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            40,
+            4,
+            0,
+            0,
+            4,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            58,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            5,
+            3,
+            0,
+            0,
+            0,
+            47,
+            0,
+            3,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            57,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            4,
+            0,
+            51,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            48,
+            0
+          ],
+          [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            55
+          ]
+        ]
+      }
+    }
+  },
+  "triage": {
+    "FCFS (no triage)": {
+      "accuracy": 0.265,
+      "macro_f1": 0.1397,
+      "high_precision": 0.0,
+      "high_recall": 0.0
+    },
+    "Keyword rule only": {
+      "accuracy": 0.4617,
+      "macro_f1": 0.372,
+      "high_precision": 0.7667,
+      "high_recall": 0.5433
+    },
+    "ML urgency model only": {
+      "accuracy": 0.81,
+      "macro_f1": 0.801,
+      "high_precision": 0.8035,
+      "high_recall": 0.9016
+    },
+    "Hybrid agent triage": {
+      "accuracy": 0.7833,
+      "macro_f1": 0.7669,
+      "high_precision": 0.7993,
+      "high_recall": 0.9252
+    }
+  },
+  "triage_confusion": [
+    [
+      235,
+      19,
+      0
+    ],
+    [
+      46,
+      106,
+      7
+    ],
+    [
+      13,
+      45,
+      129
+    ]
+  ],
+  "triage_ms_per_message": 9.56
+}

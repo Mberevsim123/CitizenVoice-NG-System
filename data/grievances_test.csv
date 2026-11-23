@@ -1,0 +1,601 @@
+text,category,sentiment,urgency,lga
+"please help, persons are burning refuse near residential homes every night around gudi in nasarawa eggon lga for two weeks. everybody is angry and scared.",Environment,Negative,Medium,Nasarawa Eggon
+"i live in wamba and an electric pole fell on a house and the wire is live at gudi, wamba lga. please come now! this is a disgrace.",Electricity,Negative,High,Wamba
+"Hi, the water vendors now sell at three times the price because the public taps are dry near Kwandere road for over three months. We are living in fear.",Water,Negative,Medium,Nasarawa Eggon
+"ma, a snake bite victim cannot get anti venom at the teaching hospital here in nasarawa. many families are involved. we need help fast. kindly take note.",Health,Neutral,High,Nasarawa
+"Hello, our neighbour's house is on fire and persons are trapped inside around Kwandere road in Wamba LGA. There is a school nearby. Please come now! Kindly acknowledge receipt.",Fire,Positive,High,Wamba
+I live in Lafia and the river bank keeps expanding towards the area near Tudun Kofa. Kindly advise on the next step.,Flood/Emergency,Neutral,Medium,Lafia
+"I wish to complain that the school roof was blown off and classes hold under trees at Garaku, Kokona LGA for a long time. I am disappointed in the authorities.",Education,Negative,Medium,Kokona
+"To whom it may concern, the street light on our road blinks at night near Angwan Lambu for two weeks. I commend the agency for listening.",Electricity,Positive,Low,Doma
+"help us, the trees along the road need trimming at angwan mada, obi lga. thank you for the good work so far.",Environment,Positive,Low,Obi
+"Biko, the road has caved in and vehicles are falling into the gully at High Court junction, Kokona LGA. Old people and pregnant women live here. Na wa for this country.",Roads,Negative,High,Kokona
+"I wish to complain that a police officer shot at a driver who garbaged to give kickback behind High Court junction, Keffi. Many families are involved. Please come now! This is very frustrating.",Corruption,Negative,High,Keffi
+"ma, an accident victim has been left at the teaching hospital without treatment in ado, nasarawa eggon. nobody cares about us.",Health,Negative,High,Nasarawa Eggon
+"I live in Wamba and the transformer exploded and fire is coming out of it at Shabu, Wamba LGA. There is a school nearby. Lives are at risk. This is a disgrace.",Electricity,Negative,High,Wamba
+"Biko, an inferno has broken out at the market and it is spreading quickly fast in Nasarawa town. Shameful situation.",Fire,Negative,High,Nasarawa
+"Madam, I want to know the schedule for the next immunisation exercise near Mararaba for two weeks. Kindly look into it.",Health,Neutral,Low,Wamba
+"Hello, garbage has not been evacuated from the market for weeks in Ado, Karu for two weeks. Many families are involved. We are fed up.",Environment,Negative,High,Karu
+"dear government, displaced flood water victims in the camp have not received relief materials here in keffi. please let me know what to do.",Flood/Emergency,Neutral,Medium,Keffi
+"Sir, erosion has washed away the highway and a house is about to fall at New Karu. Many families are involved. Emergency!!! We are tired of this government.",Flood/Emergency,Negative,High,Akwanga
+"Abeg, I want to know the schedule for the next immunisation exercise around Gudi in Doma LGA. This is for your information.",Health,Neutral,Low,Doma
+"Biko, the PHC is always locked by noon near Gudi for some days now. Many families are involved. Please let me know what to do.",Health,Neutral,High,Lafia
+"Hello, please put a speed bump in front of the primary school at Garaku. Kindly acknowledge receipt.",Roads,Neutral,Low,Nasarawa Eggon
+"I wish to complain that a chemical spill from a truck is flowing into the stream we drink from at Garaku, Nasarawa Eggon LGA. Children are affected. Hurry! Wahala dey o.",Environment,Negative,High,Nasarawa Eggon
+"Attention please, a fallen tree is blocking the expressway and a car crashed into it behind High Court junction, Kokona. This is terrible and painful.",Roads,Negative,High,Kokona
+"Please help, please update the outage schedule on your page in High Court junction, Nasarawa since January. Old people and pregnant women live here. This is a formal report.",Electricity,Neutral,Low,Nasarawa
+My name is a resident of Nasarawa. I want to know when the scholarship portal will open here in Nasarawa since last month. Old people and pregnant women live here. Kindly take note.,Education,Neutral,Low,Nasarawa
+"Hello, officials are diverting relief materials meant for flood water victims right now here in Lafia. Many families are involved. Please come now! Shameful situation.",Corruption,Negative,High,Lafia
+"good day, phone snatchers operate every evening at the junction around high court junction in kokona lga. hurry! i commend the agency for listening.",Security,Positive,High,Kokona
+"Please, the school needs a library at Gudi, Keana LGA for two weeks. This is a formal report.",Education,Neutral,Low,Keana
+"Sir, erosion has washed away the highway and a house is about to fall here in Wamba. This is terrible and painful.",Flood/Emergency,Negative,High,Wamba
+"to whom it may concern, please put a speed bump in front of the primary school at shabu, kokona lga. there is a school nearby. well done to the team.",Roads,Positive,Low,Kokona
+"I want to report that please organise fire safety training for our school in Mararaba, Nasarawa. There is a school nearby. This is for your information.",Fire,Neutral,Low,Nasarawa
+"Biko, the health centre is always locked by noon near Mararaba. There is a school nearby. Kindly acknowledge receipt.",Health,Neutral,Medium,Keffi
+"Hi, children are convulsing and the PHC has no doctor behind Mararaba, Wamba. Shameful situation.",Health,Negative,High,Wamba
+"hi, our neighbour's house is burning and persons are stuck inside at mararaba, lafia lga. we are suffering and angry.",Fire,Negative,High,Lafia
+"sir, displaced flood victims in the camp have not received relief materials here in toto since january. hurry! we appreciate the recent effort.",Flood/Emergency,Positive,High,Toto
+"Ma, can SEMA share the list of flood water prone areas in Sabon Pegi, Keana since last month. This is unacceptable.",Flood/Emergency,Negative,Low,Keana
+"Abeg, I want to know when the scholarship portal will open at Sabon Pegi since January. I commend the agency for listening.",Education,Positive,Low,Toto
+"Madam, garbage has not been evacuated from the market for weeks near Sabon Pegi. Emergency!!! Kindly take note.",Environment,Neutral,High,Nasarawa Eggon
+"Hello, I want to apply for a new water connection here in Keana. Children are affected. Please treat accordingly.",Water,Neutral,Low,Keana
+"Attention please, officials are diverting relief materials meant for flood victims right now at Doma road, Obi LGA. We are fed up.",Corruption,Negative,High,Obi
+"Dear government, the highway signs on the bypass are bent at Doma road. This is a disgrace.",Roads,Negative,Low,Lafia
+"Dear government, the highway signs on the bypass are bent here in Kokona. God bless you for your service.",Roads,Positive,Low,Kokona
+"Help us, the fire hydrants in the market have been dry for mnths near Ado. Nobody cares about us.",Fire,Negative,Medium,Doma
+"Help us, the trees along the road need trimming behind Masaka, Doma for a long time. I would like a response.",Environment,Neutral,Low,Doma
+"please, officials are diverting relief materials meant for flood victims right now near kwandere road. emergency!!! awaiting your feedback.",Corruption,Neutral,High,Awe
+Urgent: illegal gas refilling shops are operating inside residential buildings around Sabon Pegi in Toto LGA. We are suffering and angry.,Fire,Negative,Medium,Toto
+My name is a resident of Wamba. the fire service truck in our LGA has been broken down here in Wamba. I am disappointed in the authorities.,Fire,Negative,Medium,Wamba
+"Please help, there have been no immunisation vaccines at the PHC for wks here in Karu. Please attend to this.",Health,Neutral,Medium,Karu
+"Good morning, I want to know the date for the next environmental sanitation at Garaku, Nasarawa Eggon LGA for some days now. Children are affected. Keep up the good work.",Environment,Positive,Low,Nasarawa Eggon
+"Good day, illegal gas refilling shops are operating inside residential buildings in Garaku, Toto since last month. This is very frustrating.",Fire,Negative,Medium,Toto
+"Good day, please organise fire safety training for our school at Sabon Pegi. I would like a response.",Fire,Neutral,Low,Nasarawa Eggon
+"Help us, a bush fire is spreading quickly towards the homes at Angwan Lambu, Awe LGA. Please come now! Everybody is angry and scared.",Fire,Negative,High,Awe
+"Dear government, I want to know how to report a corruption case anonymously here in Akwanga for a long time. Kindly acknowledge receipt.",Corruption,Neutral,Low,Akwanga
+"Ma, a chemical spill from a truck is flowing into the stream we drink from around Sabon Pegi in Keana LGA. This is very frustrating.",Environment,Negative,High,Keana
+"Good morning, please paint the public water tank near Shabu. There is a school nearby. Please let me know what to do.",Water,Neutral,Low,Obi
+"Abeg, I want to suggest more community policing meetings around Angwan Lambu in Lafia LGA. We need help fast. I would like a response.",Security,Neutral,Medium,Lafia
+"Good morning, a fallen tree is blocking the expressway and a car crashed into it near New Karu. Shameful situation.",Roads,Negative,High,Awe
+"Good morning, can SEMA share the list of flood water prone areas in Awe town. Kindly look into it.",Flood/Emergency,Neutral,Low,Awe
+"Hi, the school roof was blown off and classes hold under trees near Gudi for two weeks. Please let me know what to do.",Education,Neutral,Medium,Toto
+"Please help, a burst pipe has been wasting water on the road for wks in New Karu, Toto. We need help fast. Kindly look into it.",Water,Neutral,Low,Toto
+"I want to report that our neighbour's house is burning and persons are trapped inside in Angwan Lambu, Toto. We need help fast. This is a disgrace.",Fire,Negative,High,Toto
+"I wish to complain that the fire hydrants in the market have been dry for months behind Tudun Kofa, Keana for two weeks. People are crying and helpless.",Fire,Negative,Medium,Keana
+"Madam, suspicious persons keep gathering behind the market at night near Kwandere road. Please let me know what to do.",Security,Neutral,Medium,Keana
+"Hi, officials are diverting relief materials meant for flood victims right now at Garaku, Keffi LGA. Send help immediately. People are crying and helpless.",Corruption,Negative,High,Keffi
+"Please help, the street light on our highway blinks at night around Tudun Kofa in Karu LGA. Old people and pregnant women live here. We are happy with the new platform.",Electricity,Positive,Low,Karu
+"Good morning, I want to know how to get a fire safety certificate for my shop in Keana town since January. Old people and pregnant women live here. God bless you for your service.",Fire,Positive,Low,Keana
+"help us, the phc is always locked by noon at garaku, doma lga for two weeks. please come now! wahala dey o.",Health,Negative,High,Doma
+"Please, the waiting area at the general teaching hospital needs more chairs behind Shabu, Nasarawa. I am writing for your attention.",Health,Neutral,Low,Nasarawa
+I wish to complain that a fire has broken out at the market and it is spreading quickly fast in Nasarawa Eggon town. This is so sad.,Fire,Negative,High,Nasarawa Eggon
+"Good morning, the public school has no tutors for mathematics and English at Ado, Obi LGA for some days now. This is wickedness.",Education,Negative,Medium,Obi
+I live in Toto and a fallen tree is blocking the expressway and a car crashed into it in Toto town. Please come now! Na wa for this country.,Roads,Negative,High,Toto
+"Sir, pupils sit on the floor because there are no desks here in Wamba for a long time. Na wa for this country.",Education,Negative,Medium,Wamba
+"Please, displaced flood water victims in the camp have not received relief materials in Awe town for some days now. Na wa for this country.",Flood/Emergency,Negative,Medium,Awe
+"please, the school roof was blown off and classes hold under trees at masaka, obi lga. children are affected. this is a disgrace.",Education,Negative,High,Obi
+"Madam, the prepaid meter has been rejecting tokens since last week near Kwandere road since January. The government has abandoned us.",Electricity,Negative,Medium,Nasarawa Eggon
+"Hello, an inferno has broken out at the market and it is spreading quickly fast here in Karu. Wahala dey o.",Fire,Negative,High,Karu
+I live in Awe and students are stuck after a fight broke out in the school near Garaku. We are frustrated beyond words.,Education,Negative,High,Awe
+"Abeg, I applied for a prepaid meter and want to know the status in New Karu, Nasarawa. Old people and pregnant women live here. This is a formal report.",Electricity,Neutral,Low,Nasarawa
+"good morning, the school needs a library near garaku. many families are involved. i am disappointed in the authorities.",Education,Negative,Low,Awe
+"Good day, kidnappers just abducted two people from our street around Shabu in Nasarawa Eggon LGA. We need help fast. I am disappointed in the authorities.",Security,Negative,High,Nasarawa Eggon
+"Sir, the fire service truck in our LGA has been broken down at Garaku. We are suffering and angry.",Fire,Negative,Medium,Wamba
+"please help, i applied for a prepaid meter and want to know the status here in wamba for two weeks. children are affected. kindly take note.",Electricity,Neutral,Low,Wamba
+"Biko, a burst pipe has been wasting water on the road for wks at Bukan Sidi, Doma LGA for over three months. Please come now! I am writing for your attention.",Water,Neutral,High,Doma
+"hi, there is a violent clash between two groups and houses are being burnt behind bukan sidi, nasarawa eggon. everybody is angry and scared.",Security,Negative,High,Nasarawa Eggon
+"biko, the police post in our ward needs a signboard near shabu. kindly advise on the next step.",Security,Positive,Low,Wamba
+i live in lafia and a man was stabbed and he is bleeding on the highway in lafia town. there is a school nearby. please attend to this.,Security,Neutral,High,Lafia
+"Abeg, the school roof was blown off and classes hold under trees here in Doma for some days now. Old people and pregnant women live here. People are crying and helpless.",Education,Positive,High,Doma
+"Biko, the PHC is always locked by noon behind Tudun Kofa, Keffi for over three months. We are frustrated beyond words.",Health,Negative,Medium,Keffi
+"To whom it may concern, toxic smoke from the dumpsite fire is choking residents behind Masaka, Keffi. Old people and pregnant women live here. Send help immediately. This is a disgrace.",Environment,Negative,High,Keffi
+I wish to complain that the water bill should show the meter reading in Akwanga town. There is a school nearby. We are happy with the new platform.,Water,Positive,Low,Akwanga
+"Please, the school needs a library behind Mararaba, Nasarawa for two weeks. We are grateful for this platform.",Education,Positive,Low,Nasarawa
+"Dear government, salaries of ghost workers are being paid in our ministry in Garaku, Keana. Many families are involved. We are afraid for our lives.",Corruption,Negative,High,Keana
+"Please help, please put a speed bump in front of the primary school at Tudun Kofa since last month. We need help fast. I am writing for your attention.",Roads,Neutral,Low,Keana
+"Good day, I want to know when the scholarship portal will open around Masaka in Keffi LGA. There is a school nearby. Send help immediately. This is for your information.",Education,Neutral,Low,Keffi
+"sir, toxic smoke from the dumpsite fire is choking residents around kwandere road in wamba lga. this is for your information.",Environment,Neutral,High,Wamba
+"Dear government, the fire hydrants in the market have been dry for mnths in Ado, Keana since last month. This is for your information.",Fire,Neutral,Low,Keana
+"Good day, nurses at the clinic demand cash before they attend to patients at Bukan Sidi. Old people and pregnant women live here. This is for your information.",Health,Neutral,Medium,Toto
+"good morning, please paint the public water tank behind jos road, wamba. emergency!!! god bless you for your service.",Water,Positive,Medium,Wamba
+"Hi, I want information about flood early warning for this rainy season behind Masaka, Nasarawa. Many families are involved. Awaiting your feedback.",Flood/Emergency,Neutral,Low,Nasarawa
+"Attention please, the borehole water has turned dark and smells of chemicals and people are falling sick behind Ado, Nasarawa. Emergency!!! This is so sad.",Water,Negative,High,Nasarawa
+"Madam, erosion is eating into the foundation of homes on our street behind Sabon Pegi, Kokona for over three months. Awaiting your feedback.",Flood/Emergency,Neutral,Medium,Kokona
+"Abeg, there has been no pipe borne water in our area for two mnths in Angwan Lambu, Keffi since last month. We need help fast. This is wickedness.",Water,Negative,High,Keffi
+"Please, a water pipe burst and is flood watering the transformer area behind Jos road, Toto. There is a school nearby. Send help immediately. We are suffering and angry.",Water,Negative,High,Toto
+"Ma, please update the outage schedule on your page here in Obi. We are happy with the new platform.",Electricity,Positive,Low,Obi
+I live in Nasarawa and I want to know how to report a corruption case anonymously in Nasarawa town for over three months. Many families are involved. Kindly advise on the next step.,Corruption,Neutral,Low,Nasarawa
+"Good morning, illegal gas refilling shops are operating inside residential buildings behind Ado, Toto. Many families are involved. We are suffering and angry.",Fire,Neutral,High,Toto
+I want to report that AEDC staff are demanding cash before they replace the fuse at High Court junction for two weeks. Shameful situation.,Electricity,Negative,Medium,Akwanga
+Urgent: the filling station is burning and smoke is everywhere here in Doma. Emergency!!! The government has abandoned us.,Fire,Negative,High,Doma
+"Attention please, the dam water has overflowed and children are being swept away in Doma town. Please let me know what to do.",Flood/Emergency,Neutral,High,Doma
+"hello, erosion is eating into the foundation of houses on our street here in awe. we are happy with the new platform.",Flood/Emergency,Positive,Medium,Awe
+"Madam, teachers have not been paid for months so they stopped teaching near Doma road. God bless you for your service.",Education,Positive,Medium,Wamba
+"biko, i want to know when the scholarship portal will open behind mararaba, doma since january. kindly look into it.",Education,Neutral,Low,Doma
+"Sir, a water pipe burst and is flooding the transformer (trafo) area in Gudi, Nasarawa Eggon. Many families are involved. Hurry! This is very frustrating.",Water,Negative,High,Nasarawa Eggon
+"Ma, school children sit on the floor because there are no desks at Garaku for two weeks. We are suffering and angry.",Education,Negative,Medium,Toto
+"Urgent: illegal gas refilling shops are operating inside residential buildings in Kwandere road, Doma. Children are affected. We are frustrated beyond words.",Fire,Negative,Medium,Doma
+"Good morning, the fire extinguishers in the secretariat have expired behind Ado, Karu for two weeks. Kindly take note.",Fire,Neutral,Low,Karu
+"Hi, school children sit on the floor because there are no desks at Masaka, Keffi LGA for some days now. Many families are involved. Send help immediately. Nobody cares about us.",Education,Negative,High,Keffi
+My name is a resident of Keana. students are stuck after a fight broke out in the school here in Keana. Many families are involved. Hurry! Wahala dey o.,Education,Negative,High,Keana
+"To whom it may concern, a woman in labour has been garbaged admission at the general teaching hospital in Doma town. Nobody cares about us.",Health,Negative,High,Doma
+"Dear government, the teaching hospital toilets need cleaning in Kwandere road, Karu since January. Kindly advise on the next step.",Health,Neutral,Low,Karu
+"hi, erosion has washed away the road and a house is about to fall behind tudun kofa, nasarawa eggon. this is terrible and painful.",Flood/Emergency,Negative,High,Nasarawa Eggon
+"Ma, the primary health centre has no drugs for malaria at High Court junction. Many families are involved. I am disappointed in the authorities.",Health,Negative,High,Toto
+"To whom it may concern, a building just collapsed and people are stuck under it at Doma road, Wamba LGA. Old people and pregnant women live here. We are fed up.",Flood/Emergency,Negative,High,Wamba
+Urgent: a high tension cable fell on the highway and it is sparking here in Keffi. Send help immediately. We are suffering and angry.,Electricity,Negative,High,Keffi
+"Biko, tutors have not been paid for months so they stopped teaching behind Doma road, Toto. There is a school nearby. This is very frustrating.",Education,Negative,Medium,Toto
+"Please, a company is dumping rubbish into the river near Ado. Awaiting your feedback.",Environment,Neutral,Medium,Awe
+"Help us, toxic smoke from the dumpsite fire is choking residents behind Ado, Kokona. This is a formal report.",Environment,Neutral,High,Kokona
+"Madam, cultists are attacking students near the hostel now in Keana town. Emergency!!! People are crying and helpless.",Security,Negative,High,Keana
+"hi, the phc is always locked by noon behind ado, nasarawa eggon. many families are involved. this is wickedness.",Health,Negative,High,Nasarawa Eggon
+"To whom it may concern, phone snatchers operate every evening at the junction in Akwanga town for some days now. Please treat accordingly.",Security,Neutral,Medium,Akwanga
+"Good morning, the teaching hospital toilets need cleaning behind Garaku, Kokona. I commend the agency for listening.",Health,Positive,Low,Kokona
+"Abeg, a police officer shot at a driver who garbaged to give bribe at Tudun Kofa. Lives are at risk. We are living in fear.",Corruption,Negative,High,Keffi
+"Good day, a police officer shot at a driver who garbaged to give kickback here in Obi. We need help fast. We are afraid for our lives.",Corruption,Negative,High,Obi
+"Biko, illegal gas refilling shops are operating inside residential buildings in Toto town. We are afraid for our lives.",Fire,Negative,Medium,Toto
+i wish to complain that please publish the budget for our ward projects near kwandere road. kindly look into it.,Corruption,Neutral,Low,Wamba
+Urgent: I want to suggest more community policing meetings around Angwan Mada in Kokona LGA. I am writing for your attention.,Security,Neutral,Low,Kokona
+"Ma, the dumpsite near the school is breeding mosquitoes and flies in Gudi, Awe for over three months. Old people and pregnant women live here. We are suffering and angry.",Environment,Negative,Medium,Awe
+"Abeg, the borehole water has turned dark and smells of chemicals and persons are falling sick around Bukan Sidi in Obi LGA. Awaiting your feedback.",Water,Positive,High,Obi
+"Hello, persons are burning garbage near residential homes every night in New Karu, Obi since last month. Old people and pregnant women live here. We are living in fear.",Environment,Negative,Medium,Obi
+"biko, i need information on how to join the neighbourhood watch in lafia town for two weeks. there is a school nearby. please treat accordingly.",Security,Neutral,Low,Lafia
+"Biko, officers at the checkpoint collect money from every commercial driver behind High Court junction, Obi. Please treat accordingly.",Corruption,Neutral,Medium,Obi
+"biko, students are stuck after a fight broke out in the school near masaka. lives are at risk. awaiting your feedback.",Education,Neutral,High,Doma
+"To whom it may concern, I want to apply for a new water connection in Keffi town. We thank the governor for the support.",Water,Positive,Low,Keffi
+"Dear government, the trees along the highway need trimming at Ado for a long time. Old people and pregnant women live here. We need help fast. This is a formal report.",Environment,Neutral,Low,Keffi
+I want to report that I need information on how to join the neighbourhood watch at Ado. This is for your information.,Security,Neutral,Low,Nasarawa Eggon
+"Madam, fire is burning the petrol station near the motor park at Doma road, Toto LGA. Children are affected. Send help immediately. We are afraid for our lives.",Fire,Negative,High,Toto
+"Hi, the fire extinguishers in the secretariat have expired at Gudi, Obi LGA for a long time. Old people and pregnant women live here. Send help immediately. This is a disgrace.",Fire,Negative,Medium,Obi
+"Good day, I want information about flood water early warning for this rainy season at Jos road. Please let me know what to do.",Flood/Emergency,Neutral,Low,Keana
+Urgent: please put a speed bump in front of the primary school at Gudi for a long time. Hurry! This is for your information.,Roads,Neutral,Low,Keffi
+"Please help, a fallen tree is blocking the expressway and a car crashed into it at Mararaba. Old people and pregnant women live here. Lives are at risk. We are suffering and angry.",Roads,Negative,High,Doma
+"Abeg, cultists are attacking students near the hostel now here in Lafia. Please come now! This is terrible and painful.",Security,Negative,High,Lafia
+"Madam, please update the outage schedule on your page near High Court junction. Thank you for the good work so far.",Electricity,Positive,Low,Obi
+My name is a resident of Lafia. officials are diverting relief materials meant for flood water victims right now around Garaku in Lafia LGA. This is for your information.,Corruption,Neutral,High,Lafia
+"Biko, a high tension cable fell on the highway and it is sparking behind Mararaba, Wamba. Lives are at risk. Wahala dey o.",Electricity,Negative,High,Wamba
+Urgent: please desilt the drainage before the rains start at Jos road for a long time. Old people and pregnant women live here. Thank you for the good work so far.,Flood/Emergency,Positive,Low,Nasarawa
+"Sir, the area borehole has been broken for weeks at Jos road for a long time. We are tired of this government.",Water,Positive,Medium,Akwanga
+I wish to complain that a police officer shot at a driver who refused to give kickback near Angwan Mada. Many families are involved. Send help immediately. We are suffering and angry.,Corruption,Negative,High,Wamba
+"Hi, the drainage on the highway is blocked and the highway is flooding near Sabon Pegi. I am writing for your attention.",Roads,Neutral,Medium,Akwanga
+"Madam, the prepaid meter has been rejecting tokens since last week at Garaku, Lafia LGA for a long time. There is a school nearby. Kindly acknowledge receipt.",Electricity,Neutral,Medium,Lafia
+"please help, erosion has washed away the highway and a house is about to fall here in doma. there is a school nearby. this is terrible and painful.",Flood/Emergency,Negative,High,Doma
+"Sir, the highway has caved in and vehicles are falling into the gully here in Obi. Emergency!!! Please attend to this.",Roads,Neutral,High,Obi
+"To whom it may concern, please put a speed bump in front of the primary school behind Shabu, Nasarawa since January. I would like a response.",Roads,Neutral,Low,Nasarawa
+"attention please, persons are burning garbage near residential houses every night in doma town. we are suffering and angry.",Environment,Negative,Medium,Doma
+"Sir, I want to know the procedure for requesting public information here in Kokona for over three months. Wahala dey o.",Corruption,Negative,Low,Kokona
+"Good day, I want to know the procedure for requesting public information around Doma road in Obi LGA for a long time. Please come now! Keep up the good work.",Corruption,Positive,Low,Obi
+"Ma, the public school has no tutors for mathematics and English here in Toto for two weeks. This is very frustrating.",Education,Negative,High,Toto
+"Biko, erosion has washed away the highway and a house is about to fall in Keffi town. This is so sad.",Flood/Emergency,Negative,High,Keffi
+"Sir, an inferno has broken out at the market and it is spreading fast here in Toto. Many families are involved. We are afraid for our lives.",Fire,Negative,High,Toto
+I wish to complain that the fire extinguishers in the secretariat have expired near High Court junction since January. Many families are involved. This is for your information.,Fire,Neutral,Low,Nasarawa
+"Biko, the waiting area at the general teaching hospital needs more chairs near Garaku. God bless you for your service.",Health,Positive,Low,Doma
+"please, the borehole water has turned dark and smells of chemicals and persons are falling sick behind bukan sidi, nasarawa eggon. we need help fast. this is terrible and painful.",Water,Negative,High,Nasarawa Eggon
+My name is a resident of Keffi. the health centre is always locked by noon around Kwandere road in Keffi LGA. People are crying and helpless.,Health,Negative,Medium,Keffi
+"Biko, the bridge on our highway is cracked and shaking when trucks pass near Angwan Lambu. Please come now! This is so sad.",Roads,Negative,High,Awe
+"To whom it may concern, children are convulsing and the PHC has no doctor near Ado. There is a school nearby. This is unacceptable.",Health,Negative,High,Nasarawa
+"Biko, the road signs on the bypass are bent behind Tudun Kofa, Doma. I commend the agency for listening.",Roads,Positive,Low,Doma
+"Please, a company is dumping rubbish into the river behind Masaka, Doma. We need help fast. Na wa for this country.",Environment,Negative,High,Doma
+My name is a resident of Wamba. please put a speed bump in front of the primary school at Doma road for some days now. Kindly advise on the next step.,Roads,Neutral,Low,Wamba
+"I live in Nasarawa and there has been no pipe borne water in our area for two mnths at High Court junction, Nasarawa LGA. Many families are involved. We are frustrated beyond words.",Water,Negative,High,Nasarawa
+"Help us, a police officer shot at a driver who garbaged to give kickback near Doma road. Many families are involved. We are tired of this government.",Corruption,Negative,High,Nasarawa
+"Hi, I want information about flood water early warning for this rainy season behind Sabon Pegi, Kokona since last month. Please let me know what to do.",Flood/Emergency,Neutral,Low,Kokona
+"Good day, officers at the checkpoint collect cash from every commercial driver at Angwan Mada for a long time. Please let me know what to do.",Corruption,Neutral,Medium,Wamba
+"Dear government, please put a speed bump in front of the primary school at Angwan Lambu since January. The government has abandoned us.",Roads,Negative,Low,Akwanga
+"Abeg, please publish the budget for our ward projects at Jos road. Keep up the good work.",Corruption,Positive,Low,Wamba
+"Hello, the public school has no teachers for mathematics and English here in Toto. Please come now! Kindly take note.",Education,Neutral,High,Toto
+"Help us, I want to apply for a new water connection in Karu town for a long time. I would like a response.",Water,Neutral,Low,Karu
+"I wish to complain that can SEMA share the list of flood prone areas at Jos road, Awe LGA for two weeks. Please let me know what to do.",Flood/Emergency,Neutral,Low,Awe
+"Dear government, many people in our village are vomiting and stooling after drinking the well water around Jos road in Akwanga LGA. Old people and pregnant women live here. We are fed up.",Health,Negative,High,Akwanga
+"Biko, drug users have taken over the abandoned building near the school at Jos road, Karu LGA for some days now. There is a school nearby. This is so sad.",Security,Negative,High,Karu
+my name is a resident of lafia. please place more waste bins along the main highway around garaku in lafia lga. there is a school nearby. i am writing for your attention.,Environment,Neutral,Low,Lafia
+"Biko, children are convulsing and the PHC has no doctor at Garaku, Doma LGA. Lives are at risk. Wahala dey o.",Health,Negative,High,Doma
+"Good day, I applied for a prepaid meter and want to know the status at Gudi. We need help fast. This is a formal report.",Electricity,Positive,Low,Akwanga
+"Hi, students are stuck after a fight broke out in the school near Mararaba. Many families are involved. The government has abandoned us.",Education,Negative,High,Awe
+"madam, the trees along the highway need trimming behind bukan sidi, kokona for some days now. emergency!!! awaiting your feedback.",Environment,Neutral,Low,Kokona
+"Please, the street light on our highway blinks at night behind High Court junction, Awe. Please attend to this.",Electricity,Neutral,Low,Awe
+"Hi, bandits attacked the village and people are wounded near Kwandere road. Hurry! This is a disgrace.",Security,Negative,High,Lafia
+"To whom it may concern, the street lights at the police checkpoint are not working behind Doma road, Obi. God bless you for your service.",Security,Positive,Low,Obi
+"Hello, please put a speed bump in front of the primary school in Doma road, Lafia since January. We appreciate the recent effort.",Roads,Positive,Low,Lafia
+"biko, the highway has caved in and vehicles are falling into the gully near new karu. we are fed up.",Roads,Negative,High,Lafia
+Urgent: I want to know the date for the next environmental sanitation here in Obi. Many families are involved. Hurry! Kindly take note.,Environment,Neutral,Low,Obi
+"please help, please update the outage schedule on your page in masaka, nasarawa eggon. awaiting your feedback.",Electricity,Neutral,Low,Nasarawa Eggon
+i live in awe and persons keep selling fuel in jerrycans beside homes which is a fire risk in awe town. there is a school nearby. please attend to this.,Fire,Neutral,Medium,Awe
+"Attention please, please paint the public water tank behind Gudi, Obi. Well done to the team.",Water,Positive,Low,Obi
+"hello, the school needs a library around angwan lambu in wamba lga since january. there is a school nearby. please let me know what to do.",Education,Neutral,Low,Wamba
+"Sir, I want information about flood water early warning for this rainy season here in Nasarawa Eggon. Old people and pregnant women live here. Please treat accordingly.",Flood/Emergency,Neutral,Low,Nasarawa Eggon
+"i live in toto and they asked me to pay before registering my child in a public school behind jos road, toto for two weeks. everybody is angry and scared.",Corruption,Negative,Medium,Toto
+"Attention please, the fire service truck in our LGA has been broken down at Masaka, Nasarawa LGA. Old people and pregnant women live here. Nobody cares about us.",Fire,Negative,Medium,Nasarawa
+"ma, the prepaid meter has been rejecting tokens since last week here in toto for over three months. old people and pregnant women live here. we are living in fear.",Electricity,Negative,Medium,Toto
+"Hello, abductors just abducted two persons from our street here in Wamba. Lives are at risk. We are afraid for our lives.",Security,Negative,High,Wamba
+My name is a resident of Keffi. the transformer (trafo) in our area has been faulty for two months here in Keffi. Please treat accordingly.,Electricity,Neutral,Medium,Keffi
+"Dear government, I want to know when the scholarship portal will open here in Keffi for a long time. Kindly look into it.",Education,Neutral,Low,Keffi
+"good morning, please paint the public water tank in obi town. people are crying and helpless.",Water,Positive,Low,Obi
+"Abeg, the borehole water has turned dark and smells of chemicals and people are falling sick at Bukan Sidi. There is a school nearby. Lives are at risk. We are frustrated beyond words.",Water,Negative,Low,Keffi
+"Dear government, an electric pole fell on a house and the wire is live around Bukan Sidi in Nasarawa LGA. Emergency!!! We are living in fear.",Electricity,Negative,High,Nasarawa
+"Hi, a man was stabbed and he is bleeding heavily on the road at Sabon Pegi, Kokona LGA. Send help immediately. We are afraid for our lives.",Security,Negative,High,Kokona
+"biko, the road has caved in and vehicles are falling into the gully at garaku, doma lga. this is so sad.",Roads,Negative,High,Doma
+"Biko, the highway to the general teaching hospital is impassable in Keffi town. Na wa for this country.",Roads,Negative,Medium,Keffi
+Urgent: students are trapped after a fight broke out in the school here in Nasarawa Eggon. Children are affected. We are frustrated beyond words.,Education,Negative,High,Nasarawa Eggon
+"I live in Wamba and kidnappers just abducted two persons from our street at Shabu, Wamba LGA. Children are affected. Emergency!!! Shameful situation.",Security,Negative,High,Wamba
+"Hi, I want to suggest more area policing meetings in Toto town for some days now. This is for your information.",Security,Neutral,Low,Toto
+"I wish to complain that please publish the budget for our ward projects at Bukan Sidi, Lafia LGA. Keep up the good work.",Corruption,Positive,Low,Lafia
+"Dear government, there is a violent clash between two groups and homes are being burnt around Bukan Sidi in Toto LGA. Lives are at risk. We are suffering and angry.",Security,Negative,High,Toto
+"Biko, the street lights at the police checkpoint are not working behind High Court junction, Lafia since January. Kindly acknowledge receipt.",Security,Neutral,Low,Lafia
+"Sir, I want to apply for a new water connection around Tudun Kofa in Karu LGA since January. There is a school nearby. We appreciate the recent effort.",Water,Positive,Low,Karu
+"Please, a burst pipe has been wasting water on the road for wks near Shabu since January. Many families are involved. Kindly acknowledge receipt.",Water,Neutral,Medium,Keana
+Urgent: every time it rains the drainage overflows into our homes at Masaka. Awaiting your feedback.,Flood/Emergency,Neutral,Medium,Wamba
+"Hello, the waiting area at the general hospital needs more chairs at Sabon Pegi. This is for your information.",Health,Neutral,Low,Awe
+"Please help, no light for one mnth yet we keep receiving bills at Bukan Sidi for over three months. Kindly acknowledge receipt.",Electricity,Neutral,Medium,Karu
+Urgent: please publish the budget for our ward projects at Bukan Sidi for some days now. This is a formal report.,Corruption,Neutral,Low,Karu
+"madam, nurses at the clinic demand cash before they attend to patients near bukan sidi. na wa for this country.",Health,Negative,Medium,Keffi
+"Abeg, the contract for the borehole was paid for but nothing was done around Garaku in Keana LGA. Old people and pregnant women live here. We are tired of this government.",Corruption,Negative,Medium,Keana
+"Dear government, the classroom roof fell down while school children were inside at Mararaba. There is a school nearby. We need help fast. Well done to the team.",Education,Positive,High,Karu
+"Please help, a chemical spill from a truck is flowing into the stream we drink from here in Karu. There is a school nearby. Send help immediately. Shameful situation.",Environment,Negative,High,Karu
+"Hello, I want information about flood early warning for this rainy season at Angwan Lambu. Awaiting your feedback.",Flood/Emergency,Neutral,Low,Karu
+"Madam, the water bill should show the meter reading at Doma road, Awe LGA for a long time. Lives are at risk. Please treat accordingly.",Water,Neutral,Low,Awe
+My name is a resident of Nasarawa Eggon. I applied for a prepaid meter and want to know the status around Shabu in Nasarawa Eggon LGA for some days now. Kindly acknowledge receipt.,Electricity,Neutral,Low,Nasarawa Eggon
+"madam, displaced flood water victims in the camp have not received relief materials at angwan mada, akwanga lga since last month. shameful situation.",Flood/Emergency,Negative,Medium,Akwanga
+"Hello, a fallen tree is blocking the expressway and a car crashed into it in Garaku, Karu. Children are affected. We need help fast. This is terrible and painful.",Roads,Negative,High,Karu
+"I wish to complain that the fire service truck in our LGA has been broken down at High Court junction, Nasarawa LGA. This is for your information.",Fire,Neutral,Medium,Nasarawa
+"Good day, there is a violent clash between two groups and homes are being burnt in Doma road, Toto. Many families are involved. This is a disgrace.",Security,Negative,High,Toto
+"I want to report that a burst pipe has been wasting water on the highway for weeks in Masaka, Akwanga. This is so sad.",Water,Negative,Medium,Akwanga
+"Sir, the fire service truck in our LGA has been broken down at Garaku. This is wickedness.",Fire,Negative,High,Akwanga
+"My name is a resident of Karu. please update the outage schedule on your page in Angwan Lambu, Karu. Send help immediately. We are frustrated beyond words.",Electricity,Negative,Medium,Karu
+i want to report that the highway has caved in and vehicles are falling into the gully at shabu. old people and pregnant women live here. we need help fast. please let me know what to do.,Roads,Neutral,High,Akwanga
+"Please help, a police officer shot at a driver who refused to give kickback at Angwan Lambu. Emergency!!! Kindly look into it.",Corruption,Neutral,High,Kokona
+"Hi, I want information about flood water early warning for this rainy season in Karu town for a long time. Kindly advise on the next step.",Flood/Emergency,Neutral,Low,Karu
+"Dear government, a snake bite victim cannot get anti venom at the teaching hospital here in Nasarawa. There is a school nearby. We are tired of this government.",Health,Negative,High,Nasarawa
+"Good day, many people in our village are vomiting and stooling after drinking the well water here in Keffi. This is wickedness.",Health,Negative,High,Keffi
+"Biko, please place more rubbish bins along the main road near Tudun Kofa since January. Kindly look into it.",Environment,Neutral,Low,Keffi
+"Attention please, cultists are attacking students near the hostel now behind Garaku, Kokona. We are suffering and angry.",Security,Negative,High,Kokona
+"I wish to complain that the street light on our highway blinks at night at Sabon Pegi, Nasarawa LGA for some days now. Children are affected. People are crying and helpless.",Electricity,Negative,Low,Nasarawa
+"My name is a resident of Karu. the water bill should show the meter reading in Kwandere road, Karu since last month. We are frustrated beyond words.",Water,Negative,Low,Karu
+"urgent: a woman in labour has been refused admission at the general teaching hospital in sabon pegi, awe. we need help fast. this is so sad.",Health,Negative,High,Awe
+"Hello, please place more rubbish bins along the main road here in Nasarawa Eggon for a long time. Please let me know what to do.",Environment,Neutral,Low,Nasarawa Eggon
+"Please help, please update the outage schedule on your page here in Keffi. I commend the agency for listening.",Electricity,Positive,Low,Keffi
+"To whom it may concern, I applied for a prepaid meter and want to know the status behind Tudun Kofa, Nasarawa Eggon for two weeks. This is for your information.",Electricity,Neutral,Low,Nasarawa Eggon
+"hi, a fire has broken out at the market and it is spreading fast behind sabon pegi, doma. this is unacceptable.",Fire,Negative,High,Doma
+"Hi, salaries of ghost workers are being paid in our ministry at Garaku, Obi LGA for a long time. People are crying and helpless.",Corruption,Negative,Medium,Obi
+"Sir, no light for one mnth yet we keep receiving bills at Jos road for over three months. Emergency!!! People are crying and helpless.",Electricity,Negative,High,Kokona
+"Sir, the school needs a library in Sabon Pegi, Wamba. Children are affected. Kindly acknowledge receipt.",Education,Neutral,Low,Wamba
+Urgent: the fire extinguishers in the secretariat have expired here in Awe for a long time. I am writing for your attention.,Fire,Neutral,Low,Awe
+"I live in Kokona and the dam water has overflowed and children are being swept away behind Gudi, Kokona. Please come now! We are afraid for our lives.",Flood/Emergency,Negative,High,Kokona
+"Abeg, I want information about flood water early warning for this rainy season here in Nasarawa since last month. Children are affected. Lives are at risk. I commend the agency for listening.",Flood/Emergency,Positive,Medium,Nasarawa
+"biko, i want to know the procedure for requesting public information in nasarawa town. many families are involved. we thank the governor for the support.",Corruption,Positive,Low,Nasarawa
+"Abeg, a water pipe burst and is flooding the transformer (trafo) area here in Doma. Kindly advise on the next step.",Water,Neutral,High,Doma
+"To whom it may concern, the school needs a library in Doma town for a long time. God bless you for your service.",Education,Positive,Low,Doma
+"Please, a gas tanker exploded and houses are burning at Ado, Akwanga LGA. Children are affected. Please come now! We are afraid for our lives.",Fire,Negative,High,Akwanga
+"help us, kidnappers just abducted two persons from our street behind jos road, toto. i am disappointed in the authorities.",Security,Negative,High,Toto
+"biko, i want to know how to get a fire safety certificate for my shop behind mararaba, karu since last month. this is for your information.",Fire,Neutral,Low,Karu
+"Sir, erosion is eating into the foundation of homes on our street here in Nasarawa for over three months. We thank the governor for the support.",Flood/Emergency,Positive,Medium,Nasarawa
+"Good morning, salaries of ghost workers are being paid in our ministry in Toto town for two weeks. Children are affected. Kindly acknowledge receipt.",Corruption,Neutral,Medium,Toto
+"I want to report that I want to know the date for the next environmental sanitation in Gudi, Awe for a long time. Awaiting your feedback.",Environment,Neutral,Low,Awe
+"Abeg, the health centre is always locked by noon in High Court junction, Awe for two weeks. Children are affected. Wahala dey o.",Health,Negative,High,Awe
+"Sir, please share the date for the common entrance examination around Ado in Doma LGA for two weeks. Children are affected. I am writing for your attention.",Education,Negative,Low,Doma
+"Please help, the water bill should show the meter reading at Masaka. We thank the governor for the support.",Water,Positive,Low,Nasarawa
+"i live in awe and please share the date for the common entrance examination behind kwandere road, awe since january. this is a formal report.",Education,Neutral,Low,Awe
+"Abeg, please update the outage schedule on your page here in Nasarawa Eggon. Old people and pregnant women live here. We are suffering and angry.",Electricity,Negative,Low,Nasarawa Eggon
+"Help us, officials are diverting relief materials meant for flood victims right now in Toto town. Please come now! We are afraid for our lives.",Corruption,Negative,High,Toto
+i want to report that aedc brought an estimated bill that is far above our usage around new karu in akwanga lga for a long time. we are tired of this government.,Electricity,Negative,Medium,Akwanga
+"Hello, the bridge on our highway is cracked and shaking when trucks pass around Garaku in Nasarawa Eggon LGA. Awaiting your feedback.",Roads,Neutral,Medium,Nasarawa Eggon
+"i live in kokona and the filling station is burning and smoke is everywhere at angwan lambu, kokona lga. this is so sad.",Fire,Negative,High,Kokona
+"I live in Toto and the primary health centre has no drugs for malaria behind Kwandere road, Toto. Hurry! This is very frustrating.",Health,Negative,High,Toto
+I want to report that the prepaid meter has been rejecting tokens since last week around Shabu in Lafia LGA. We appreciate the recent effort.,Electricity,Positive,Medium,Lafia
+"Dear government, the classroom roof fell down while school children were inside here in Wamba. I am disappointed in the authorities.",Education,Negative,High,Wamba
+"Abeg, displaced flood victims in the camp have not received relief materials in Ado, Obi. This is so sad.",Flood/Emergency,Negative,Medium,Obi
+"I want to report that there is no police patrol in the area since the last robbery in Angwan Mada, Wamba for over three months. Many families are involved. We need help fast. Shameful situation.",Security,Negative,High,Wamba
+"Ma, kidnappers just abducted two people from our street here in Kokona. Old people and pregnant women live here. Hurry! We are grateful for this platform.",Security,Positive,High,Kokona
+"I wish to complain that the transformer exploded and fire is coming out of it at Kwandere road, Karu LGA. We need help fast. This is a formal report.",Electricity,Neutral,High,Karu
+My name is a resident of Nasarawa Eggon. I want to know when the scholarship portal will open around Angwan Mada in Nasarawa Eggon LGA. Many families are involved. Na wa for this country.,Education,Negative,Low,Nasarawa Eggon
+"Dear government, I want to know how to get a fire safety certificate for my shop here in Lafia. We thank the governor for the support.",Fire,Negative,Low,Lafia
+"Sir, students are stuck after a fight broke out in the school here in Keffi. The government has abandoned us.",Education,Negative,High,Keffi
+"Hi, please put up a notice board with the clinic opening hours at Masaka, Obi LGA since last month. Old people and pregnant women live here. This is terrible and painful.",Health,Negative,Low,Obi
+"biko, the highway has caved in and vehicles are falling into the gully behind garaku, toto. please come now! this is terrible and painful.",Roads,Negative,High,Toto
+"Abeg, the river bank keeps expanding towards the area around Jos road in Lafia LGA. We are suffering and angry.",Flood/Emergency,Negative,Medium,Lafia
+"Biko, every time it rains the drainage overflows into our homes behind Sabon Pegi, Wamba. Wahala dey o.",Flood/Emergency,Negative,Medium,Wamba
+"Ma, the public school has no tutors for mathematics and English in Masaka, Kokona since January. Old people and pregnant women live here. God bless you for your service.",Education,Positive,Medium,Kokona
+My name is a resident of Toto. the dumpsite near the school is breeding mosquitoes and flies here in Toto since January. Many families are involved. Everybody is angry and scared.,Environment,Negative,High,Toto
+"Dear government, please share the date for the common entrance examination here in Awe since January. This is terrible and painful.",Education,Negative,Low,Awe
+I live in Doma and I want to know how to report a corruption case anonymously in Doma town. There is a school nearby. We appreciate the recent effort.,Corruption,Positive,Low,Doma
+"Attention please, the street light on our highway blinks at night behind Bukan Sidi, Obi. This is unacceptable.",Electricity,Negative,Low,Obi
+"Good day, I want to apply for a new water connection in New Karu, Wamba. Please come now! Thank you for the good work so far.",Water,Positive,Medium,Wamba
+"Dear government, the PHC is always locked by noon around Tudun Kofa in Nasarawa LGA for a long time. We are fed up.",Health,Negative,Low,Nasarawa
+"Dear government, a water pipe burst and is flood watering the transformer area around Masaka in Obi LGA. Nobody cares about us.",Water,Negative,High,Obi
+"Hi, the filling station is burning and smoke is everywhere near Shabu. Old people and pregnant women live here. Lives are at risk. Na wa for this country.",Fire,Negative,High,Lafia
+"Attention please, I want to know how to report a corruption case anonymously behind Gudi, Wamba since last month. We need help fast. Awaiting your feedback.",Corruption,Neutral,Low,Wamba
+"Help us, officials are diverting relief materials meant for flood victims right now at Doma road, Wamba LGA. Lives are at risk. We are afraid for our lives.",Corruption,Negative,High,Wamba
+"Madam, a water pipe burst and is flooding the transformer area near Mararaba. Lives are at risk. People are crying and helpless.",Water,Negative,High,Keana
+"Madam, toxic smoke from the dumpsite fire is choking residents near Ado. We need help fast. We are living in fear.",Environment,Positive,High,Nasarawa Eggon
+"Ma, a police officer shot at a driver who refused to give kickback here in Nasarawa. We need help fast. This is very frustrating.",Corruption,Negative,High,Nasarawa
+My name is a resident of Akwanga. the bridge fell down and a vehicle fell into the river around Jos road in Akwanga LGA. Send help immediately. We are tired of this government.,Flood/Emergency,Negative,High,Akwanga
+"Help us, the transformer (trafo) exploded and fire is coming out of it at New Karu, Awe LGA. Emergency!!! We are tired of this government.",Electricity,Negative,High,Awe
+My name is a resident of Lafia. the road signs on the bypass are bent at Bukan Sidi. I would like a response.,Roads,Neutral,Low,Lafia
+"To whom it may concern, I want to know when the scholarship portal will open behind Gudi, Nasarawa Eggon since January. We are happy with the new platform.",Education,Positive,Low,Nasarawa Eggon
+I live in Nasarawa Eggon and the contract for the borehole was paid for but nothing was done near Mararaba. Many families are involved. We need help fast. Please treat accordingly.,Corruption,Neutral,High,Nasarawa Eggon
+"help us, a high tension cable fell on the highway and it is sparking in keffi town. send help immediately. this is wickedness.",Electricity,Negative,High,Keffi
+"Help us, the street lights at the police checkpoint are not working near Ado. I commend the agency for listening.",Security,Positive,Low,Obi
+"Ma, the fire service truck in our LGA has been broken down at Angwan Lambu for a long time. Old people and pregnant women live here. The government has abandoned us.",Fire,Negative,High,Obi
+I want to report that the bridge on our road is cracked and shaking when trucks pass around Doma road in Wamba LGA. Wahala dey o.,Roads,Negative,Medium,Wamba
+"Good morning, the public school has no teachers for mathematics and English at Ado, Lafia LGA. I commend the agency for listening.",Education,Positive,Medium,Lafia
+"abeg, our neighbour's house is burning and persons are stuck inside around doma road in obi lga. lives are at risk. we are living in fear.",Fire,Negative,High,Obi
+"Hello, AEDC staff are demanding money before they replace the fuse at Gudi since January. We are afraid for our lives.",Electricity,Negative,Medium,Wamba
+"my name is a resident of lafia. illegal mining has left open pits all over the community in high court junction, lafia since january. many families are involved. we are frustrated beyond words.",Environment,Negative,Medium,Lafia
+"Madam, please desilt the drainage before the rains start at Doma road, Keana LGA for some days now. We are afraid for our lives.",Flood/Emergency,Negative,Low,Keana
+"Ma, the road contractor abandoned the project for over a year around Kwandere road in Toto LGA for some days now. I am disappointed in the authorities.",Roads,Negative,Medium,Toto
+I want to report that school children sit on the floor because there are no desks here in Wamba. This is very frustrating.,Education,Negative,Medium,Wamba
+"Help us, the borehole water has turned dark and smells of chemicals and persons are falling sick in Obi town. There is a school nearby. Lives are at risk. We are frustrated beyond words.",Water,Negative,High,Obi
+"Sir, the water bill should show the meter reading at Kwandere road. Children are affected. This is a formal report.",Water,Neutral,Low,Keana
+I wish to complain that the teaching hospital generator is not working so surgeries are postponed near Kwandere road. Old people and pregnant women live here. Awaiting your feedback.,Health,Neutral,Medium,Lafia
+My name is a resident of Wamba. school children sit on the floor because there are no desks around Bukan Sidi in Wamba LGA for some days now. Lives are at risk. The government has abandoned us.,Education,Negative,High,Wamba
+"biko, the borehole water has turned dark and smells of chemicals and people are falling sick in keana town. everybody is angry and scared.",Water,Negative,High,Keana
+"Dear government, I want to know the procedure for requesting public information around Angwan Lambu in Awe LGA. I commend the agency for listening.",Corruption,Positive,Low,Awe
+"Sir, a snake bite victim cannot get anti venom at the hospital in Angwan Mada, Akwanga. Lives are at risk. This is unacceptable.",Health,Negative,High,Akwanga
+"to whom it may concern, the water vendors now sell at three times the price because the public taps are dry near gudi. this is terrible and painful.",Water,Negative,Medium,Keffi
+"Urgent: please publish the budget for our ward projects in Gudi, Wamba. Kindly advise on the next step.",Corruption,Neutral,Low,Wamba
+"Please, the local government staff demanded a bribe before issuing my certificate near Bukan Sidi. Kindly take note.",Corruption,Neutral,Medium,Doma
+"Sir, the hospital toilets need cleaning in Jos road, Awe. Kindly advise on the next step.",Health,Negative,Low,Awe
+"Help us, please share the date for the common entrance examination near New Karu. Kindly look into it.",Education,Neutral,Low,Kokona
+"Ma, a building just fell down and persons are stuck under it in Bukan Sidi, Kokona. Send help immediately. We are living in fear.",Flood/Emergency,Negative,High,Kokona
+"I wish to complain that please share the date for the common entrance examination at Gudi, Karu LGA. Awaiting your feedback.",Education,Neutral,Low,Karu
+"Good morning, a snake bite victim cannot get anti venom at the hospital near High Court junction. Hurry! Please treat accordingly.",Health,Neutral,High,Kokona
+"I want to report that phone snatchers operate every evening at the junction in Angwan Lambu, Lafia since January. This is wickedness.",Security,Negative,Medium,Lafia
+"Ma, toxic smoke from the dumpsite fire is choking residents around Ado in Obi LGA. There is a school nearby. Emergency!!! Wahala dey o.",Environment,Negative,High,Obi
+"Ma, I want to apply for a new water connection in Angwan Lambu, Keana. This is a disgrace.",Water,Negative,Low,Keana
+"Hello, the road markings at the junction have faded at Angwan Mada since January. Old people and pregnant women live here. I am writing for your attention.",Roads,Neutral,Low,Obi
+"to whom it may concern, erosion is eating into the foundation of houses on our street behind garaku, nasarawa since last month. please come now! i would like a response.",Flood/Emergency,Neutral,High,Nasarawa
+"Please help, please desilt the drainage before the rains start here in Akwanga for some days now. Kindly look into it.",Flood/Emergency,Neutral,Low,Akwanga
+"Hi, a big crater on the highway just caused an accident and people are injured at Mararaba, Kokona LGA. There is a school nearby. Please come now! We appreciate the recent effort.",Roads,Positive,High,Kokona
+"Madam, AEDC brought an estimated bill that is far above our usage near Mararaba for two weeks. Many families are involved. Wahala dey o.",Electricity,Negative,Medium,Karu
+"Dear government, the borehole water has turned dark and smells of chemicals and persons are falling sick around Tudun Kofa in Kokona LGA. Old people and pregnant women live here. This is terrible and painful.",Water,Negative,High,Kokona
+"Biko, I want to know how to get a fire safety certificate for my shop at Garaku, Wamba LGA. I am writing for your attention.",Fire,Neutral,Low,Wamba
+I live in Toto and officials are diverting relief materials meant for flood water victims right now near Masaka. Children are affected. Wahala dey o.,Corruption,Negative,High,Toto
+I want to report that the drainage on the highway is blocked and the highway is flood watering at Shabu. Lives are at risk. We are happy with the new platform.,Roads,Positive,High,Toto
+"Ma, some boys with guns are robbing persons on the highway as I type in Gudi, Doma. Lives are at risk. Nobody cares about us.",Security,Negative,High,Doma
+"madam, the teaching hospital toilets need cleaning behind ado, akwanga for over three months. i would like a response.",Health,Neutral,Low,Akwanga
+"Dear government, some boys with guns are robbing and beating persons on the highway as I type at Shabu. Everybody is angry and scared.",Security,Negative,High,Obi
+"To whom it may concern, persons keep selling fuel in jerrycans beside homes which is a fire risk near Mararaba. I would like a response.",Fire,Neutral,Medium,Doma
+"Ma, the highway to the general teaching hospital is impassable around Shabu in Keana LGA. Please attend to this.",Roads,Neutral,Medium,Keana
+"Help us, the water vendors now sell at three times the price because the public taps are dry in Lafia town. We are frustrated beyond words.",Water,Negative,Medium,Lafia
+"Urgent: erosion has washed away the road and a house is about to fall in Mararaba, Toto. Many families are involved. Please come now! The government has abandoned us.",Flood/Emergency,Negative,High,Toto
+"Help us, a burst pipe has been wasting water on the road for weeks near High Court junction for a long time. Kindly advise on the next step.",Water,Neutral,Medium,Karu
+"Hello, a big crater on the highway just caused an accident and people are injured around Shabu in Awe LGA. Please come now! Nobody cares about us.",Roads,Negative,High,Awe
+"please, a water pipe burst and is flood watering the transformer area at new karu, obi lga. i am disappointed in the authorities.",Water,Negative,High,Obi
+"Good day, there have been no immunisation vaccines at the PHC for weeks around High Court junction in Akwanga LGA. Many families are involved. We are living in fear.",Health,Negative,High,Akwanga
+"Hi, I want to know when the scholarship portal will open behind Jos road, Keffi. Many families are involved. Emergency!!! Everybody is angry and scared.",Education,Negative,High,Keffi
+"I wish to complain that a police officer shot at a driver who refused to give kickback behind Shabu, Obi. There is a school nearby. Na wa for this country.",Corruption,Negative,High,Obi
+"Dear government, I want to know how to get a fire safety certificate for my shop at New Karu for some days now. We are happy with the new platform.",Fire,Positive,Low,Akwanga
+Urgent: a police officer shot at a driver who refused to give kickback around High Court junction in Obi LGA. Emergency!!! Wahala dey o.,Corruption,Negative,High,Obi
+"Abeg, please publish the budget for our ward projects here in Awe for a long time. I am writing for your attention.",Corruption,Neutral,Low,Awe
+"Hi, students are trapped after a fight broke out in the school at Tudun Kofa, Nasarawa Eggon LGA. We need help fast. Thanks for the quick response last time.",Education,Positive,High,Nasarawa Eggon
+"I want to report that erosion has washed away the road and a house is about to fall in Doma road, Awe. Children are affected. Please come now! This is terrible and painful.",Flood/Emergency,Negative,High,Awe
+"Please help, some boys with guns are robbing and beating people on the highway as I type around Bukan Sidi in Nasarawa Eggon LGA. Lives are at risk. We are living in fear.",Security,Negative,High,Nasarawa Eggon
+"help us, i want to apply for a new water connection behind sabon pegi, lafia for some days now. many families are involved. this is a disgrace.",Water,Negative,Low,Lafia
+"Ma, please paint the public water tank around Gudi in Wamba LGA. There is a school nearby. We are living in fear.",Water,Negative,Low,Wamba
+"attention please, the teaching hospital toilets need cleaning behind shabu, akwanga for two weeks. many families are involved. keep up the good work.",Health,Positive,Low,Akwanga
+"I live in Nasarawa Eggon and I applied for a prepaid meter and want to know the status behind Tudun Kofa, Nasarawa Eggon for over three months. Old people and pregnant women live here. I would like a response.",Electricity,Neutral,Low,Nasarawa Eggon
+"ma, the teaching hospital toilets need cleaning at mararaba for two weeks. kindly look into it.",Health,Neutral,Low,Kokona
+"biko, the community borehole has been broken for weeks at bukan sidi, lafia lga. this is wickedness.",Water,Neutral,Medium,Lafia
+"Good morning, the school roof was blown off and classes hold under trees in Doma town for two weeks. Wahala dey o.",Education,Negative,Medium,Doma
+"Biko, teachers have not been paid for mnths so they stopped teaching in Lafia town since last month. We are living in fear.",Education,Negative,Medium,Lafia
+"Attention please, a police officer shot at a driver who garbaged to give kickback in Keffi town. Lives are at risk. This is wickedness.",Corruption,Negative,High,Keffi
+"Ma, the trees along the highway need trimming around Masaka in Doma LGA for some days now. Old people and pregnant women live here. Thank you for the good work so far.",Environment,Positive,Low,Doma
+"Attention please, the police post in our ward needs a signboard near Kwandere road for a long time. Emergency!!! Awaiting your feedback.",Security,Neutral,Medium,Keffi
+"good morning, the bridge fell down and a vehicle fell into the river behind gudi, nasarawa. there is a school nearby. this is a disgrace.",Flood/Emergency,Negative,High,Nasarawa
+"Abeg, our neighbour's house is on fire and people are trapped inside in Angwan Lambu, Wamba. Send help immediately. I am disappointed in the authorities.",Fire,Negative,High,Wamba
+"Abeg, cultists are attacking students near the hostel now here in Nasarawa. Emergency!!! We are suffering and angry.",Security,Negative,High,Nasarawa
+Urgent: a chemical spill from a truck is flowing into the stream we drink from here in Obi. There is a school nearby. This is terrible and painful.,Environment,Negative,High,Obi
+"Dear government, abductors just abducted two persons from our street around Gudi in Kokona LGA. This is a disgrace.",Security,Negative,High,Kokona
+"Dear government, the dumpsite near the school is breeding mosquitoes and flies at Sabon Pegi. The government has abandoned us.",Environment,Negative,Medium,Doma
+"I wish to complain that pot holes on the Keffi Akwanga highway are causing accidents every week at Ado, Lafia LGA. I would like a response.",Roads,Neutral,Medium,Lafia
+"Please, the school roof was blown off and classes hold under trees in Toto town for two weeks. Children are affected. We are grateful for this platform.",Education,Positive,Medium,Toto
+"My name is a resident of Keana. erosion has washed away the highway and a house is about to fall in New Karu, Keana. We are suffering and angry.",Flood/Emergency,Negative,High,Keana
+"Madam, officers at the checkpoint collect money from every commercial driver behind Garaku, Karu. Emergency!!! Wahala dey o.",Corruption,Negative,High,Karu
+"dear government, the public school has no tutors for mathematics and english at jos road. there is a school nearby. wahala dey o.",Education,Negative,Medium,Keffi
+"Dear government, a fallen tree is blocking the expressway and a car crashed into it here in Obi. People are crying and helpless.",Roads,Negative,High,Obi
+"Sir, officials are diverting relief materials meant for flood water victims right now at Jos road. We are living in fear.",Corruption,Negative,High,Doma
+"Abeg, the PHC is always locked by noon here in Lafia for a long time. There is a school nearby. Shameful situation.",Health,Negative,Medium,Lafia
+"hello, erosion has washed away the highway and a house is about to fall here in keffi. kindly acknowledge receipt.",Flood/Emergency,Neutral,High,Keffi
+Urgent: please place more waste bins along the main highway at Jos road since last month. Children are affected. We thank the governor for the support.,Environment,Positive,Low,Kokona
+I wish to complain that the drainage on the road is blocked and the road is flood watering in Keana town. There is a school nearby. Na wa for this country.,Roads,Negative,Medium,Keana
+"I want to report that a police officer shot at a driver who garbaged to give kickback in Gudi, Doma. Please come now! We are fed up.",Corruption,Negative,High,Doma
+"Urgent: the fire service truck in our LGA has been broken down in Mararaba, Lafia. We are suffering and angry.",Fire,Negative,Medium,Lafia
+"Hi, I want information about flood early warning for this rainy season behind Ado, Toto for over three months. I am writing for your attention.",Flood/Emergency,Neutral,Low,Toto
+"Hello, some boys with guns are robbing people on the highway as I type in Bukan Sidi, Awe. Children are affected. This is terrible and painful.",Security,Negative,High,Awe
+"Biko, the drainage on the road is blocked and the road is flooding behind Kwandere road, Keffi. Hurry! Wahala dey o.",Roads,Negative,High,Keffi
+"Sir, tutors have not been paid for months so they stopped teaching in Sabon Pegi, Keffi for over three months. Nobody cares about us.",Education,Negative,Medium,Keffi
+I live in Nasarawa Eggon and refuse has not been evacuated from the market for weeks in Nasarawa Eggon town since January. Please come now! Kindly acknowledge receipt.,Environment,Neutral,High,Nasarawa Eggon
+"Good morning, I want to apply for a new water connection at Gudi, Doma LGA. Keep up the good work.",Water,Positive,Low,Doma
+"Biko, there have been no immunisation vaccines at the PHC for weeks near High Court junction since last month. There is a school nearby. Awaiting your feedback.",Health,Neutral,Medium,Toto
+"please, the teaching hospital generator is not working so surgeries are postponed behind mararaba, keffi. please treat accordingly.",Health,Neutral,Medium,Keffi
+"Ma, the street lights at the police checkpoint are not working around Tudun Kofa in Obi LGA for two weeks. I am writing for your attention.",Security,Neutral,Low,Obi
+"I wish to complain that there have been repeated burglaries in our area this mnth behind Ado, Nasarawa since last month. Many families are involved. This is a formal report.",Security,Neutral,Medium,Nasarawa
+"urgent: many persons in our village are vomiting and stooling after drinking the well water in bukan sidi, lafia. this is terrible and painful.",Health,Negative,High,Lafia
+My name is a resident of Obi. a child was electrocuted by an exposed transformer cable here in Obi. Please come now! I am disappointed in the authorities.,Electricity,Negative,High,Obi
+"Ma, can SEMA share the list of flood prone areas at Sabon Pegi. Please come now! I would like a response.",Flood/Emergency,Neutral,Medium,Wamba
+I wish to complain that a water pipe burst and is flood watering the transformer (trafo) area near Garaku. Emergency!!! This is so sad.,Water,Negative,High,Awe
+"Biko, please paint the public water tank in Wamba town for a long time. God bless you for your service.",Water,Positive,Low,Wamba
+"Good day, officers at the checkpoint collect money from every commercial driver in Masaka, Nasarawa. This is so sad.",Corruption,Negative,Medium,Nasarawa
+"Hello, I want to know the procedure for requesting public information around Sabon Pegi in Obi LGA for a long time. This is a formal report.",Corruption,Neutral,Low,Obi
+"Please help, please desilt the drainage before the rains start around Jos road in Lafia LGA for some days now. We are living in fear.",Flood/Emergency,Negative,Low,Lafia
+I live in Nasarawa and the drainage on the road is blocked and the road is flooding in Nasarawa town since January. We are fed up.,Roads,Negative,Medium,Nasarawa
+"To whom it may concern, gunmen are moving from house to house tonight behind Bukan Sidi, Toto. This is wickedness.",Security,Negative,High,Toto
+"Sir, thieves broke into three shops in the plaza last week here in Keana. This is a formal report.",Security,Neutral,Medium,Keana
+"Hi, the bridge on our highway is cracked and shaking when trucks pass behind Angwan Mada, Doma for over three months. I am disappointed in the authorities.",Roads,Negative,Medium,Doma
+"Madam, a chemical spill from a truck is flowing into the stream we drink from at Garaku, Doma LGA. We are tired of this government.",Environment,Negative,High,Doma
+"abeg, please organise fire safety training for our school around new karu in obi lga. na wa for this country.",Fire,Negative,Low,Obi
+"Please, please organise fire safety training for our school behind Kwandere road, Keffi. We appreciate the recent effort.",Fire,Positive,Low,Keffi
+"To whom it may concern, school children sit on the floor because there are no desks behind Sabon Pegi, Keffi. Wahala dey o.",Education,Negative,Medium,Keffi
+"Please, no light for one month yet we keep receiving bills near Bukan Sidi for a long time. Shameful situation.",Electricity,Negative,Medium,Awe
+"good morning, the water vendors now sell at three times the price because the public taps are dry at tudun kofa, keana lga for a long time. we are tired of this government.",Water,Negative,Medium,Keana
+"Help us, AEDC brought an estimated bill that is far above our usage at Masaka, Nasarawa LGA since January. Kindly advise on the next step.",Electricity,Neutral,Medium,Nasarawa
+i want to report that tutors have not been paid for mnths so they stopped teaching around mararaba in keana lga. please come now! the government has abandoned us.,Education,Negative,High,Keana
+"Dear government, there is no police patrol in the area since the last robbery here in Awe for some days now. We appreciate the recent effort.",Security,Positive,Medium,Awe
+"abeg, the public school has no tutors for mathematics and english at sabon pegi for some days now. we are suffering and angry.",Education,Negative,Medium,Karu
+"Madam, officials are diverting relief materials meant for flood victims right now near Angwan Mada. There is a school nearby. Hurry! We are afraid for our lives.",Corruption,Negative,High,Lafia
+"Abeg, officials are diverting relief materials meant for flood victims right now at Jos road. People are crying and helpless.",Corruption,Negative,High,Kokona
+"Dear government, no light for one mnth yet we keep receiving bills in Angwan Mada, Wamba for two weeks. Nobody cares about us.",Electricity,Negative,Medium,Wamba
+"Madam, I want to know the procedure for requesting public information at Tudun Kofa, Lafia LGA for over three months. Children are affected. Please attend to this.",Corruption,Neutral,Low,Lafia
+"To whom it may concern, every time it rains the drainage overflows into our homes behind Masaka, Lafia for over three months. Hurry! I am disappointed in the authorities.",Flood/Emergency,Negative,High,Lafia
+"Good day, the area borehole has been broken for wks in Sabon Pegi, Karu. I would like a response.",Water,Neutral,Medium,Karu
+"hello, abductors just abducted two people from our street around jos road in toto lga. many families are involved. we are fed up.",Security,Positive,High,Toto
+"Sir, I want to know how to get a fire safety certificate for my shop here in Kokona for two weeks. Keep up the good work.",Fire,Positive,Low,Kokona
+"My name is a resident of Nasarawa. I want to know when the scholarship portal will open in Kwandere road, Nasarawa. Send help immediately. Thanks for the quick response last time.",Education,Positive,Medium,Nasarawa
+"Good day, the school needs a library at Doma road for some days now. I would like a response.",Education,Neutral,Low,Doma
+"I live in Awe and the transformer (trafo) in our area has been faulty for two mnths behind New Karu, Awe for over three months. There is a school nearby. This is a formal report.",Electricity,Neutral,Medium,Awe
+"Abeg, AEDC staff are demanding cash before they replace the fuse around Shabu in Lafia LGA for two weeks. This is very frustrating.",Electricity,Negative,Medium,Lafia
+Urgent: a police officer shot at a driver who garbaged to give kickback around Sabon Pegi in Awe LGA. Please come now! This is wickedness.,Corruption,Negative,High,Awe
+"Abeg, the fire service truck in our LGA has been broken down in Angwan Mada, Toto. There is a school nearby. Please attend to this.",Fire,Neutral,Medium,Toto
+"good day, toxic smoke from the dumpsite fire is choking residents here in nasarawa. children are affected. send help immediately. this is so sad.",Environment,Negative,High,Nasarawa
+I wish to complain that officials are diverting relief materials meant for flood water victims right now in Awe town. Nobody cares about us.,Corruption,Negative,High,Awe
+"Please help, I want to know the procedure for requesting public information here in Lafia since January. Lives are at risk. This is a formal report.",Corruption,Neutral,Medium,Lafia
+"Biko, the borehole water has turned dark and smells of chemicals and persons are falling sick behind Ado, Doma. Many families are involved. Wahala dey o.",Water,Negative,High,Doma
+"dear government, i want to know how to get a fire safety certificate for my shop in masaka, karu for two weeks. please treat accordingly.",Fire,Neutral,Low,Karu
+"Good day, please paint the public water tank in Garaku, Keana for two weeks. I commend the agency for listening.",Water,Positive,Low,Keana
+"Sir, the classroom roof fell down while pupils were inside in Angwan Mada, Wamba. We need help fast. We are tired of this government.",Education,Negative,High,Wamba
+"biko, persons are burning garbage near residential houses every night at kwandere road, toto lga for over three months. kindly advise on the next step.",Environment,Neutral,Medium,Toto
+"Hi, the contract for the borehole was paid for but nothing was done behind Angwan Mada, Doma. There is a school nearby. Kindly acknowledge receipt.",Corruption,Neutral,Medium,Doma
+"To whom it may concern, the teaching hospital generator is not working so surgeries are postponed near Angwan Mada since January. Everybody is angry and scared.",Health,Negative,Medium,Keffi
+"Good morning, please place more rubbish bins along the main road behind Tudun Kofa, Keffi for some days now. There is a school nearby. Everybody is angry and scared.",Environment,Negative,Low,Keffi
+"Please, cultists are attacking students near the hostel now at Gudi, Wamba LGA. Wahala dey o.",Security,Negative,High,Wamba
+my name is a resident of nasarawa eggon. the waiting area at the general teaching hospital needs more chairs at tudun kofa since january. many families are involved. please let me know what to do.,Health,Neutral,Low,Nasarawa Eggon
+"Help us, gunmen are moving from house to house tonight near Tudun Kofa. Lives are at risk. We are suffering and angry.",Security,Neutral,High,Obi
+I live in Keana and the transformer (trafo) exploded and fire is coming out of it near Shabu. Children are affected. Hurry! This is so sad.,Electricity,Negative,High,Keana
+"i live in keana and the fire extinguishers in the secretariat have expired at sabon pegi, keana lga. children are affected. this is a disgrace.",Fire,Negative,Low,Keana
+"I live in Keffi and officers at the checkpoint collect cash from every commercial driver at Garaku, Keffi LGA for some days now. Kindly take note.",Corruption,Neutral,Medium,Keffi
+"good day, a child was electrocuted by an exposed transformer (trafo) cable at bukan sidi. hurry! this is unacceptable.",Electricity,Negative,High,Keana
+"Hi, the street light on our road blinks at night near Sabon Pegi. There is a school nearby. Thank you for the good work so far.",Electricity,Positive,Low,Karu
+i live in lafia and a snake bite victim cannot get anti venom at the teaching hospital near masaka. please come now! we are frustrated beyond words.,Health,Negative,High,Lafia
+"Please, they asked me to pay before registering my child in a public school in Nasarawa Eggon town for a long time. Please come now! This is a disgrace.",Corruption,Negative,High,Nasarawa Eggon
+"I live in Wamba and the road markings at the junction have faded at New Karu, Wamba LGA. Kindly look into it.",Roads,Neutral,Medium,Wamba
+"Sir, please share the date for the common entrance examination around Sabon Pegi in Wamba LGA since last month. Kindly advise on the next step.",Education,Neutral,Low,Wamba
+"Hello, a water pipe burst and is flood watering the transformer area in Bukan Sidi, Akwanga. Send help immediately. Shameful situation.",Water,Negative,High,Akwanga
+"Hello, fire is burning the petrol station near the motor park around Doma road in Keffi LGA. The government has abandoned us.",Fire,Negative,High,Keffi
+"Sir, cultists are attacking students near the hostel now around High Court junction in Kokona LGA. Hurry! I am writing for your attention.",Security,Neutral,High,Kokona
+"Please help, the water bill should show the meter reading around Masaka in Akwanga LGA. Please attend to this.",Water,Neutral,Low,Akwanga
+"Urgent: please share the date for the common entrance examination in Jos road, Kokona. Kindly advise on the next step.",Education,Neutral,Low,Kokona
+"Attention please, the local government staff demanded a kickback before issuing my certificate at High Court junction, Karu LGA since January. We are fed up.",Corruption,Negative,Medium,Karu
+"Biko, the river bank keeps expanding towards the area in Toto town. We are suffering and angry.",Flood/Emergency,Negative,Medium,Toto
+"Urgent: cultists are attacking students near the hostel now in Sabon Pegi, Doma. Many families are involved. Please come now! This is wickedness.",Security,Negative,High,Doma
+"Hi, illegal gas refilling shops are operating inside residential buildings at Kwandere road, Nasarawa LGA for some days now. Old people and pregnant women live here. Thanks for the quick response last time.",Fire,Positive,Medium,Nasarawa
+"good morning, an accident victim has been left at the teaching hospital without treatment at garaku, awe lga. lives are at risk. we are living in fear.",Health,Negative,High,Awe
+"Sir, AEDC brought an estimated bill that is far above our usage here in Doma since January. The government has abandoned us.",Electricity,Negative,Medium,Doma
+"I wish to complain that the borehole water has turned dark and smells of chemicals and persons are falling sick at Gudi, Lafia LGA. Old people and pregnant women live here. Hurry! People are crying and helpless.",Water,Negative,High,Lafia
+"please, the dam water has overflowed and children are being swept away behind garaku, doma. many families are involved. this is terrible and painful.",Flood/Emergency,Negative,High,Doma
+"to whom it may concern, i want to apply for a new water connection in lafia town since january. there is a school nearby. lives are at risk. kindly look into it.",Water,Neutral,Medium,Lafia
+"Good morning, the trees along the highway need trimming at High Court junction, Keffi LGA. Awaiting your feedback.",Environment,Neutral,Low,Keffi
+"Madam, drug users have taken over the abandoned building near the school behind Angwan Mada, Nasarawa. Please treat accordingly.",Security,Neutral,Low,Nasarawa
+"Sir, a police officer shot at a driver who refused to give bribe in Bukan Sidi, Wamba. Lives are at risk. Shameful situation.",Corruption,Negative,High,Wamba
+"I want to report that a high tension cable fell on the road and it is sparking in Bukan Sidi, Lafia. Please come now! This is for your information.",Electricity,Neutral,High,Lafia
+"Madam, the river bank keeps expanding towards the community behind Gudi, Awe. Emergency!!! Please treat accordingly.",Flood/Emergency,Neutral,High,Awe
+"Attention please, the prepaid meter has been rejecting tokens since last week behind Bukan Sidi, Doma for some days now. This is a formal report.",Electricity,Neutral,Medium,Doma
+"Good day, the school roof was blown off and classes hold under trees in Kwandere road, Akwanga for over three months. We need help fast. Please treat accordingly.",Education,Neutral,High,Akwanga
+"I live in Akwanga and there is a cholera outbreak and two persons have died behind Masaka, Akwanga. Na wa for this country.",Health,Negative,High,Akwanga
+"i wish to complain that school children sit on the floor because there are no desks behind angwan mada, wamba for a long time. i am writing for your attention.",Education,Neutral,Medium,Wamba
+"sir, the classroom roof fell down while school children were inside at masaka. lives are at risk. this is wickedness.",Education,Negative,High,Nasarawa
+"Good morning, the road to the general hospital is impassable near High Court junction. This is terrible and painful.",Roads,Negative,Medium,Kokona
+"Hi, please put up a notice board with the clinic opening hours near New Karu for over three months. Many families are involved. We thank the governor for the support.",Health,Positive,Low,Obi
+"I live in Kokona and the highway has caved in and vehicles are falling into the gully at Garaku, Kokona LGA. We need help fast. I would like a response.",Roads,Neutral,High,Kokona
+My name is a resident of Obi. I want to know how to get a fire safety certificate for my shop here in Obi since January. We are suffering and angry.,Fire,Negative,Low,Obi
+"Madam, there is a violent clash between two groups and homes are being burnt behind Angwan Mada, Keffi. Lives are at risk. The government has abandoned us.",Security,Negative,High,Keffi
+"Dear government, AEDC brought an estimated bill that is far above our usage in Sabon Pegi, Wamba since January. Old people and pregnant women live here. This is so sad.",Electricity,Negative,Medium,Wamba
+"Attention please, AEDC brought an estimated bill that is far above our usage near Mararaba for over three months. Old people and pregnant women live here. I am disappointed in the authorities.",Electricity,Negative,Medium,Wamba
+"Madam, the drainage on the highway is blocked and the highway is flooding behind Gudi, Toto. Wahala dey o.",Roads,Negative,Medium,Toto
+"I wish to complain that I want to suggest more area policing meetings behind Bukan Sidi, Lafia since January. God bless you for your service.",Security,Positive,Low,Lafia
+Urgent: persons are burning garbage near residential houses every night around Ado in Nasarawa Eggon LGA for two weeks. We are frustrated beyond words.,Environment,Negative,Medium,Nasarawa Eggon
+"Sir, an inferno has broken out at the market and it is spreading quickly fast around Bukan Sidi in Awe LGA. The government has abandoned us.",Fire,Negative,High,Awe
+My name is a resident of Kokona. toxic smoke from the dumpsite fire is choking residents at Sabon Pegi. There is a school nearby. Emergency!!! We are suffering and angry.,Environment,Negative,High,Kokona
+"To whom it may concern, a building just fell down and people are trapped under it behind Mararaba, Wamba. We need help fast. Shameful situation.",Flood/Emergency,Negative,High,Wamba
+"Biko, flood has submerged our houses and families are stranded on the roof at Sabon Pegi, Akwanga LGA. Hurry! We are living in fear.",Flood/Emergency,Negative,Medium,Akwanga
+"Abeg, people keep selling fuel in jerrycans beside houses which is a fire risk at Doma road. I commend the agency for listening.",Fire,Positive,Medium,Lafia
+"Good day, AEDC staff are demanding money before they replace the fuse here in Lafia for two weeks. Hurry! Kindly acknowledge receipt.",Electricity,Neutral,High,Lafia
+"to whom it may concern, students are stuck after a fight broke out in the school behind new karu, karu. please come now! we are frustrated beyond words.",Education,Negative,High,Karu
+"Sir, illegal gas refilling shops are operating inside residential buildings in Doma road, Nasarawa since January. Kindly look into it.",Fire,Neutral,Medium,Nasarawa
+"Urgent: every time it rains the drainage overflows into our homes in Shabu, Nasarawa. Lives are at risk. Please treat accordingly.",Flood/Emergency,Neutral,High,Nasarawa
+"Ma, the classroom roof fell down while pupils were inside in Mararaba, Awe. Many families are involved. Send help immediately. We are fed up.",Education,Negative,High,Awe
+"Ma, the borehole water has turned dark and smells of chemicals and people are falling sick around Masaka in Lafia LGA. Many families are involved. People are crying and helpless.",Water,Negative,High,Lafia
+"Abeg, the classroom roof fell down while pupils were inside around Masaka in Kokona LGA. Send help immediately. The government has abandoned us.",Education,Negative,High,Kokona
+"Attention please, an electric pole fell on a house and the wire is live in Keana town. Please come now! We are grateful for this platform.",Electricity,Positive,High,Keana
+"Biko, the hospital toilets need cleaning in Karu town. There is a school nearby. We thank the governor for the support.",Health,Positive,Low,Karu
+"Hello, an accident victim has been left at the teaching hospital without treatment around Mararaba in Wamba LGA. There is a school nearby. Emergency!!! The government has abandoned us.",Health,Negative,High,Wamba
+"I live in Obi and the road signs on the bypass are bent at High Court junction, Obi LGA. Old people and pregnant women live here. This is unacceptable.",Roads,Negative,Medium,Obi
+"To whom it may concern, a woman in labour has been refused admission at the general hospital in Doma town. Na wa for this country.",Health,Negative,High,Doma
+"Good day, potholes on the Keffi Akwanga highway are causing accidents every week around Doma road in Keffi LGA. This is wickedness.",Roads,Negative,Medium,Keffi
+"Biko, a bush fire is spreading towards the houses at Doma road, Keffi LGA. We need help fast. People are crying and helpless.",Fire,Negative,High,Keffi
+"abeg, the road contractor abandoned the project for over a year at gudi for two weeks. children are affected. we are frustrated beyond words.",Roads,Negative,Medium,Toto
+"Biko, the prepaid meter has been rejecting tokens since last week behind Masaka, Nasarawa Eggon for two weeks. I am writing for your attention.",Electricity,Neutral,Medium,Nasarawa Eggon
+"Hi, drug users have taken over the abandoned building near the school in Wamba town for some days now. This is for your information.",Security,Neutral,Medium,Wamba
+I live in Nasarawa Eggon and many persons in our village are vomiting and stooling after drinking the well water near Ado. There is a school nearby. Hurry! This is terrible and painful.,Health,Negative,High,Nasarawa Eggon
+"Help us, the borehole water has turned dark and smells of chemicals and people are falling sick in Obi town. I am disappointed in the authorities.",Water,Negative,High,Obi
+"sir, the hospital toilets need cleaning here in keana for a long time. there is a school nearby. awaiting your feedback.",Health,Neutral,Low,Keana
+"Hello, the road has caved in and vehicles are falling into the gully at Sabon Pegi. We need help fast. This is a disgrace.",Roads,Negative,High,Keffi
+Urgent: many people in our village are vomiting and stooling after drinking the well water around Shabu in Keana LGA. There is a school nearby. We need help fast. Nobody cares about us.,Health,Negative,High,Keana
+"Hi, toxic smoke from the dumpsite fire is choking residents behind Jos road, Doma. Children are affected. Send help immediately. The government has abandoned us.",Environment,Negative,High,Doma
+"Hi, I want to suggest more area policing meetings in Lafia town. Hurry! This is wickedness.",Security,Negative,Low,Lafia
+"Hi, a chemical spill from a truck is flowing into the stream we drink from behind Doma road, Kokona. Many families are involved. Kindly advise on the next step.",Environment,Neutral,High,Kokona
+"Sir, the river bank keeps expanding towards the community at Shabu. I am disappointed in the authorities.",Flood/Emergency,Negative,Medium,Lafia
+"Please help, a chemical spill from a truck is flowing into the stream we drink from at Gudi. The government has abandoned us.",Environment,Negative,High,Nasarawa
+"dear government, please desilt the drainage before the rains start around new karu in wamba lga for some days now. children are affected. kindly acknowledge receipt.",Flood/Emergency,Neutral,Low,Wamba
+"Dear government, the drainage on the highway is blocked and the highway is flood watering at New Karu since last month. Awaiting your feedback.",Roads,Neutral,Medium,Karu
+"Dear government, garbage has not been evacuated from the market for weeks here in Doma. Please treat accordingly.",Environment,Neutral,Low,Doma
+"Good morning, the health centre is always locked by noon at Angwan Mada, Kokona LGA for two weeks. Well done to the team.",Health,Positive,Medium,Kokona
+I wish to complain that the water vendors now sell at three times the price because the public taps are dry near Masaka since January. Children are affected. We appreciate the recent effort.,Water,Positive,Medium,Obi
+"urgent: the bridge collapsed and a vehicle fell into the river in high court junction, nasarawa eggon. emergency!!! we are suffering and angry.",Flood/Emergency,Negative,High,Nasarawa Eggon
+"sir, a chemical spill from a truck is flowing into the stream we drink from in garaku, wamba. we are fed up.",Environment,Negative,High,Wamba
+"madam, the police post in our ward needs a signboard behind mararaba, lafia for a long time. well done to the team.",Security,Positive,Low,Lafia
+"Madam, I applied for a prepaid meter and want to know the status behind Kwandere road, Toto. Kindly look into it.",Electricity,Neutral,Low,Toto
+"Attention please, can SEMA share the list of flood water prone areas at High Court junction, Awe LGA for over three months. Children are affected. Please come now! Kindly acknowledge receipt.",Flood/Emergency,Neutral,Low,Awe
+"Good morning, illegal gas refilling shops are operating inside residential buildings in Obi town for some days now. This is very frustrating.",Fire,Negative,Medium,Obi
+"Sir, pot holes on the Keffi Akwanga road are causing accidents every week in Sabon Pegi, Akwanga. Children are affected. Shameful situation.",Roads,Negative,High,Akwanga
+"Ma, the teaching hospital toilets need cleaning at Shabu for two weeks. There is a school nearby. This is very frustrating.",Health,Negative,Medium,Awe
+"I want to report that a bush fire is spreading quickly towards the homes in New Karu, Nasarawa Eggon. Hurry! I am disappointed in the authorities.",Fire,Negative,High,Nasarawa Eggon
+I wish to complain that every time it rains the drainage overflows into our houses in Doma town for two weeks. We are tired of this government.,Flood/Emergency,Negative,Low,Doma
+"Help us, the borehole water has turned dark and smells of chemicals and persons are falling sick near Kwandere road. Please come now! We are suffering and angry.",Water,Negative,High,Awe
+"good morning, a burst pipe has been wasting water on the road for wks at shabu, nasarawa lga. kindly look into it.",Water,Neutral,Medium,Nasarawa
+"My name is a resident of Lafia. a burst pipe has been wasting water on the highway for weeks in Sabon Pegi, Lafia for over three months. Old people and pregnant women live here. Kindly acknowledge receipt.",Water,Neutral,Medium,Lafia
+"I live in Toto and please organise fire safety training for our school behind Doma road, Toto. Keep up the good work.",Fire,Positive,Low,Toto
+I live in Karu and I want to apply for a new water connection in Karu town since January. Emergency!!! We appreciate the recent effort.,Water,Positive,Low,Karu
+"Good day, a woman in labour has been garbaged admission at the general hospital at Tudun Kofa. We are afraid for our lives.",Health,Negative,High,Keffi
+"Hello, the school needs a library around Garaku in Nasarawa Eggon LGA. Children are affected. Kindly take note.",Education,Neutral,Low,Nasarawa Eggon
+"Help us, many people in our village are vomiting and stooling after drinking the well water behind Masaka, Keana. Many families are involved. Hurry! We are frustrated beyond words.",Health,Negative,High,Keana
+"dear government, please desilt the drainage before the rains start here in akwanga for two weeks. please attend to this.",Flood/Emergency,Neutral,Low,Akwanga
+"dear government, please paint the public water tank at bukan sidi for some days now. please attend to this.",Water,Neutral,Low,Keana
+"Ma, the highway has caved in and vehicles are falling into the gully here in Wamba. Wahala dey o.",Roads,Negative,High,Wamba
+"Hi, suspicious persons keep gathering behind the market at night in Obi town for two weeks. Kindly take note.",Security,Neutral,Medium,Obi
+"Madam, the trees along the highway need trimming at Gudi, Doma LGA for a long time. Keep up the good work.",Environment,Positive,Low,Doma
+My name is a resident of Wamba. a big crater on the highway just caused an accident and persons are injured at Tudun Kofa. Many families are involved. Please come now! I would like a response.,Roads,Neutral,High,Wamba
+"Dear government, cultists are attacking students near the hostel now at Angwan Mada. This is unacceptable.",Security,Negative,High,Keana
+My name is a resident of Wamba. the road has caved in and vehicles are falling into the gully here in Wamba. Many families are involved. This is very frustrating.,Roads,Negative,High,Wamba
+"Please, the road markings at the junction have faded behind Ado, Doma for over three months. Well done to the team.",Roads,Positive,Low,Doma
+"To whom it may concern, I want to know how to get a fire safety certificate for my shop at Bukan Sidi, Keffi LGA. Kindly acknowledge receipt.",Fire,Neutral,Low,Keffi
+urgent: officials are diverting relief materials meant for flood water victims right now at angwan mada. many families are involved. we need help fast. this is so sad.,Corruption,Negative,High,Keana
+"Sir, the highway signs on the bypass are bent at Garaku since last month. We are suffering and angry.",Roads,Negative,Low,Obi
+"ma, can sema share the list of flood water prone areas at mararaba for two weeks. there is a school nearby. we appreciate the recent effort.",Flood/Emergency,Positive,Low,Keana
+"Please, erosion is eating into the foundation of homes on our street near Ado since last month. Children are affected. Kindly advise on the next step.",Flood/Emergency,Neutral,Medium,Doma
+"Help us, cultists are attacking students near the hostel now near Tudun Kofa. Send help immediately. This is very frustrating.",Security,Positive,High,Karu
+I want to report that garbage has not been evacuated from the market for weeks here in Obi. Kindly advise on the next step.,Environment,Neutral,Medium,Obi
+"Hi, please share the date for the common entrance examination at Doma road, Wamba LGA since last month. Kindly take note.",Education,Neutral,Low,Wamba
+"I want to report that armed men are firing guns sporadically in our community right now in Kwandere road, Toto. Lives are at risk. We are afraid for our lives.",Security,Negative,High,Toto
+"Sir, I want to apply for a new water connection at Sabon Pegi. Thank you for the good work so far.",Water,Positive,Low,Toto
+"Abeg, the local government staff demanded a kickback before issuing my certificate in Angwan Mada, Karu for a long time. There is a school nearby. We need help fast. Wahala dey o.",Corruption,Positive,High,Karu
+"Hi, some boys with guns are robbing persons on the road as I type at Angwan Lambu, Doma LGA. Hurry! People are crying and helpless.",Security,Negative,High,Doma
+"Madam, nurses at the clinic demand money before they attend to patients behind New Karu, Wamba. We are grateful for this platform.",Health,Positive,Medium,Wamba
+Urgent: I want to know the procedure for requesting public information around Masaka in Akwanga LGA for a long time. Many families are involved. Nobody cares about us.,Corruption,Negative,Low,Akwanga
+"Madam, a police officer shot at a driver who garbaged to give kickback at High Court junction, Toto LGA. Many families are involved. Hurry! We are fed up.",Corruption,Negative,High,Toto
+"Help us, there has been no pipe borne water in our area for two mnths behind Doma road, Obi. Lives are at risk. Wahala dey o.",Water,Negative,Medium,Obi
+"Please, a police officer shot at a driver who refused to give bribe near Tudun Kofa. We need help fast. We are afraid for our lives.",Corruption,Negative,High,Nasarawa Eggon
+"Please help, they asked me to pay before registering my child in a public school here in Doma for over three months. Wahala dey o.",Corruption,Negative,Medium,Doma
+"Abeg, the water vendors now sell at three times the price because the public taps are dry here in Obi for some days now. This is unacceptable.",Water,Negative,Medium,Obi
+"Help us, please organise fire safety training for our school behind New Karu, Keffi. There is a school nearby. Please let me know what to do.",Fire,Neutral,Low,Keffi
+"Hello, erosion is eating into the foundation of homes on our street in Angwan Lambu, Nasarawa since January. Old people and pregnant women live here. People are crying and helpless.",Flood/Emergency,Negative,Medium,Nasarawa
+"Good morning, toxic smoke from the dumpsite fire is choking residents behind Jos road, Nasarawa Eggon. We are suffering and angry.",Environment,Negative,High,Nasarawa Eggon
+"Good morning, please organise fire safety training for our school at Ado, Akwanga LGA. This is a formal report.",Fire,Neutral,Low,Akwanga
+"good day, a man was stabbed and he is bleeding on the highway here in doma. send help immediately. this is wickedness.",Security,Negative,High,Doma
+"Ma, the trees along the road need trimming around Jos road in Lafia LGA for a long time. There is a school nearby. This is for your information.",Environment,Neutral,Low,Lafia
+"Biko, a chemical spill from a truck is flowing into the stream we drink from near Gudi. Lives are at risk. Please attend to this.",Environment,Neutral,High,Keana
+"To whom it may concern, erosion has washed away the road and a house is about to fall behind Doma road, Toto. We need help fast. This is terrible and painful.",Flood/Emergency,Negative,High,Toto
+I wish to complain that the road signs on the bypass are bent near Jos road for a long time. Well done to the team.,Roads,Positive,Low,Kokona
+"Help us, the drainage on the road is blocked and the road is flooding in Lafia town for a long time. This is unacceptable.",Roads,Negative,High,Lafia
+"Please, students are stuck after a fight broke out in the school near Bukan Sidi. Hurry! Wahala dey o.",Education,Negative,High,Awe
+"Dear government, a bush fire is spreading towards the homes at Ado. Well done to the team.",Fire,Positive,High,Nasarawa Eggon
+"Good morning, the borehole water has turned dark and smells of chemicals and persons are falling sick near New Karu. Nobody cares about us.",Water,Negative,High,Lafia
+"Ma, I want to know when the scholarship portal will open here in Nasarawa Eggon. Many families are involved. This is a formal report.",Education,Neutral,Low,Nasarawa Eggon

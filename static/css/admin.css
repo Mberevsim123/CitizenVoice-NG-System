@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Officer console: KPIs, triage queue, complaint drawer, analytics, routing,
+   model performance
+   ========================================================================== */
+
+.container--wide {
+  max-width: 1360px;
+}
+
+/* ---------- sign in ---------- */
+.login-card {
+  max-width: 420px;
+  margin: var(--space-7) auto;
+}
+
+.login-card__title {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-lg);
+  color: var(--green-800);
+}
+
+.login-card__form {
+  margin-top: var(--space-4);
+}
+
+/* ---------- KPIs ---------- */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.kpi {
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.kpi__label {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.kpi__value {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.kpi--alert {
+  border-left: 4px solid var(--danger);
+}
+
+.kpi--alert .kpi__value {
+  color: var(--danger);
+}
+
+.console-tabs {
+  margin: var(--space-5) 0 var(--space-4);
+}
+
+/* ---------- queue ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.filters .select {
+  width: auto;
+  min-width: 160px;
+}
+
+.filters__search {
+  flex: 1;
+  min-width: 220px;
+}
+
+.queue__text {
+  max-width: 440px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.queue__sub {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.sla-breach {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--danger);
+}
+
+/* ---------- drawer ---------- */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 15, 0.38);
+  animation: fade-in 0.15s ease;
+}
+
+.drawer__panel {
+  position: relative;
+  width: min(620px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  padding: var(--space-5) var(--space-5) var(--space-6);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  animation: slide-in 0.2s ease;
+}
+
+.drawer__panel:focus {
+  outline: none;
+}
+
+.drawer__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  background: transparent;
+}
+
+.drawer__close:hover {
+  background: var(--line-soft);
+}
+
+.detail__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-right: var(--space-6);
+}
+
+.detail__title {
+  font-size: var(--fs-lg);
+}
+
+.detail__text {
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+.detail__heading {
+  margin: var(--space-5) 0 var(--space-2);
+  font-size: var(--fs-md);
+}
+
+.status-form {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) auto;
+  gap: var(--space-2);
+}
+
+.history__item {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.history__meta,
+.dispatch__item {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.dispatch__item + .dispatch__item {
+  margin-top: var(--space-1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes slide-in {
+  from { transform: translateX(40px); opacity: 0; }
+}
+
+/* ---------- charts ---------- */
+.donut {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.donut__ring {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+}
+
+.donut__hole {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  background: var(--surface);
+}
+
+.legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-1) 0;
+}
+
+.legend__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.hbar {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 40px;
+  gap: var(--space-2);
+  align-items: center;
+  margin: var(--space-2) 0;
+  font-size: var(--fs-sm);
+}
+
+.hbar__track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--line-soft);
+}
+
+.hbar__fill {
+  height: 100%;
+  border-radius: 5px;
+  background: var(--c-bar);
+}
+
+.hbar__fill--alt {
+  background: var(--c-bar-alt);
+}
+
+.hbar__value {
+  font-weight: 700;
+  text-align: right;
+}
+
+.daily {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+
+.daily__day {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.daily__stack {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 70%;
+  height: 150px;
+}
+
+.daily__seg--low { background: var(--c-low); }
+.daily__seg--medium { background: var(--c-medium); }
+.daily__seg--high { background: var(--c-high); border-radius: 3px 3px 0 0; }
+
+.daily__label {
+  font-size: 0.6875rem;
+  color: var(--muted);
+}
+
+.mt {
+  margin-top: var(--space-4);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 980px) {
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .filters .select,
+  .filters__search {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .drawer__panel {
+    padding: var(--space-4);
+  }
+
+  .donut {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.model-card__title {
+  padding: var(--space-4) var(--space-4) 0;
+}
+
+.model-card .table th,
+.model-card .table td {
+  padding: 8px 10px;
+}
+
+.model-card .table td:first-child {
+  white-space: nowrap;
+}
+
+.serving-cell {
+  min-width: 300px;
+  font-size: var(--fs-sm);
+}
+
+/* keep the console tabs on one scrollable line on small screens */
+.console-tabs {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.console-tabs .tab {
+  white-space: nowrap;
+}

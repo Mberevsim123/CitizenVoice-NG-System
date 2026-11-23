@@ -1,0 +1,513 @@
+{
+ "budget_minutes": 30.0,
+ "n_train": 2400,
+ "n_dev": 300,
+ "n_test": 600,
+ "classical": {
+  "sentiment": {
+   "selected": "SVM C=0.3, word 1-2",
+   "dev_f1": 0.7718
+  },
+  "urgency": {
+   "selected": "LR C=12.0, word 1-2 + char 2-5",
+   "dev_f1": 0.8546
+  },
+  "category": {
+   "selected": "SVM C=0.3, word 1-2 + char 2-5",
+   "dev_f1": 0.8855
+  }
+ },
+ "classical_trials": [
+  {
+   "task": "sentiment",
+   "features": "word 1-2",
+   "classifier": "LR C=1.0",
+   "dev_f1": 0.7166
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2",
+   "classifier": "LR C=1.0",
+   "dev_f1": 0.8299
+  },
+  {
+   "task": "category",
+   "features": "word 1-2",
+   "classifier": "LR C=1.0",
+   "dev_f1": 0.8612
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2",
+   "classifier": "LR C=4.0",
+   "dev_f1": 0.7445
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2",
+   "classifier": "LR C=4.0",
+   "dev_f1": 0.8379
+  },
+  {
+   "task": "category",
+   "features": "word 1-2",
+   "classifier": "LR C=4.0",
+   "dev_f1": 0.8586
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2",
+   "classifier": "LR C=12.0",
+   "dev_f1": 0.7369
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2",
+   "classifier": "LR C=12.0",
+   "dev_f1": 0.848
+  },
+  {
+   "task": "category",
+   "features": "word 1-2",
+   "classifier": "LR C=12.0",
+   "dev_f1": 0.8557
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2",
+   "classifier": "SVM C=0.3",
+   "dev_f1": 0.7718
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2",
+   "classifier": "SVM C=0.3",
+   "dev_f1": 0.8397
+  },
+  {
+   "task": "category",
+   "features": "word 1-2",
+   "classifier": "SVM C=0.3",
+   "dev_f1": 0.8683
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2",
+   "classifier": "SVM C=1.0",
+   "dev_f1": 0.7421
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2",
+   "classifier": "SVM C=1.0",
+   "dev_f1": 0.841
+  },
+  {
+   "task": "category",
+   "features": "word 1-2",
+   "classifier": "SVM C=1.0",
+   "dev_f1": 0.8623
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=1.0",
+   "dev_f1": 0.7616
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=1.0",
+   "dev_f1": 0.8292
+  },
+  {
+   "task": "category",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=1.0",
+   "dev_f1": 0.8846
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=4.0",
+   "dev_f1": 0.7451
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=4.0",
+   "dev_f1": 0.8443
+  },
+  {
+   "task": "category",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=4.0",
+   "dev_f1": 0.8852
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=12.0",
+   "dev_f1": 0.753
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=12.0",
+   "dev_f1": 0.8546
+  },
+  {
+   "task": "category",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "LR C=12.0",
+   "dev_f1": 0.8855
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "SVM C=0.3",
+   "dev_f1": 0.7534
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "SVM C=0.3",
+   "dev_f1": 0.8294
+  },
+  {
+   "task": "category",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "SVM C=0.3",
+   "dev_f1": 0.8855
+  },
+  {
+   "task": "sentiment",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "SVM C=1.0",
+   "dev_f1": 0.7514
+  },
+  {
+   "task": "urgency",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "SVM C=1.0",
+   "dev_f1": 0.8456
+  },
+  {
+   "task": "category",
+   "features": "word 1-2 + char 2-5",
+   "classifier": "SVM C=1.0",
+   "dev_f1": 0.8855
+  }
+ ],
+ "transformer": {
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "epochs": 12,
+  "steps": 1724,
+  "best_epoch": 9,
+  "train_minutes": 27.3,
+  "batch_size": 16,
+  "max_len": 96,
+  "history": [
+   {
+    "epoch": 1,
+    "steps": 150,
+    "minutes": 2.42,
+    "train_loss": 3.142,
+    "dev_f1": {
+     "sentiment": 0.8918,
+     "urgency": 0.8142,
+     "category": 0.9306
+    },
+    "dev_mean_f1": 0.8789,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 2,
+    "steps": 300,
+    "minutes": 5.16,
+    "train_loss": 1.2617,
+    "dev_f1": {
+     "sentiment": 0.8812,
+     "urgency": 0.8832,
+     "category": 0.9432
+    },
+    "dev_mean_f1": 0.9025,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 3,
+    "steps": 450,
+    "minutes": 7.96,
+    "train_loss": 1.1436,
+    "dev_f1": {
+     "sentiment": 0.903,
+     "urgency": 0.9122,
+     "category": 0.9506
+    },
+    "dev_mean_f1": 0.9219,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 4,
+    "steps": 600,
+    "minutes": 10.23,
+    "train_loss": 1.0712,
+    "dev_f1": {
+     "sentiment": 0.8894,
+     "urgency": 0.9128,
+     "category": 0.9441
+    },
+    "dev_mean_f1": 0.9154,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 5,
+    "steps": 750,
+    "minutes": 12.44,
+    "train_loss": 1.027,
+    "dev_f1": {
+     "sentiment": 0.9037,
+     "urgency": 0.913,
+     "category": 0.9379
+    },
+    "dev_mean_f1": 0.9182,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 6,
+    "steps": 900,
+    "minutes": 14.84,
+    "train_loss": 0.983,
+    "dev_f1": {
+     "sentiment": 0.8934,
+     "urgency": 0.9104,
+     "category": 0.9307
+    },
+    "dev_mean_f1": 0.9115,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 7,
+    "steps": 1050,
+    "minutes": 17.42,
+    "train_loss": 0.9447,
+    "dev_f1": {
+     "sentiment": 0.9163,
+     "urgency": 0.92,
+     "category": 0.9378
+    },
+    "dev_mean_f1": 0.9247,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 8,
+    "steps": 1200,
+    "minutes": 19.79,
+    "train_loss": 0.8992,
+    "dev_f1": {
+     "sentiment": 0.8946,
+     "urgency": 0.9275,
+     "category": 0.9379
+    },
+    "dev_mean_f1": 0.92,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 9,
+    "steps": 1350,
+    "minutes": 22.1,
+    "train_loss": 0.8797,
+    "dev_f1": {
+     "sentiment": 0.9087,
+     "urgency": 0.9317,
+     "category": 0.941
+    },
+    "dev_mean_f1": 0.9271,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 10,
+    "steps": 1500,
+    "minutes": 24.15,
+    "train_loss": 0.8634,
+    "dev_f1": {
+     "sentiment": 0.8998,
+     "urgency": 0.9313,
+     "category": 0.9379
+    },
+    "dev_mean_f1": 0.923,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 11,
+    "steps": 1650,
+    "minutes": 26.19,
+    "train_loss": 0.8509,
+    "dev_f1": {
+     "sentiment": 0.9025,
+     "urgency": 0.9277,
+     "category": 0.9379
+    },
+    "dev_mean_f1": 0.9227,
+    "partial_epoch": false
+   },
+   {
+    "epoch": 12,
+    "steps": 1724,
+    "minutes": 27.23,
+    "train_loss": 0.8569,
+    "dev_f1": {
+     "sentiment": 0.9025,
+     "urgency": 0.9313,
+     "category": 0.9379
+    },
+    "dev_mean_f1": 0.9239,
+    "partial_epoch": true
+   }
+  ]
+ },
+ "weights": {
+  "sentiment": 0.7000000000000001,
+  "urgency": 0.8,
+  "category": 0.7000000000000001
+ },
+ "blend_dev_f1": {
+  "sentiment": 0.892,
+  "urgency": 0.9198,
+  "category": 0.941
+ },
+ "thresholds": {
+  "high": 46.0,
+  "medium": 18.0
+ },
+ "threshold_calibration": {
+  "dev_macro_f1": 0.9264,
+  "dev_high_recall": 0.9744,
+  "high_recall_floor": 0.9573
+ },
+ "test": {
+  "sentiment": {
+   "Baseline TF-IDF": {
+    "accuracy": 0.845,
+    "precision": 0.9015,
+    "recall": 0.7692,
+    "f1": 0.8115
+   },
+   "Tuned TF-IDF": {
+    "accuracy": 0.8533,
+    "precision": 0.9038,
+    "recall": 0.7857,
+    "f1": 0.8259
+   },
+   "Fine-tuned MiniLM": {
+    "accuracy": 0.9483,
+    "precision": 0.9375,
+    "recall": 0.9175,
+    "f1": 0.9267
+   },
+   "Served (blend)": {
+    "accuracy": 0.9533,
+    "precision": 0.9522,
+    "recall": 0.9227,
+    "f1": 0.9358
+   }
+  },
+  "urgency": {
+   "Baseline TF-IDF": {
+    "accuracy": 0.81,
+    "precision": 0.8151,
+    "recall": 0.7957,
+    "f1": 0.801,
+    "high_precision": 0.8035,
+    "high_recall": 0.9016
+   },
+   "Tuned TF-IDF": {
+    "accuracy": 0.825,
+    "precision": 0.827,
+    "recall": 0.8117,
+    "f1": 0.8161,
+    "high_precision": 0.825,
+    "high_recall": 0.9094
+   },
+   "Fine-tuned MiniLM": {
+    "accuracy": 0.89,
+    "precision": 0.8851,
+    "recall": 0.8761,
+    "f1": 0.8795,
+    "high_precision": 0.9044,
+    "high_recall": 0.9685
+   },
+   "Served (blend)": {
+    "accuracy": 0.8917,
+    "precision": 0.8875,
+    "recall": 0.8779,
+    "f1": 0.8817,
+    "high_precision": 0.9011,
+    "high_recall": 0.9685
+   }
+  },
+  "category": {
+   "Baseline TF-IDF": {
+    "accuracy": 0.85,
+    "precision": 0.8545,
+    "recall": 0.8483,
+    "f1": 0.8491
+   },
+   "Tuned TF-IDF": {
+    "accuracy": 0.8683,
+    "precision": 0.8744,
+    "recall": 0.867,
+    "f1": 0.8692
+   },
+   "Fine-tuned MiniLM": {
+    "accuracy": 0.905,
+    "precision": 0.908,
+    "recall": 0.8987,
+    "f1": 0.9002
+   },
+   "Served (blend)": {
+    "accuracy": 0.9067,
+    "precision": 0.9096,
+    "recall": 0.9005,
+    "f1": 0.9022
+   }
+  }
+ },
+ "triage": {
+  "FCFS (no triage)": {
+   "accuracy": 0.265,
+   "precision": 0.0883,
+   "recall": 0.3333,
+   "f1": 0.1397,
+   "high_precision": 0.0,
+   "high_recall": 0.0
+  },
+  "Keyword rule only": {
+   "accuracy": 0.4617,
+   "precision": 0.3659,
+   "recall": 0.4725,
+   "f1": 0.372,
+   "high_precision": 0.7667,
+   "high_recall": 0.5433
+  },
+  "Hybrid triage (baseline models)": {
+   "accuracy": 0.7833,
+   "precision": 0.7905,
+   "recall": 0.7606,
+   "f1": 0.7669,
+   "high_precision": 0.7993,
+   "high_recall": 0.9252
+  },
+  "Hybrid triage (fine-tuned models)": {
+   "accuracy": 0.8617,
+   "precision": 0.8593,
+   "recall": 0.8439,
+   "f1": 0.8476,
+   "high_precision": 0.8857,
+   "high_recall": 0.9764
+  }
+ },
+ "triage_ms_per_message": 51.27,
+ "max_weight": 0.8,
+ "total_minutes": 29.68
+}

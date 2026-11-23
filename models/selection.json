@@ -1,0 +1,13 @@
+{
+ "classical": "models_tuned.pkl",
+ "weights": {
+  "sentiment": 0.7000000000000001,
+  "urgency": 0.8,
+  "category": 0.7000000000000001
+ },
+ "thresholds": {
+  "high": 46.0,
+  "medium": 18.0
+ },
+ "created": "2026-11-23 09:11:11"
+}

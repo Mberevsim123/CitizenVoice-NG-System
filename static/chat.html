@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chat with the CitizenVoice grievance assistant to report a problem in your community.">
+  <title>CitizenVoice NG · Report a Grievance</title>
+  <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/chat.css">
+  <script type="module" src="/static/js/chat.js"></script>
+</head>
+<body class="app-shell">
+  <a class="skip-link" href="#composer-input">Skip to message box</a>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand__logo" aria-hidden="true">CV</span>
+      <span>
+        <span class="brand__name">CitizenVoice NG</span>
+        <span class="brand__tag">Nasarawa State Grievance Reporting</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link is-active" href="/chat" aria-current="page">Report</a>
+      <a class="nav__link" href="/track">Track Complaint</a>
+      <span class="nav__user" data-user-name></span>
+      <button class="nav__link" type="button" data-action="sign-out">Sign out</button>
+    </nav>
+  </header>
+
+  <div class="chat-layout">
+    <aside class="panel panel--start" aria-labelledby="my-complaints-title">
+      <h2 class="panel__title" id="my-complaints-title">My complaints</h2>
+      <ul class="complaint-list" id="my-complaints">
+        <li class="empty">No complaints yet.</li>
+      </ul>
+    </aside>
+
+    <main class="chat" id="main">
+      <div class="chat__log" id="chat-log" role="log" aria-live="polite" aria-label="Conversation with CitizenVoice"></div>
+
+      <form class="composer" id="composer">
+        <label class="sr-only" for="composer-input">Your message</label>
+        <textarea class="textarea composer__input" id="composer-input" name="message" rows="1" maxlength="2000"
+                  placeholder="Describe the problem and where it is happening…" autocomplete="off" required></textarea>
+        <button class="btn btn--primary btn--pill" type="submit" id="composer-send">Send</button>
+      </form>
+      <p class="composer__hint">Press Enter to send, Shift + Enter for a new line. In immediate danger? Call <strong>112</strong>.</p>
+    </main>
+
+    <aside class="panel panel--end" aria-labelledby="perception-title">
+      <h2 class="panel__title" id="perception-title">Agent perception &amp; decision</h2>
+      <div id="perception">
+        <p class="empty">The agent's reading of your complaint will appear here as you chat.</p>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>

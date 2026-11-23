@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Track page: reference lookup, complaint summary and progress timeline
+   ========================================================================== */
+
+.page-title {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-lg);
+  color: var(--green-800);
+}
+
+.track-form {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.track-result {
+  margin-top: var(--space-4);
+}
+
+.result__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.result__ref {
+  font-size: var(--fs-lg);
+}
+
+.result__text {
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--green-700);
+  border-radius: var(--radius-sm);
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+.result__note {
+  margin: var(--space-4) 0;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.summary-grid__item {
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.summary-grid__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.summary-grid__value {
+  font-weight: 700;
+}
+
+.timeline {
+  margin: var(--space-3) 0 0 var(--space-2);
+  padding: 0 0 0 var(--space-5);
+  border-left: 2px solid var(--line);
+  list-style: none;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-5) - 8px);
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  background: var(--green-700);
+  box-shadow: 0 0 0 2px var(--green-700);
+}
+
+.timeline__item:last-child::before {
+  background: var(--surface);
+}
+
+.timeline__status {
+  font-weight: 700;
+}
+
+.timeline__meta {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .track-form {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Track the progress of a complaint filed with CitizenVoice NG.">
+  <title>CitizenVoice NG · Track a Complaint</title>
+  <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/track.css">
+  <script type="module" src="/static/js/track.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand__logo" aria-hidden="true">CV</span>
+      <span>
+        <span class="brand__name">CitizenVoice NG</span>
+        <span class="brand__tag">Nasarawa State Grievance Reporting</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link" href="/">Home</a>
+      <a class="nav__link" href="/chat">Report</a>
+      <a class="nav__link is-active" href="/track" aria-current="page">Track Complaint</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container container--narrow">
+    <section class="card" aria-labelledby="track-title">
+      <h1 class="page-title" id="track-title">Track a complaint</h1>
+      <p class="muted">Enter the reference number you received from the chatbot.</p>
+      <form class="track-form" id="track-form">
+        <label class="sr-only" for="track-ref">Reference number</label>
+        <input class="input" id="track-ref" name="ref" placeholder="e.g. CV-2026-00012" autocomplete="off"
+               pattern="[Cc][Vv]-\d{4}-\d{5}" title="Format: CV-2026-00012" required>
+        <button class="btn btn--primary" type="submit">Track</button>
+      </form>
+    </section>
+
+    <section id="track-result" class="track-result" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    CitizenVoice NG · Nasarawa State Government Grievance Desk · Emergency: 112
+  </footer>
+</body>
+</html>

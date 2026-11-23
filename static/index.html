@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Report a government grievance in Nasarawa State. CitizenVoice analyses your complaint, sets its priority and routes it to the responsible agency.">
+  <title>CitizenVoice NG · Report a Government Grievance</title>
+  <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/home.css">
+  <script type="module" src="/static/js/home.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand__logo" aria-hidden="true">CV</span>
+      <span>
+        <span class="brand__name">CitizenVoice NG</span>
+        <span class="brand__tag">Nasarawa State Grievance Reporting</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link is-active" href="/" aria-current="page">Home</a>
+      <a class="nav__link" href="/track">Track Complaint</a>
+      <a class="nav__link" href="/admin">Officer Login</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container hero">
+    <section class="hero__intro" aria-labelledby="hero-title">
+      <span class="badge">AI chatbot · sentiment analysis · urgency triage</span>
+      <h1 id="hero-title" class="hero__title">Report a government grievance in your own words.</h1>
+      <p class="hero__lead">
+        CitizenVoice reads your complaint, detects how serious and how emotional it is, sets an
+        urgency level, and sends it straight to the responsible agency. Emergencies are escalated at once.
+      </p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step__number">1</span>
+          <h2 class="step__title">Chat</h2>
+          <p class="step__text">Describe the problem: insecurity, fire, flood, health, electricity, water, roads, corruption, sanitation or schools.</p>
+        </li>
+        <li class="step">
+          <span class="step__number">2</span>
+          <h2 class="step__title">Triage</h2>
+          <p class="step__text">The agent analyses sentiment and danger signals and assigns High, Medium or Low priority.</p>
+        </li>
+        <li class="step">
+          <span class="step__number">3</span>
+          <h2 class="step__title">Track</h2>
+          <p class="step__text">You get a reference number and can follow the agency's response until it is resolved.</p>
+        </li>
+      </ol>
+
+      <p class="alert alert--danger hero__emergency">
+        <strong>In immediate danger?</strong> Call the National Emergency Number <strong>112</strong>
+        (toll-free) first, then report here.
+      </p>
+    </section>
+
+    <section class="card auth-card" aria-label="Sign in or create an account">
+      <p class="alert alert--info auth-card__notice" id="signed-in-notice" hidden>
+        You are signed in as <strong data-user-name></strong>.
+        <a id="continue-link" href="/chat">Continue</a>
+      </p>
+
+      <div class="tabs auth-card__tabs" role="tablist" aria-label="Account">
+        <button class="tab is-active" type="button" role="tab" id="tab-login"
+                aria-selected="true" aria-controls="panel-login" data-tab="login">Sign in</button>
+        <button class="tab" type="button" role="tab" id="tab-register"
+                aria-selected="false" aria-controls="panel-register" data-tab="register" tabindex="-1">Create account</button>
+      </div>
+
+      <form class="form" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+        <div class="field">
+          <label class="field__label" for="login-id">Phone number or email</label>
+          <input class="input" id="login-id" name="phone" autocomplete="username" placeholder="e.g. 08031234567" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="login-password">Password</label>
+          <input class="input" id="login-password" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <p class="form-error" role="alert" data-error></p>
+        <button class="btn btn--primary btn--block" type="submit">Sign in and start chatting</button>
+      </form>
+
+      <form class="form" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
+        <div class="field">
+          <label class="field__label" for="reg-name">Full name</label>
+          <input class="input" id="reg-name" name="full_name" autocomplete="name" placeholder="e.g. Amina Yusuf" required minlength="2" maxlength="80">
+        </div>
+        <div class="field">
+          <label class="field__label" for="reg-phone">Phone number</label>
+          <input class="input" id="reg-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="e.g. 08031234567" required minlength="7" maxlength="20">
+        </div>
+        <div class="field">
+          <label class="field__label" for="reg-email">Email <span class="muted">(optional)</span></label>
+          <input class="input" id="reg-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label class="field__label" for="reg-lga">Local Government Area</label>
+          <select class="select" id="reg-lga" name="lga" required>
+            <option value="" disabled selected>Loading…</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field__label" for="reg-password">Password</label>
+          <input class="input" id="reg-password" name="password" type="password" autocomplete="new-password" required minlength="6">
+        </div>
+        <p class="form-error" role="alert" data-error></p>
+        <button class="btn btn--primary btn--block" type="submit">Create account</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    CitizenVoice NG · Nasarawa State Government Grievance Desk · Emergency: 112
+  </footer>
+</body>
+</html>
