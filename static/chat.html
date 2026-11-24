@@ -38,15 +38,28 @@
     </aside>
 
     <main class="chat" id="main">
-      <div class="chat__log" id="chat-log" role="log" aria-live="polite" aria-label="Conversation with CitizenVoice"></div>
+      <div class="chat__scroll" id="chat-scroll">
+        <div class="chat__column chat__log" id="chat-log" role="log" aria-live="polite" aria-label="Conversation with CitizenVoice"></div>
+      </div>
 
-      <form class="composer" id="composer">
-        <label class="sr-only" for="composer-input">Your message</label>
-        <textarea class="textarea composer__input" id="composer-input" name="message" rows="1" maxlength="2000"
-                  placeholder="Describe the problem and where it is happening…" autocomplete="off" required></textarea>
-        <button class="btn btn--primary btn--pill" type="submit" id="composer-send">Send</button>
-      </form>
-      <p class="composer__hint">Press Enter to send, Shift + Enter for a new line. In immediate danger? Call <strong>112</strong>.</p>
+      <div class="chat__dock">
+        <form class="chat__column composer" id="composer">
+          <div class="composer__box">
+            <label class="sr-only" for="composer-input">Your message</label>
+            <textarea class="composer__input" id="composer-input" name="message" rows="1" maxlength="2000"
+                      placeholder="Describe the problem and where it is happening…" autocomplete="off" required></textarea>
+            <button class="composer__send" type="submit" id="composer-send" aria-label="Send message" disabled>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <p class="composer__hint">
+            Enter to send · Shift + Enter for a new line · In immediate danger? Call <strong>112</strong>
+          </p>
+        </form>
+      </div>
     </main>
 
     <aside class="panel panel--end" aria-labelledby="perception-title">

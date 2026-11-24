@@ -128,7 +128,7 @@ The officer account is created once, the first time the database starts empty. C
 
 The repository is ready for Railway: `railway.json` sets the start command
 (`python -m app.serve`), a health check on `/api/health` and restart-on-failure. `.python-version`
-pins Python 3.11.9, and `requirements.txt` installs the CPU-only PyTorch build on Linux.
+pins Python 3.11 (newest 3.11.x), and `requirements.txt` installs the CPU-only PyTorch build on Linux.
 
 1. **New project** -> **Deploy from GitHub repo** -> choose this repository (branch `main`).
 2. **Variables**: add `CV_ADMIN_PASSWORD` (a long secret). Production mode turns on automatically.

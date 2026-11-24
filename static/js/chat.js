@@ -10,6 +10,7 @@ const AGENT = 'CitizenVoice Agent';
 const WELCOME = 'Welcome to CitizenVoice. Describe the problem you want to report, and mention the LGA or community where it is happening.';
 
 const log = $('#chat-log');
+const scroller = $('#chat-scroll');
 const form = $('#composer');
 const input = $('#composer-input');
 const sendButton = $('#composer-send');
@@ -21,25 +22,62 @@ let busy = false;
 /* ------------------------------------------------------------------ conversation */
 
 function scrollToEnd() {
-  log.scrollTop = log.scrollHeight;
+  scroller.scrollTop = scroller.scrollHeight;
 }
 
+/** "Amina Yusuf" -> "AY" */
+function initials(name) {
+  const parts = String(name || '').trim().split(/\s+/).filter(Boolean);
+  return (parts.slice(0, 2).map((p) => p[0]).join('') || 'You').toUpperCase();
+}
+
+const SENDERS = {
+  agent: { name: AGENT, avatar: 'CV' },
+  user: { name: session.name || 'You', avatar: initials(session.name) },
+};
+
 /**
- * Add one message bubble.
+ * Add one message to the single conversation column. Consecutive messages from the
+ * same sender are grouped: only the first shows the avatar and name.
  * @param {string} text
- * @param {{from?: 'agent'|'user', variant?: ''|'alert'|'error', author?: string}} options
+ * @param {{from?: 'agent'|'user', variant?: ''|'alert'|'error'}} options
  */
-function addMessage(text, { from = 'agent', variant = '', author = null } = {}) {
-  const classes = ['msg', `msg--${from}`, variant && `msg--${variant}`].filter(Boolean).join(' ');
-  log.append(h('div', { class: classes }, author && h('span', { class: 'msg__author' }, author), h('div', { class: 'msg__bubble' }, text)));
+function addMessage(text, { from = 'agent', variant = '' } = {}) {
+  const last = log.lastElementChild;
+  const continued = Boolean(last && last.classList.contains('msg') && last.dataset.from === from);
+  const sender = SENDERS[from];
+  const classes = ['msg', `msg--${from}`, variant && `msg--${variant}`, continued && 'msg--continued']
+    .filter(Boolean)
+    .join(' ');
+  log.append(
+    h(
+      'div',
+      { class: classes, dataset: { from } },
+      continued ? null : h('span', { class: 'msg__avatar', 'aria-hidden': 'true' }, sender.avatar),
+      h(
+        'div',
+        { class: 'msg__body' },
+        continued ? null : h('span', { class: 'msg__author' }, sender.name),
+        h('div', { class: 'msg__bubble' }, text),
+      ),
+    ),
+  );
   scrollToEnd();
 }
 
 function showTyping() {
+  const last = log.lastElementChild;
+  const continued = Boolean(last && last.classList.contains('msg') && last.dataset.from === 'agent');
   const el = h(
     'div',
-    { class: 'msg msg--agent', 'aria-label': `${AGENT} is typing` },
-    h('div', { class: 'msg__bubble typing' }, [1, 2, 3].map(() => h('span', { class: 'typing__dot' }))),
+    { class: `msg msg--agent${continued ? ' msg--continued' : ''}`, dataset: { from: 'agent' }, 'aria-label': `${AGENT} is typing` },
+    continued ? null : h('span', { class: 'msg__avatar', 'aria-hidden': 'true' }, 'CV'),
+    h(
+      'div',
+      { class: 'msg__body' },
+      continued ? null : h('span', { class: 'msg__author' }, AGENT),
+      h('div', { class: 'msg__bubble typing' }, [1, 2, 3].map(() => h('span', { class: 'typing__dot' }))),
+    ),
   );
   log.append(el);
   scrollToEnd();
@@ -60,22 +98,24 @@ function clearQuickReplies() {
   log.querySelectorAll('.quick-replies').forEach((el) => el.remove());
 }
 
+function updateSendState() {
+  sendButton.disabled = busy || !input.value.trim();
+}
+
 async function send(text) {
   const message = text.trim();
   if (!message || busy) return;
   busy = true;
-  sendButton.disabled = true;
+  updateSendState();
   clearQuickReplies();
-  addMessage(message, { from: 'user', author: 'You' });
+  addMessage(message, { from: 'user' });
   const typing = showTyping();
 
   try {
     const reply = await api('/api/chat', { method: 'POST', body: { message } });
     typing.remove();
     const emergency = reply.action === 'ESCALATE_EMERGENCY';
-    reply.messages.forEach((m, i) => {
-      addMessage(m, { variant: emergency && i < 2 ? 'alert' : '', author: i === 0 ? AGENT : null });
-    });
+    reply.messages.forEach((m, i) => addMessage(m, { variant: emergency && i < 2 ? 'alert' : '' }));
     showQuickReplies(reply.quick_replies);
     renderPerception(reply.analysis, reply.action);
     if (reply.ref) loadComplaints();
@@ -88,7 +128,7 @@ async function send(text) {
     addMessage(`${err.message} Your message was not delivered.`, { variant: 'error' });
   } finally {
     busy = false;
-    sendButton.disabled = false;
+    updateSendState();
     input.focus();
   }
 }
@@ -177,7 +217,7 @@ async function loadComplaints() {
 
 /* ------------------------------------------------------------------ composer */
 
-const COMPOSER_MAX_HEIGHT = 160; // keep in sync with .composer__input max-height
+const COMPOSER_MAX_HEIGHT = 200; // keep in sync with .composer__input max-height
 
 function autoGrow() {
   input.style.height = 'auto';
@@ -187,7 +227,7 @@ function autoGrow() {
 
 function submitComposer() {
   const text = input.value;
-  if (!text.trim()) return;
+  if (!text.trim() || busy) return;
   input.value = '';
   autoGrow();
   send(text);
@@ -205,11 +245,14 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
-input.addEventListener('input', autoGrow);
+input.addEventListener('input', () => {
+  autoGrow();
+  updateSendState();
+});
 
 /* ------------------------------------------------------------------ start */
 
 initHeader({ signOutTo: '/' });
-addMessage(WELCOME, { author: AGENT });
+addMessage(WELCOME);
 loadComplaints();
 input.focus();
