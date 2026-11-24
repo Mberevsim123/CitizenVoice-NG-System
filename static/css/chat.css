@@ -6,12 +6,14 @@
   --chat-column: 760px;
 
   /* message palette */
-  --bubble-user: linear-gradient(135deg, #0e5a37 0%, #0a4229 55%, #08341f 100%);
-  --bubble-user-ink: #f4faf6;
-  --bubble-user-shadow: 0 6px 18px -8px rgba(6, 51, 31, 0.55);
-  --bubble-agent: #ffffff;
-  --bubble-agent-line: #e3e9e5;
-  --bubble-agent-shadow: 0 1px 2px rgba(16, 24, 20, 0.04), 0 4px 14px -6px rgba(16, 24, 20, 0.08);
+  /* natural tones: soft sage for the citizen, warm paper for the agent */
+  --bubble-user: #e4ede6;
+  --bubble-user-ink: #1d3427;
+  --bubble-user-line: #cddccf;
+  --bubble-user-shadow: 0 1px 2px rgba(29, 52, 39, 0.06);
+  --bubble-agent: #fbfaf6;
+  --bubble-agent-line: #e8e4da;
+  --bubble-agent-shadow: 0 1px 2px rgba(60, 52, 36, 0.05);
   --accent-gold: #c8a24a;
   --chat-bg: #f6f7f5;
 
@@ -196,6 +198,7 @@
 .msg--user .msg__bubble {
   color: var(--bubble-user-ink);
   background: var(--bubble-user);
+  border: 1px solid var(--bubble-user-line);
   box-shadow: var(--bubble-user-shadow);
 }
 
