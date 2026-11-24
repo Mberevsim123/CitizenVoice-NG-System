@@ -213,6 +213,32 @@
   box-shadow: none;
 }
 
+/* sides: inside the shared column the agent leans left and the citizen leans right */
+.msg--agent {
+  padding-right: 12%;
+}
+
+.msg--user {
+  grid-template-columns: minmax(0, 1fr) 32px;
+  padding-left: 12%;
+}
+
+.msg--user .msg__avatar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.msg--user .msg__body {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+}
+
+.msg--user .msg__bubble {
+  text-align: left;
+  border-radius: 16px 4px 16px 16px;
+}
+
 @keyframes msg-in {
   from { opacity: 0; transform: translateY(4px); }
 }
@@ -430,6 +456,15 @@
   .msg__avatar {
     width: 28px;
     height: 28px;
+  }
+
+  .msg--user {
+    grid-template-columns: minmax(0, 1fr) 28px;
+    padding-left: 8%;
+  }
+
+  .msg--agent {
+    padding-right: 8%;
   }
 
   .quick-replies {
