@@ -23,15 +23,34 @@ def test_railway_defaults_to_production_and_volume():
         assert env == "production" and path == str(Path(vol) / "citizenvoice.db")
 
 
-def test_production_refuses_default_admin_password():
+def test_production_starts_without_creating_an_officer():
+    """No officer account is created automatically: the first officer registers in the console."""
     with tempfile.TemporaryDirectory() as tmp:
-        r = run("from app import db; db.init()", CV_ENV="production", CV_DB_PATH=f"{tmp}/a.db")
-        assert r.returncode != 0 and "CV_ADMIN_PASSWORD" in r.stderr
-
-
-def test_production_starts_with_admin_password():
-    with tempfile.TemporaryDirectory() as tmp:
-        r = run("from app import db; con = db.init(); print(con.execute(\"SELECT email FROM users WHERE role='admin'\").fetchone()[0])",
-                CV_ENV="production", CV_DB_PATH=f"{tmp}/a.db", CV_ADMIN_PASSWORD="a-long-test-secret")
+        r = run("from app import db; con = db.init(); "
+                "print(con.execute(\"SELECT COUNT(*) FROM users WHERE role='admin'\").fetchone()[0], db.has_super_admin(con))",
+                CV_ENV="production", CV_DB_PATH=f"{tmp}/a.db")
         assert r.returncode == 0, r.stderr
-        assert r.stdout.strip() == "admin@citizenvoice.ng"
+        assert r.stdout.split() == ["0", "False"]
+
+
+def test_seed_refused_in_production():
+    with tempfile.TemporaryDirectory() as tmp:
+        r = run("from app import seed; seed.main()", CV_ENV="production", CV_DB_PATH=f"{tmp}/a.db")
+        assert r.returncode != 0 and "disabled in production" in (r.stderr + r.stdout)
+
+
+def test_old_database_admin_becomes_super_admin():
+    """A database from an earlier version keeps its officer, promoted to super administrator."""
+    import sqlite3
+    with tempfile.TemporaryDirectory() as tmp:
+        old = sqlite3.connect(f"{tmp}/old.db")
+        old.executescript("CREATE TABLE users (id INTEGER PRIMARY KEY, full_name TEXT, phone TEXT UNIQUE, email TEXT,"
+                          " lga TEXT, password_hash TEXT, role TEXT DEFAULT 'citizen', agency_id INTEGER, created_at TEXT);"
+                          "INSERT INTO users(full_name,phone,email,role) VALUES ('Old Officer','080','old@x.ng','admin');")
+        old.commit()
+        old.close()
+        r = run("from app import db; con = db.init(); "
+                "print(*con.execute(\"SELECT status, is_super FROM users WHERE role='admin'\").fetchone())",
+                CV_DB_PATH=f"{tmp}/old.db")
+        assert r.returncode == 0, r.stderr
+        assert r.stdout.split() == ["active", "1"]

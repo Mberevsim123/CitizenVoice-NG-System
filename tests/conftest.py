@@ -20,11 +20,18 @@ def client():
         yield c
 
 
+SUPER_ADMIN = {"full_name": "Super Officer", "email": "super@citizenvoice.ng", "phone": "08000000001",
+               "password": "SuperSecret1"}
+
+
 @pytest.fixture(scope="session")
 def admin_headers(client):
-    r = client.post("/api/login", json={"phone": "admin@citizenvoice.ng", "password": "Admin@123"})
-    assert r.status_code == 200
-    return {"Authorization": "Bearer " + r.json()["token"]}
+    """The first officer to register on the fresh test database: the super administrator."""
+    r = client.post("/api/officers/register", json=SUPER_ADMIN)
+    assert r.status_code == 200, r.text
+    body = r.json()
+    assert body["status"] == "active" and body["is_super"] is True
+    return {"Authorization": "Bearer " + body["token"]}
 
 
 @pytest.fixture

@@ -2,9 +2,9 @@
 
 Environments
 ------------
-development  (default locally)  demo officer password allowed, API docs at /docs
+development  (default locally)  API docs at /docs
 production   (default on Railway, or CV_ENV=production)
-             CV_ADMIN_PASSWORD is required, API docs are hidden, HSTS is sent
+             API docs are hidden, HSTS is sent
 """
 import os
 from pathlib import Path
@@ -31,11 +31,9 @@ TOKEN_TTL_HOURS = int(os.getenv("CV_TOKEN_TTL_HOURS", "168"))
 # Set CV_USE_TRANSFORMER=0 to serve only the classical TF-IDF models (no PyTorch needed).
 USE_TRANSFORMER = os.getenv("CV_USE_TRANSFORMER", "1") != "0"
 
-# Initial officer account, created only when the database has no administrator.
-# In production there is no default password: it must be supplied.
-ADMIN_EMAIL = os.getenv("CV_ADMIN_EMAIL", "admin@citizenvoice.ng")
-ADMIN_PASSWORD = os.getenv("CV_ADMIN_PASSWORD") or ("" if IS_PRODUCTION else "Admin@123")
-MIN_ADMIN_PASSWORD_LENGTH = 10
+# Officer accounts are never created automatically. The first officer to register becomes
+# the super administrator; later officers wait for the super administrator's approval.
+MIN_OFFICER_PASSWORD_LENGTH = 8
 
 LOG_LEVEL = os.getenv("CV_LOG_LEVEL", "INFO").upper()
 

@@ -29,10 +29,18 @@
 
   <!-- officer sign in -->
   <main id="login-view" class="container" hidden>
-    <section class="card login-card" aria-labelledby="login-title">
-      <h1 class="login-card__title" id="login-title">Officer sign in</h1>
-      <p class="muted">Grievance desk officers and agency administrators.</p>
-      <form class="form login-card__form" id="login-form">
+    <section class="card auth-card login-card" aria-labelledby="login-title">
+      <h1 class="login-card__title" id="login-title">Officer console</h1>
+      <p class="muted login-card__lead">Grievance desk officers and agency administrators.</p>
+
+      <div class="tabs auth-card__tabs" role="tablist" aria-label="Officer account">
+        <button class="tab is-active" type="button" role="tab" id="tab-officer-login"
+                aria-selected="true" aria-controls="officer-login" data-tab="login">Sign in</button>
+        <button class="tab" type="button" role="tab" id="tab-officer-register"
+                aria-selected="false" aria-controls="officer-register" data-tab="register" tabindex="-1">Create officer account</button>
+      </div>
+
+      <form class="form" id="officer-login" role="tabpanel" aria-labelledby="tab-officer-login">
         <div class="field">
           <label class="field__label" for="login-id">Email or phone</label>
           <input class="input" id="login-id" name="phone" autocomplete="username" required>
@@ -44,6 +52,35 @@
         <p class="form-error" role="alert" data-error></p>
         <button class="btn btn--primary btn--block" type="submit">Sign in</button>
       </form>
+
+      <form class="form" id="officer-register" role="tabpanel" aria-labelledby="tab-officer-register" hidden>
+        <p class="alert alert--info" id="setup-notice"></p>
+        <div class="field">
+          <label class="field__label" for="off-name">Full name</label>
+          <input class="input" id="off-name" name="full_name" autocomplete="name" required minlength="2" maxlength="80">
+        </div>
+        <div class="field">
+          <label class="field__label" for="off-email">Official email</label>
+          <input class="input" id="off-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="off-phone">Phone number</label>
+          <input class="input" id="off-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required minlength="7" maxlength="20">
+        </div>
+        <div class="field">
+          <label class="field__label" for="off-password">Password</label>
+          <input class="input" id="off-password" name="password" type="password" autocomplete="new-password" required minlength="8">
+          <p class="field__hint">At least 8 characters.</p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="off-confirm">Confirm password</label>
+          <input class="input" id="off-confirm" name="confirm" type="password" autocomplete="new-password" required minlength="8">
+        </div>
+        <p class="form-error" role="alert" data-error></p>
+        <button class="btn btn--primary btn--block" type="submit">Create officer account</button>
+      </form>
+
+      <p class="auth-card__footer">Reporting a problem as a citizen? <a href="/">Go to the citizen page</a></p>
     </section>
   </main>
 
@@ -56,6 +93,9 @@
       <button class="tab" type="button" role="tab" id="tab-analytics" aria-selected="false" aria-controls="panel-analytics" data-tab="analytics" tabindex="-1">Analytics</button>
       <button class="tab" type="button" role="tab" id="tab-routing" aria-selected="false" aria-controls="panel-routing" data-tab="routing" tabindex="-1">Agency Routing</button>
       <button class="tab" type="button" role="tab" id="tab-model" aria-selected="false" aria-controls="panel-model" data-tab="model" tabindex="-1">Model Performance</button>
+      <button class="tab" type="button" role="tab" id="tab-officers" aria-selected="false" aria-controls="panel-officers" data-tab="officers" tabindex="-1" hidden>
+        Officers <span class="tab__badge" id="pending-badge" hidden></span>
+      </button>
     </div>
 
     <section id="panel-queue" role="tabpanel" aria-labelledby="tab-queue">
@@ -109,6 +149,7 @@
     <section id="panel-analytics" role="tabpanel" aria-labelledby="tab-analytics" hidden></section>
     <section id="panel-routing" role="tabpanel" aria-labelledby="tab-routing" hidden></section>
     <section id="panel-model" role="tabpanel" aria-labelledby="tab-model" hidden></section>
+    <section id="panel-officers" role="tabpanel" aria-labelledby="tab-officers" hidden></section>
   </main>
 
   <!-- complaint detail drawer -->

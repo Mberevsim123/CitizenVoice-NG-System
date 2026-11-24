@@ -26,8 +26,23 @@ Local demo accounts (development only, created by `python -m app.seed`):
 | Grievance desk officer | admin@citizenvoice.ng | Admin@123 |
 | Demo citizen | 08031000000 | Citizen@123 |
 
-Or create a new citizen account on the home page. In production these defaults are not
-available: the officer password comes from `CV_ADMIN_PASSWORD` (see Deployment).
+Or create a new citizen account on the home page. The demo officer exists only in seeded
+development databases; a real deployment uses officer self-registration (below).
+
+## Officer accounts
+
+No officer account is created automatically. Officers register themselves at `/admin`
+(**Create officer account**):
+
+* The **first** officer to register becomes the **super administrator** and is signed in at once.
+* Every later officer is created as **awaiting approval** and cannot sign in until the super
+  administrator approves the account in the console's **Officers** tab. The super administrator
+  can also reject an account; a rejected officer is signed out everywhere.
+* There is exactly one super administrator (a database constraint enforces it), and that
+  account cannot be rejected.
+
+Register the super administrator right after the first deploy, before the URL is shared:
+until then, whoever registers first gets that role.
 
 Pages: `/` (home, sign in, register), `/chat` (chatbot), `/track` (track complaint),
 `/admin` (officer console: triage queue, analytics, agency routing, model performance).
@@ -111,9 +126,7 @@ Settings come from environment variables (see `.env.example`).
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `CV_ENV` | `production` on Railway, otherwise `development` | production requires `CV_ADMIN_PASSWORD`, hides `/docs`, sends HSTS |
-| `CV_ADMIN_PASSWORD` | `Admin@123` in development only | first officer account password (min. 10 characters in production) |
-| `CV_ADMIN_EMAIL` | `admin@citizenvoice.ng` | first officer account email |
+| `CV_ENV` | `production` on Railway, otherwise `development` | production hides `/docs`, sends HSTS, disables `app.seed` |
 | `CV_DB_PATH` | Railway volume, else `data/citizenvoice.db` | SQLite database file |
 | `CV_MODEL_DIR` | `models` | trained models |
 | `CV_TOKEN_TTL_HOURS` | `168` | sign-in session lifetime |
@@ -121,8 +134,6 @@ Settings come from environment variables (see `.env.example`).
 | `CV_LOG_LEVEL` | `INFO` | logging level |
 | `PORT` / `HOST` | `8000` / `0.0.0.0` | web server (`python -m app.serve`) |
 
-The officer account is created once, the first time the database starts empty. Changing
-`CV_ADMIN_PASSWORD` later does not change an existing account's password.
 
 ## Deployment (Railway)
 
@@ -131,7 +142,7 @@ The repository is ready for Railway: `railway.json` sets the start command
 pins Python 3.11 (newest 3.11.x), and `requirements.txt` installs the CPU-only PyTorch build on Linux.
 
 1. **New project** -> **Deploy from GitHub repo** -> choose this repository (branch `main`).
-2. **Variables**: add `CV_ADMIN_PASSWORD` (a long secret). Production mode turns on automatically.
+2. No variables are required: production mode turns on automatically on Railway.
 3. **Volume**: right-click the service -> **Attach volume**, mount path `/data`. The database is
    stored there automatically, so complaints survive redeploys. Without a volume, the logs warn
    that data will be lost on every deploy.
@@ -140,13 +151,15 @@ pins Python 3.11 (newest 3.11.x), and `requirements.txt` installs the CPU-only P
    deploys). Turn on **Wait for CI** so a push only deploys after the GitHub Actions tests
    (`.github/workflows/ci.yml`) pass.
 
-The first deploy takes a few minutes (PyTorch install). Sign in to `/admin` with
-`CV_ADMIN_EMAIL` / `CV_ADMIN_PASSWORD`. A production database starts empty: no demo complaints
-or demo citizens.
+The first deploy takes a few minutes (PyTorch install). Then open `/admin`, choose **Create
+officer account** and register: as the first officer you become the super administrator. A
+production database starts empty: no demo complaints, citizens or officers.
 
 ## Security
 
-* Passwords: PBKDF2-SHA256 (120,000 iterations, per-user salt), constant-time comparison.
+* Passwords: PBKDF2-SHA256 (120,000 iterations, per-user salt), constant-time comparison;
+  officers need at least 8 characters, citizens 6.
+* Officer access: self-registration with super-administrator approval (see Officer accounts).
 * Sessions: random bearer tokens that expire (`CV_TOKEN_TTL_HOURS`) and are revoked on sign-out.
 * The front end builds every element with text nodes (`h()` in `static/js/common.js`), so
   citizen-supplied text is never parsed as HTML.

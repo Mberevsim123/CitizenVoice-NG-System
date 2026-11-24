@@ -81,23 +81,6 @@
   margin-top: var(--space-5);
 }
 
-.auth-card {
-  padding-top: 0;
-}
-
-.auth-card__tabs {
-  margin: 0 calc(-1 * var(--space-5)) var(--space-4);
-}
-
-.auth-card__tabs .tab {
-  flex: 1;
-  padding: var(--space-4);
-}
-
-.auth-card__notice {
-  margin: var(--space-4) 0 0;
-}
-
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
@@ -109,9 +92,5 @@
 @media (max-width: 640px) {
   .steps {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .auth-card__tabs {
-    margin: 0 calc(-1 * var(--space-4)) var(--space-4);
   }
 }

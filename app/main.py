@@ -2,6 +2,7 @@
 import json
 import logging
 import secrets
+import sqlite3
 from datetime import datetime, timedelta
 
 from fastapi import FastAPI, HTTPException, Header, Depends, Request
@@ -86,6 +87,33 @@ class RegisterIn(BaseModel):
         return v
 
 
+class OfficerRegisterIn(BaseModel):
+    full_name: str = Field(min_length=2, max_length=80)
+    email: str = Field(min_length=5, max_length=120)
+    phone: str = Field(min_length=7, max_length=20)
+    password: str = Field(max_length=128)
+
+    @field_validator("full_name", "phone", "email")
+    @classmethod
+    def strip(cls, v):
+        return v.strip()
+
+    @field_validator("email")
+    @classmethod
+    def email_shape(cls, v):
+        local, _, domain = v.partition("@")
+        if not local or "." not in domain or " " in v:
+            raise ValueError("Enter a valid email address")
+        return v.lower()
+
+    @field_validator("phone")
+    @classmethod
+    def phone_digits(cls, v):
+        if not v.lstrip("+").isdigit():
+            raise ValueError("Phone number must contain digits only")
+        return v
+
+
 class LoginIn(BaseModel):
     phone: str = Field(max_length=120)
     password: str = Field(max_length=128)
@@ -109,8 +137,8 @@ def _user_from_token(tok: str):
     if not tok:
         return None
     since = (datetime.now() - timedelta(hours=config.TOKEN_TTL_HOURS)).strftime("%Y-%m-%d %H:%M:%S")
-    row = con.execute("SELECT u.* FROM tokens t JOIN users u ON u.id=t.user_id WHERE t.token=? AND t.created_at>=?",
-                      (tok, since)).fetchone()
+    row = con.execute("SELECT u.* FROM tokens t JOIN users u ON u.id=t.user_id "
+                      "WHERE t.token=? AND t.created_at>=? AND u.status='active'", (tok, since)).fetchone()
     return dict(row) if row else None
 
 
@@ -131,6 +159,17 @@ async def admin_user(user=Depends(current_user)):
     return user
 
 
+async def super_admin_user(user=Depends(admin_user)):
+    if not user["is_super"]:
+        raise HTTPException(403, "Only the super administrator can manage officer accounts")
+    return user
+
+
+def _account(row) -> dict:
+    """The public view of a signed-in account."""
+    return {"name": row["full_name"], "role": row["role"], "is_super": bool(row["is_super"])}
+
+
 def _token(uid):
     tok = secrets.token_urlsafe(24)
     con.execute("INSERT INTO tokens(token,user_id) VALUES (?,?)", (tok, uid))
@@ -149,22 +188,73 @@ async def health():
 async def register(body: RegisterIn):
     if len(body.password) < 6:
         raise HTTPException(400, "Password must be at least 6 characters")
-    if con.execute("SELECT 1 FROM users WHERE phone=?", (body.phone,)).fetchone():
-        raise HTTPException(400, "Phone number already registered")
+    _ensure_unique(body.phone, body.email)
     cur = con.execute("INSERT INTO users(full_name,phone,email,lga,password_hash) VALUES (?,?,?,?,?)",
-                      (body.full_name, body.phone, body.email, body.lga, db.hash_pw(body.password)))
+                      (body.full_name, body.phone, body.email.lower(), body.lga, db.hash_pw(body.password)))
     con.commit()
     log.info("New citizen account %s", cur.lastrowid)
-    return {"token": _token(cur.lastrowid), "name": body.full_name, "role": "citizen"}
+    return {"token": _token(cur.lastrowid), "name": body.full_name, "role": "citizen", "is_super": False}
+
+
+def _ensure_unique(phone: str, email: str):
+    if con.execute("SELECT 1 FROM users WHERE phone=?", (phone,)).fetchone():
+        raise HTTPException(400, "Phone number already registered")
+    if email and con.execute("SELECT 1 FROM users WHERE lower(email)=lower(?)", (email,)).fetchone():
+        raise HTTPException(400, "Email address already registered")
+
+
+@app.get("/api/officers/setup")
+async def officer_setup():
+    """Tells the officer sign-up form whether the next officer becomes the super administrator."""
+    return {"has_super_admin": db.has_super_admin(con)}
+
+
+@app.post("/api/officers/register")
+async def officer_register(body: OfficerRegisterIn):
+    """
+    Officer self-registration.
+    - The first officer becomes the super administrator and is signed in at once.
+    - Every later officer is created as 'pending' and cannot sign in until the super
+      administrator approves the account.
+    """
+    if len(body.password) < config.MIN_OFFICER_PASSWORD_LENGTH:
+        raise HTTPException(400, f"Password must be at least {config.MIN_OFFICER_PASSWORD_LENGTH} characters")
+    _ensure_unique(body.phone, body.email)
+    first = not db.has_super_admin(con)
+    try:
+        cur = con.execute(
+            "INSERT INTO users(full_name,phone,email,lga,password_hash,role,status,is_super,approved_at) "
+            "VALUES (?,?,?,?,?,'admin',?,?,?)",
+            (body.full_name, body.phone, body.email, "", db.hash_pw(body.password),
+             "active" if first else "pending", 1 if first else 0,
+             datetime.now().strftime("%Y-%m-%d %H:%M:%S") if first else None))
+        con.commit()
+    except sqlite3.IntegrityError:
+        # another officer claimed super administrator at the same moment
+        con.rollback()
+        raise HTTPException(409, "Registration conflict. Please try again.")
+    if first:
+        log.info("Officer %s registered as super administrator", cur.lastrowid)
+        return {"status": "active", "token": _token(cur.lastrowid), "name": body.full_name, "role": "admin",
+                "is_super": True}
+    log.info("Officer %s registered, awaiting approval", cur.lastrowid)
+    return {"status": "pending",
+            "message": "Your officer account has been created and is awaiting approval by the super "
+                       "administrator. You can sign in once it is approved."}
 
 
 @app.post("/api/login")
 async def login(body: LoginIn):
     ident = body.phone.strip()
-    row = con.execute("SELECT * FROM users WHERE phone=? OR (email<>'' AND email=?)", (ident, ident)).fetchone()
+    row = con.execute("SELECT * FROM users WHERE phone=? OR (email<>'' AND lower(email)=lower(?))",
+                      (ident, ident)).fetchone()
     if not row or not db.check_pw(body.password, row["password_hash"]):
         raise HTTPException(401, "Invalid phone number or password")
-    return {"token": _token(row["id"]), "name": row["full_name"], "role": row["role"]}
+    if row["status"] == "pending":
+        raise HTTPException(403, "Your officer account is awaiting approval by the super administrator.")
+    if row["status"] != "active":
+        raise HTTPException(403, "This account is not active. Contact the super administrator.")
+    return {"token": _token(row["id"]), **_account(row)}
 
 
 @app.post("/api/logout")
@@ -176,7 +266,8 @@ async def logout(authorization: str = Header(default="")):
 
 @app.get("/api/me")
 async def me(user=Depends(current_user)):
-    return {k: user[k] for k in ("id", "full_name", "phone", "email", "lga", "role")}
+    return {**{k: user[k] for k in ("id", "full_name", "phone", "email", "lga", "role", "status")},
+            "is_super": bool(user["is_super"])}
 
 
 @app.get("/api/lgas")
@@ -329,6 +420,40 @@ async def admin_model(user=Depends(admin_user)):
         out["finetune"]["transformer"] = {k: tr[k] for k in ("base_model", "epochs", "steps", "best_epoch",
                                                              "train_minutes")}
     return out
+
+
+# ------------------------------------------------------------------ officer accounts (super administrator)
+class OfficerDecisionIn(BaseModel):
+    action: str   # approve | reject
+
+
+@app.get("/api/admin/officers")
+async def officers_list(user=Depends(super_admin_user)):
+    rows = con.execute(
+        "SELECT u.id,u.full_name,u.email,u.phone,u.status,u.is_super,u.created_at,u.approved_at,"
+        "a.full_name AS approved_by_name FROM users u LEFT JOIN users a ON a.id=u.approved_by "
+        "WHERE u.role='admin' ORDER BY CASE u.status WHEN 'pending' THEN 0 WHEN 'active' THEN 1 ELSE 2 END, u.id")
+    return [{**dict(r), "is_super": bool(r["is_super"])} for r in rows]
+
+
+@app.post("/api/admin/officers/{uid}")
+async def officers_decide(uid: int, body: OfficerDecisionIn, user=Depends(super_admin_user)):
+    row = con.execute("SELECT * FROM users WHERE id=? AND role='admin'", (uid,)).fetchone()
+    if not row:
+        raise HTTPException(404, "Officer not found")
+    if row["is_super"]:
+        raise HTTPException(400, "The super administrator account cannot be changed")
+    actions = {"approve": "active", "reject": "rejected"}
+    if body.action not in actions:
+        raise HTTPException(400, "Action must be 'approve' or 'reject'")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    con.execute("UPDATE users SET status=?, approved_by=?, approved_at=? WHERE id=?",
+                (actions[body.action], user["id"], now, uid))
+    if body.action == "reject":
+        con.execute("DELETE FROM tokens WHERE user_id=?", (uid,))   # sign out everywhere
+    con.commit()
+    log.info("Officer %s %sd by super administrator %s", uid, body.action, user["id"])
+    return {"ok": True, "status": actions[body.action]}
 
 
 # ------------------------------------------------------------------ pages

@@ -12,12 +12,21 @@ NAMES = ["Amina Yusuf", "Emeka Okafor", "Danjuma Audu", "Grace Ogah", "Ibrahim M
          "Abdullahi Sani", "Ruth Gyang", "Tanko Adamu", "Gbari Akpalaakpo"]
 
 
+DEMO_OFFICER = ("Grievance Desk Officer", "08000000000", "admin@citizenvoice.ng", "Admin@123")
+
+
 def main():
+    if config.IS_PRODUCTION:
+        raise SystemExit("app.seed deletes the database and loads demo data; it is disabled in production.")
     for suffix in ("", "-wal", "-shm"):
         f = db.DB_PATH.with_name(db.DB_PATH.name + suffix)
         if f.exists():
             f.unlink()
     con = db.init()
+    # demo super administrator (in a real deployment the first officer registers instead)
+    name, phone, email, password = DEMO_OFFICER
+    con.execute("INSERT INTO users(full_name,phone,email,lga,password_hash,role,status,is_super) "
+                "VALUES (?,?,?,?,?,'admin','active',1)", (name, phone, email, "Lafia", db.hash_pw(password)))
     rng = random.Random(11)
     models = Models()
     agent = GrievanceAgent(con, models)

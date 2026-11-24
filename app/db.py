@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS agencies (
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY, full_name TEXT, phone TEXT UNIQUE, email TEXT, lga TEXT,
     password_hash TEXT, role TEXT DEFAULT 'citizen', agency_id INTEGER,
-    created_at TEXT DEFAULT (datetime('now','localtime'))
+    created_at TEXT DEFAULT (datetime('now','localtime')),
+    status TEXT DEFAULT 'active', is_super INTEGER DEFAULT 0, approved_by INTEGER, approved_at TEXT
 );
 CREATE TABLE IF NOT EXISTS tokens (
     token TEXT PRIMARY KEY, user_id INTEGER, created_at TEXT DEFAULT (datetime('now','localtime'))
@@ -88,22 +89,42 @@ def check_pw(pw: str, stored: str) -> bool:
     return hmac.compare_digest(hash_pw(pw, salt), stored)
 
 
+# Officer accounts: role 'admin'. status is 'active', 'pending' (awaiting super-admin
+# approval) or 'rejected'. Exactly one officer can be the super administrator.
+OFFICER_STATUSES = ("active", "pending", "rejected")
+
+
+def _migrate(con):
+    """Bring databases created by older versions up to the current schema."""
+    cols = {r["name"] for r in con.execute("PRAGMA table_info(users)")}
+    for name, ddl in (("status", "TEXT DEFAULT 'active'"), ("is_super", "INTEGER DEFAULT 0"),
+                      ("approved_by", "INTEGER"), ("approved_at", "TEXT")):
+        if name not in cols:
+            con.execute(f"ALTER TABLE users ADD COLUMN {name} {ddl}")
+    con.execute("UPDATE users SET status='active' WHERE status IS NULL")
+    # an older database's existing officer becomes the super administrator
+    if not con.execute("SELECT 1 FROM users WHERE is_super=1").fetchone():
+        first = con.execute("SELECT id FROM users WHERE role='admin' AND status='active' ORDER BY id LIMIT 1").fetchone()
+        if first:
+            con.execute("UPDATE users SET is_super=1 WHERE id=?", (first["id"],))
+    # the database itself guarantees there is never more than one super administrator
+    con.execute("CREATE UNIQUE INDEX IF NOT EXISTS ux_single_super_admin ON users(is_super) WHERE is_super=1")
+    con.execute("CREATE UNIQUE INDEX IF NOT EXISTS ux_users_email ON users(lower(email)) WHERE email<>''")
+
+
+def has_super_admin(con) -> bool:
+    return con.execute("SELECT 1 FROM users WHERE is_super=1 AND status='active'").fetchone() is not None
+
+
 def init(path=None):
+    """Create or upgrade the schema. No officer account is created here: the first officer
+    registers through the officer console and becomes the super administrator."""
     path = path or DB_PATH
     path.parent.mkdir(parents=True, exist_ok=True)
     con = connect(path)
     con.executescript(SCHEMA)
+    _migrate(con)
     if not con.execute("SELECT 1 FROM agencies").fetchone():
         con.executemany("INSERT INTO agencies(code,name,category,contact_email,emergency_line) VALUES (?,?,?,?,?)", AGENCIES)
-    if not con.execute("SELECT 1 FROM users WHERE role='admin'").fetchone():
-        if config.IS_PRODUCTION and len(config.ADMIN_PASSWORD) < config.MIN_ADMIN_PASSWORD_LENGTH:
-            con.close()
-            raise RuntimeError(
-                "Production start-up refused: set the CV_ADMIN_PASSWORD environment variable "
-                f"(at least {config.MIN_ADMIN_PASSWORD_LENGTH} characters) so the first officer "
-                "account does not use a public default password.")
-        con.execute("INSERT INTO users(full_name,phone,email,lga,password_hash,role) VALUES (?,?,?,?,?,?)",
-                    ("Grievance Desk Officer", "08000000000", config.ADMIN_EMAIL, "Lafia",
-                     hash_pw(config.ADMIN_PASSWORD), "admin"))
     con.commit()
     return con

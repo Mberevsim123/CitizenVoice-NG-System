@@ -1,32 +1,11 @@
 /**
- * Home page: sign in, create an account, and continue an existing session.
+ * Home page: citizen sign in, citizen registration, and continuing an existing session.
  */
-import { $, $$, api, h, initHeader, render, session, setBusy } from './common.js';
+import { $, $$, api, h, initHeader, initPasswordToggles, initTabs, render, session, setBusy } from './common.js';
 
-const tabs = $$('[role="tab"]');
 const loginForm = $('#panel-login');
 const registerForm = $('#panel-register');
 const lgaSelect = $('#reg-lga');
-
-/* ------------------------------------------------------------------ tabs */
-
-function selectTab(name) {
-  for (const tab of tabs) {
-    const active = tab.dataset.tab === name;
-    tab.classList.toggle('is-active', active);
-    tab.setAttribute('aria-selected', String(active));
-    tab.tabIndex = active ? 0 : -1;
-    $(`#${tab.getAttribute('aria-controls')}`).hidden = !active;
-  }
-}
-
-function onTabKeydown(event) {
-  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
-  const index = tabs.indexOf(event.currentTarget);
-  const next = tabs[(index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
-  selectTab(next.dataset.tab);
-  next.focus();
-}
 
 /* ------------------------------------------------------------------ forms */
 
@@ -57,6 +36,11 @@ function onLogin(event) {
 function onRegister(event) {
   event.preventDefault();
   const data = new FormData(registerForm);
+  if (data.get('password') !== data.get('confirm')) {
+    $('[data-error]', registerForm).textContent = 'The two passwords do not match.';
+    $('#reg-confirm').focus();
+    return;
+  }
   submitAuth(registerForm, '/api/register', {
     full_name: String(data.get('full_name')).trim(),
     phone: String(data.get('phone')).trim(),
@@ -81,17 +65,20 @@ async function loadLgas() {
 
 function showExistingSession() {
   if (!session.token) return;
-  $('#continue-link').href = session.role === 'admin' ? '/admin' : '/chat';
-  $('#continue-link').textContent = session.role === 'admin' ? 'Continue to the officer console' : 'Continue to the chatbot';
+  const link = $('#continue-link');
+  link.href = session.role === 'admin' ? '/admin' : '/chat';
+  link.textContent = session.role === 'admin' ? 'Continue to the officer console' : 'Continue to the chatbot';
   $('#signed-in-notice').hidden = false;
 }
 
 /* ------------------------------------------------------------------ start */
 
-tabs.forEach((tab) => {
-  tab.addEventListener('click', () => selectTab(tab.dataset.tab));
-  tab.addEventListener('keydown', onTabKeydown);
+initTabs($$('[role="tab"]'), () => {
+  $$('[data-error]').forEach((el) => {
+    el.textContent = '';
+  });
 });
+initPasswordToggles();
 loginForm.addEventListener('submit', onLogin);
 registerForm.addEventListener('submit', onRegister);
 initHeader();

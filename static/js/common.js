@@ -216,3 +216,100 @@ export function debounce(fn, wait = 250) {
     timer = setTimeout(() => fn(...args), wait);
   };
 }
+
+/* ------------------------------------------------------------------ shared auth UI */
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+/** Build a small stroke icon from SVG path data (h() cannot create SVG elements). */
+function icon(paths, circles = []) {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  const attrs = {
+    viewBox: '0 0 24 24', width: 18, height: 18, fill: 'none', stroke: 'currentColor', 'stroke-width': 2,
+    'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'aria-hidden': 'true', focusable: 'false',
+  };
+  for (const [k, v] of Object.entries(attrs)) svg.setAttribute(k, String(v));
+  for (const d of paths) {
+    const path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', d);
+    svg.append(path);
+  }
+  for (const [cx, cy, r] of circles) {
+    const circle = document.createElementNS(SVG_NS, 'circle');
+    circle.setAttribute('cx', cx);
+    circle.setAttribute('cy', cy);
+    circle.setAttribute('r', r);
+    svg.append(circle);
+  }
+  return svg;
+}
+
+const eyeIcon = () => icon(['M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'], [[12, 12, 3]]);
+const eyeOffIcon = () =>
+  icon([
+    'M3 3l18 18',
+    'M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.7 17.7 0 0 1-3.1 4.1',
+    'M6.6 6.6C3.9 8.3 2 12 2 12s3.6 7 10 7a9.9 9.9 0 0 0 5.4-1.6',
+    'M9.9 9.9a3 3 0 0 0 4.2 4.2',
+  ]);
+
+/** Add a show / hide (eye) button to every password field under `root`. */
+export function initPasswordToggles(root = document) {
+  for (const input of $$('input[type="password"]', root)) {
+    if (input.closest('.password-field')) continue;
+    const wrapper = h('div', { class: 'password-field' });
+    input.replaceWith(wrapper);
+    const button = h('button', {
+      class: 'password-toggle',
+      type: 'button',
+      'aria-label': 'Show password',
+      'aria-pressed': 'false',
+      'aria-controls': input.id || null,
+    });
+    button.append(eyeIcon());
+    button.addEventListener('click', () => {
+      const show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      button.setAttribute('aria-pressed', String(show));
+      button.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+      button.replaceChildren(show ? eyeOffIcon() : eyeIcon());
+      input.focus();
+    });
+    wrapper.append(input, button);
+  }
+}
+
+/** Put every revealed password back to hidden (for example after a form is submitted). */
+export function hidePasswords(root = document) {
+  for (const button of $$('.password-toggle[aria-pressed="true"]', root)) button.click();
+}
+
+/**
+ * Accessible tabs: buttons with role="tab", data-tab and aria-controls.
+ * Returns select(name); `onChange(name)` runs after every switch.
+ */
+export function initTabs(tabs, onChange = () => {}) {
+  function select(name) {
+    for (const tab of tabs) {
+      const active = tab.dataset.tab === name;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !active;
+    }
+    onChange(name);
+  }
+  for (const tab of tabs) {
+    tab.addEventListener('click', () => select(tab.dataset.tab));
+    tab.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      const visible = tabs.filter((t) => !t.hidden);
+      const index = visible.indexOf(tab);
+      const next = visible[(index + (event.key === 'ArrowRight' ? 1 : -1) + visible.length) % visible.length];
+      select(next.dataset.tab);
+      next.focus();
+    });
+  }
+  return select;
+}

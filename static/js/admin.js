@@ -1,8 +1,12 @@
 /**
- * Officer console: KPIs, triage queue, complaint detail drawer, analytics,
- * agency routing and model performance.
+ * Officer console: sign in / officer registration, KPIs, triage queue, complaint detail
+ * drawer, analytics, agency routing, model performance and (super administrator only)
+ * officer account approvals.
  */
-import { $, $$, ApiError, api, cssVar, debounce, fmt, h, initHeader, kv, pill, render, session, setBusy } from './common.js';
+import {
+  $, $$, ApiError, api, cssVar, debounce, fmt, h, hidePasswords, initHeader, initPasswordToggles, initTabs, kv,
+  pill, render, session, setBusy,
+} from './common.js';
 
 const CATEGORIES = ['Security', 'Fire', 'Flood/Emergency', 'Health', 'Electricity', 'Water', 'Roads', 'Corruption', 'Environment', 'Education'];
 const UPDATE_STATUSES = ['Acknowledged', 'In Progress', 'Resolved', 'Closed'];
@@ -10,22 +14,45 @@ const SLA_TARGETS = 'Targets: High 2 h, Medium 24 h, Low 72 h';
 
 const loginView = $('#login-view');
 const consoleView = $('#main');
-const tabs = $$('[role="tab"]');
+const consoleTabs = $$('.console-tabs [role="tab"]');
+const authTabs = $$('.auth-card__tabs [role="tab"]');
+const officersTab = $('#tab-officers');
 const drawer = $('#drawer');
 const drawerPanel = $('.drawer__panel', drawer);
 const drawerBody = $('#drawer-body');
 let lastFocus = null;
+let me = null;
 
-/* ------------------------------------------------------------------ auth */
+/* ------------------------------------------------------------------ sign in / register */
+
+const selectAuthTab = initTabs(authTabs, () => {
+  $$('[data-error]', loginView).forEach((el) => {
+    el.textContent = '';
+  });
+});
+
+async function loadSetupNotice() {
+  const notice = $('#setup-notice');
+  try {
+    const { has_super_admin: hasSuper } = await api('/api/officers/setup', { auth: false });
+    notice.textContent = hasSuper
+      ? 'New officer accounts must be approved by the super administrator before they can sign in.'
+      : 'No officer has registered yet. The first account created becomes the super administrator, '
+        + 'who approves every officer that registers after.';
+  } catch {
+    notice.textContent = 'New officer accounts must be approved by the super administrator.';
+  }
+}
 
 function showLogin() {
   consoleView.hidden = true;
   $('#sign-out').hidden = true;
   loginView.hidden = false;
+  loadSetupNotice();
   $('#login-id').focus();
 }
 
-/** Run an officer API call; any 401/403 sends the officer back to the sign-in form. */
+/** Run an officer API call; a 401/403 (expired session, not an officer) returns to sign in. */
 async function officerApi(path, options) {
   try {
     return await api(path, options);
@@ -53,12 +80,57 @@ async function onLogin(event) {
       body: { phone: String(data.get('phone')).trim(), password: String(data.get('password')) },
     });
     if (result.role !== 'admin') {
-      error.textContent = 'This is not an officer account.';
+      error.textContent = 'This is a citizen account. Use the citizen page to report a problem.';
       return;
     }
     session.save(result);
     form.reset();
+    hidePasswords(form);
     await start();
+  } catch (err) {
+    error.textContent = err.message;
+  } finally {
+    setBusy(button, false);
+  }
+}
+
+async function onRegister(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const error = $('[data-error]', form);
+  const button = $('[type="submit"]', form);
+  const data = new FormData(form);
+  error.textContent = '';
+  if (data.get('password') !== data.get('confirm')) {
+    error.textContent = 'The two passwords do not match.';
+    $('#off-confirm').focus();
+    return;
+  }
+  setBusy(button, true);
+  try {
+    const result = await api('/api/officers/register', {
+      method: 'POST',
+      auth: false,
+      body: {
+        full_name: String(data.get('full_name')).trim(),
+        email: String(data.get('email')).trim(),
+        phone: String(data.get('phone')).trim(),
+        password: String(data.get('password')),
+      },
+    });
+    form.reset();
+    hidePasswords(form);
+    if (result.status === 'active') {
+      // first officer: super administrator, signed in straight away
+      session.save(result);
+      await start();
+      return;
+    }
+    selectAuthTab('login');
+    const loginForm = $('#officer-login');
+    const success = h('p', { class: 'alert alert--info form-success', role: 'status' }, result.message);
+    $$('.form-success', loginForm).forEach((el) => el.remove());
+    loginForm.prepend(success);
   } catch (err) {
     error.textContent = err.message;
   } finally {
@@ -68,26 +140,12 @@ async function onLogin(event) {
 
 /* ------------------------------------------------------------------ tabs */
 
-const loaders = { queue: loadQueue, analytics: loadAnalytics, routing: loadRouting, model: loadModel };
-
-function selectTab(name) {
-  for (const tab of tabs) {
-    const active = tab.dataset.tab === name;
-    tab.classList.toggle('is-active', active);
-    tab.setAttribute('aria-selected', String(active));
-    tab.tabIndex = active ? 0 : -1;
-    $(`#${tab.getAttribute('aria-controls')}`).hidden = !active;
-  }
+const loaders = {
+  queue: loadQueue, analytics: loadAnalytics, routing: loadRouting, model: loadModel, officers: loadOfficers,
+};
+const selectTab = initTabs(consoleTabs, (name) => {
   loaders[name]().catch(() => {});
-}
-
-function onTabKeydown(event) {
-  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
-  const index = tabs.indexOf(event.currentTarget);
-  const next = tabs[(index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
-  selectTab(next.dataset.tab);
-  next.focus();
-}
+});
 
 /* ------------------------------------------------------------------ KPIs */
 
@@ -475,27 +533,112 @@ async function loadModel() {
   );
 }
 
+/* ------------------------------------------------------------------ officer accounts */
+
+function officerActions(o) {
+  if (o.is_super) return h('span', { class: 'muted small' }, 'Super administrator');
+  const decide = async (action, button) => {
+    const verb = action === 'approve' ? 'Approve' : 'Reject';
+    if (!window.confirm(`${verb} ${o.full_name}'s officer account?`)) return;
+    setBusy(button, true);
+    try {
+      await officerApi(`/api/admin/officers/${o.id}`, { method: 'POST', body: { action } });
+      await loadOfficers();
+    } catch (err) {
+      setBusy(button, false);
+      window.alert(err.message);
+    }
+  };
+  const approve = h('button', { class: 'btn btn--primary btn--sm', type: 'button' }, 'Approve');
+  const reject = h('button', { class: 'btn btn--ghost btn--danger btn--sm', type: 'button' }, 'Reject');
+  approve.addEventListener('click', () => decide('approve', approve));
+  reject.addEventListener('click', () => decide('reject', reject));
+  if (o.status === 'pending') return h('div', { class: 'officer-actions' }, approve, reject);
+  if (o.status === 'active') return h('div', { class: 'officer-actions' }, reject);
+  return h('div', { class: 'officer-actions' }, approve);
+}
+
+function updatePendingBadge(officers) {
+  const pending = officers.filter((o) => o.status === 'pending').length;
+  const badge = $('#pending-badge');
+  badge.hidden = pending === 0;
+  badge.textContent = pending;
+  badge.setAttribute('aria-label', `${pending} awaiting approval`);
+}
+
+async function loadOfficers() {
+  const officers = await officerApi('/api/admin/officers');
+  updatePendingBadge(officers);
+  const pending = officers.filter((o) => o.status === 'pending');
+  const statusLabel = { active: 'Active', pending: 'Awaiting approval', rejected: 'Rejected' };
+  render(
+    $('#panel-officers'),
+    pending.length
+      ? h('p', { class: 'alert alert--info' }, `${pending.length} officer account(s) awaiting your approval.`)
+      : h('p', { class: 'muted' }, 'No officer accounts are awaiting approval.'),
+    h(
+      'div',
+      { class: 'card card--flush mt' },
+      h(
+        'div',
+        { class: 'table-wrap' },
+        h(
+          'table',
+          { class: 'table' },
+          h('thead', {}, h('tr', {}, ['Officer', 'Email', 'Phone', 'Registered', 'Status', 'Decision'].map((t) => h('th', { scope: 'col' }, t)))),
+          h(
+            'tbody',
+            {},
+            officers.map((o) =>
+              h(
+                'tr',
+                { class: o.status === 'pending' ? 'is-pending' : null },
+                h('td', {}, h('strong', {}, o.full_name), o.is_super && h('div', { class: 'queue__sub' }, 'Super administrator')),
+                h('td', {}, o.email),
+                h('td', { class: 'nowrap' }, o.phone),
+                h('td', { class: 'nowrap' }, fmt.dateTime(o.created_at)),
+                h(
+                  'td',
+                  {},
+                  pill(o.status === 'active' ? 'Resolved' : o.status === 'pending' ? 'Medium' : 'High', { label: statusLabel[o.status] }),
+                  o.approved_by_name && o.status !== 'pending'
+                    && h('div', { class: 'queue__sub' }, `by ${o.approved_by_name}`),
+                ),
+                h('td', {}, officerActions(o)),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
 /* ------------------------------------------------------------------ start */
 
 async function start() {
   try {
+    me = await officerApi('/api/me');
+    if (me.role !== 'admin') throw new Error('not an officer');
     await loadKpis();
   } catch {
-    return; // officerApi already switched to the sign-in form
+    session.clear();
+    showLogin();
+    return;
   }
   loginView.hidden = true;
   consoleView.hidden = false;
   $('#sign-out').hidden = false;
   initHeader({ signOutTo: '/admin' });
+  officersTab.hidden = !me.is_super;
+  if (me.is_super) officerApi('/api/admin/officers').then(updatePendingBadge).catch(() => {});
   selectTab('queue');
 }
 
 function bindEvents() {
-  $('#login-form').addEventListener('submit', onLogin);
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => selectTab(tab.dataset.tab));
-    tab.addEventListener('keydown', onTabKeydown);
-  });
+  $('#officer-login').addEventListener('submit', onLogin);
+  $('#officer-register').addEventListener('submit', onRegister);
+  initPasswordToggles(loginView);
   const filters = $('#filters');
   const reload = () => loadQueue().catch(() => {});
   filters.addEventListener('change', reload);

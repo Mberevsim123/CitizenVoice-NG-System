@@ -443,6 +443,50 @@ button {
   box-shadow: var(--focus);
 }
 
+/* password input with a show / hide (eye) button inside it */
+.password-field {
+  position: relative;
+}
+
+.password-field .input {
+  padding-right: 44px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  background: transparent;
+  transform: translateY(-50%);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.password-toggle:hover {
+  color: var(--green-700);
+  background: var(--green-50);
+}
+
+.password-toggle[aria-pressed="true"] {
+  color: var(--green-700);
+}
+
+.field__hint {
+  margin-top: var(--space-1);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.form-success {
+  font-size: var(--fs-sm);
+}
+
 .form-error {
   min-height: 1.25em;
   font-size: var(--fs-sm);
@@ -579,6 +623,39 @@ button {
 .tab.is-active {
   color: var(--green-700);
   border-bottom-color: var(--green-700);
+}
+
+/* ---------- Sign-in / registration card (citizen and officer pages) ---------- */
+.auth-card {
+  padding-top: 0;
+}
+
+.auth-card__tabs {
+  margin: 0 calc(-1 * var(--space-5)) var(--space-4);
+}
+
+.auth-card__tabs .tab {
+  flex: 1;
+  padding: var(--space-4);
+}
+
+.auth-card__footer {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line-soft);
+  font-size: var(--fs-sm);
+  text-align: center;
+  color: var(--muted);
+}
+
+.auth-card__notice {
+  margin: var(--space-4) 0 0;
+}
+
+@media (max-width: 640px) {
+  .auth-card__tabs {
+    margin: 0 calc(-1 * var(--space-4)) var(--space-4);
+  }
 }
 
 /* ---------- Tables ---------- */

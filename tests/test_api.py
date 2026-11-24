@@ -168,3 +168,62 @@ def test_pages_have_no_inline_code():
 def test_static_assets_served(client):
     for path in ("/static/css/base.css", "/static/js/common.js", "/static/js/chat.js", "/static/img/favicon.svg"):
         assert client.get(path).status_code == 200, path
+
+
+# ------------------------------------------------------------------ officer accounts
+def _officer(n):
+    return {"full_name": f"Officer {n}", "email": f"officer{n}@citizenvoice.ng", "phone": f"0700000{n:04d}",
+            "password": "OfficerPass1"}
+
+
+def test_officer_registration_requires_super_admin_approval(client, admin_headers):
+    # the super administrator already exists (admin_headers fixture), so a new officer waits
+    assert client.get("/api/officers/setup").json() == {"has_super_admin": True}
+    reg = client.post("/api/officers/register", json=_officer(1))
+    assert reg.status_code == 200 and reg.json()["status"] == "pending" and "token" not in reg.json()
+
+    login = {"phone": "officer1@citizenvoice.ng", "password": "OfficerPass1"}
+    r = client.post("/api/login", json=login)
+    assert r.status_code == 403 and "awaiting approval" in r.json()["detail"]
+
+    officers = client.get("/api/admin/officers", headers=admin_headers).json()
+    pending = next(o for o in officers if o["email"] == "officer1@citizenvoice.ng")
+    assert pending["status"] == "pending"
+    assert client.post(f"/api/admin/officers/{pending['id']}", json={"action": "approve"},
+                       headers=admin_headers).status_code == 200
+
+    r = client.post("/api/login", json=login)
+    assert r.status_code == 200 and r.json()["role"] == "admin" and r.json()["is_super"] is False
+    officer = {"Authorization": "Bearer " + r.json()["token"]}
+    assert client.get("/api/admin/complaints", headers=officer).status_code == 200
+    # only the super administrator manages officers
+    assert client.get("/api/admin/officers", headers=officer).status_code == 403
+
+
+def test_rejected_officer_cannot_sign_in(client, admin_headers):
+    client.post("/api/officers/register", json=_officer(2))
+    officers = client.get("/api/admin/officers", headers=admin_headers).json()
+    oid = next(o["id"] for o in officers if o["email"] == "officer2@citizenvoice.ng")
+    client.post(f"/api/admin/officers/{oid}", json={"action": "reject"}, headers=admin_headers)
+    r = client.post("/api/login", json={"phone": "officer2@citizenvoice.ng", "password": "OfficerPass1"})
+    assert r.status_code == 403 and "not active" in r.json()["detail"]
+
+
+def test_super_admin_cannot_be_changed_and_is_unique(client, admin_headers):
+    me = client.get("/api/me", headers=admin_headers).json()
+    assert me["is_super"] is True
+    r = client.post(f"/api/admin/officers/{me['id']}", json={"action": "reject"}, headers=admin_headers)
+    assert r.status_code == 400
+    supers = [o for o in client.get("/api/admin/officers", headers=admin_headers).json() if o["is_super"]]
+    assert len(supers) == 1
+
+
+def test_officer_registration_validation(client):
+    bad = {**_officer(3), "password": "short"}
+    assert client.post("/api/officers/register", json=bad).status_code == 400
+    bad = {**_officer(3), "email": "not-an-email"}
+    r = client.post("/api/officers/register", json=bad)
+    assert r.status_code == 400 and "email" in r.json()["detail"].lower()
+    client.post("/api/officers/register", json=_officer(4))
+    dup = client.post("/api/officers/register", json={**_officer(5), "email": "OFFICER4@citizenvoice.ng"})
+    assert dup.status_code == 400 and "already registered" in dup.json()["detail"]
