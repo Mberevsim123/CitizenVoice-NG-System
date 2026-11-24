@@ -303,10 +303,12 @@ export function initTabs(tabs, onChange = () => {}) {
   for (const tab of tabs) {
     tab.addEventListener('click', () => select(tab.dataset.tab));
     tab.addEventListener('keydown', (event) => {
-      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+      if (!step) return;
+      event.preventDefault();
       const visible = tabs.filter((t) => !t.hidden);
       const index = visible.indexOf(tab);
-      const next = visible[(index + (event.key === 'ArrowRight' ? 1 : -1) + visible.length) % visible.length];
+      const next = visible[(index + step + visible.length) % visible.length];
       select(next.dataset.tab);
       next.focus();
     });

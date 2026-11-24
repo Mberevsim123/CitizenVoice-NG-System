@@ -3,8 +3,207 @@
    model performance
    ========================================================================== */
 
-.container--wide {
-  max-width: 1360px;
+/* ---------- console layout: sidebar + content ---------- */
+.console {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  min-height: calc(100vh - var(--topbar-h));
+  margin-top: 4px; /* room for the flag strip */
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--topbar-h) - 4px);
+  padding: var(--space-5) var(--space-3) var(--space-3);
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.sidebar__nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.sidebar__label {
+  margin: 0 var(--space-3) var(--space-2);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.sidebar__label--admin {
+  margin-top: var(--space-5);
+}
+
+.sidebar__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 10px var(--space-3);
+  border: 0;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-align: left;
+  color: var(--ink-soft);
+  background: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar__link:hover {
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.sidebar__link.is-active {
+  color: var(--green-800);
+  background: var(--green-50);
+}
+
+.sidebar__link.is-active::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-3));
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--green-700);
+}
+
+.sidebar__icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar__text {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.sidebar__badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: #fff;
+  background: var(--danger);
+}
+
+.sidebar__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border-top: 1px solid var(--line-soft);
+}
+
+.sidebar__avatar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--green-600), var(--green-800));
+}
+
+.sidebar__who {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar__name,
+.sidebar__role {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sidebar__name {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.sidebar__role {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.sidebar__signout {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  background: transparent;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.sidebar__signout:hover {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.sidebar__signout svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.console__main {
+  min-width: 0;
+  padding: var(--space-5) var(--space-6) var(--space-7);
+}
+
+.console__header {
+  margin-bottom: var(--space-4);
+}
+
+.console__title {
+  font-size: var(--fs-lg);
+  color: var(--green-800);
+}
+
+.console__subtitle {
+  margin-top: 2px;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.console__panel {
+  margin-top: var(--space-5);
 }
 
 /* ---------- sign in ---------- */
@@ -58,10 +257,6 @@
 
 .kpi--alert .kpi__value {
   color: var(--danger);
-}
-
-.console-tabs {
-  margin: var(--space-5) 0 var(--space-4);
 }
 
 /* ---------- queue ---------- */
@@ -361,16 +556,6 @@
   font-size: var(--fs-sm);
 }
 
-/* keep the console tabs on one scrollable line on small screens */
-.console-tabs {
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.console-tabs .tab {
-  white-space: nowrap;
-}
-
 /* ---------- officer sign in / registration ---------- */
 .login-card.auth-card {
   max-width: 460px;
@@ -382,20 +567,6 @@
 }
 
 /* ---------- officer accounts (super administrator) ---------- */
-.tab__badge {
-  display: inline-grid;
-  place-items: center;
-  min-width: 20px;
-  height: 20px;
-  margin-left: var(--space-1);
-  padding: 0 6px;
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  color: #fff;
-  background: var(--danger);
-}
-
 .officer-actions {
   display: flex;
   flex-wrap: wrap;
@@ -420,4 +591,54 @@
 
 .table .is-pending td {
   background: #fffaf0;
+}
+
+/* ---------- console on tablets and phones: sidebar becomes a top strip ---------- */
+@media (max-width: 980px) {
+  .console {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: var(--space-2) var(--space-3);
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sidebar__label {
+    display: none;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    gap: var(--space-1);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sidebar__link {
+    width: auto;
+    padding: 8px 12px;
+  }
+
+  .sidebar__link.is-active::before {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: -9px;
+    width: auto;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .sidebar__footer {
+    margin-top: var(--space-2);
+    padding: var(--space-2) var(--space-1) 0;
+  }
+
+  .console__main {
+    padding: var(--space-4);
+  }
 }

@@ -13,7 +13,7 @@ const UPDATE_STATUSES = ['Acknowledged', 'In Progress', 'Resolved', 'Closed'];
 const SLA_TARGETS = 'Targets: High 2 h, Medium 24 h, Low 72 h';
 
 const loginView = $('#login-view');
-const consoleView = $('#main');
+const consoleView = $('#console');
 const consoleTabs = $$('.console-tabs [role="tab"]');
 const authTabs = $$('.auth-card__tabs [role="tab"]');
 const officersTab = $('#tab-officers');
@@ -46,7 +46,6 @@ async function loadSetupNotice() {
 
 function showLogin() {
   consoleView.hidden = true;
-  $('#sign-out').hidden = true;
   loginView.hidden = false;
   loadSetupNotice();
   $('#login-id').focus();
@@ -143,7 +142,19 @@ async function onRegister(event) {
 const loaders = {
   queue: loadQueue, analytics: loadAnalytics, routing: loadRouting, model: loadModel, officers: loadOfficers,
 };
+const SECTIONS = {
+  queue: ['Triage Queue', 'Open complaints ordered by urgency. Select one to review and update it.'],
+  analytics: ['Analytics', 'Complaint volumes, sentiment and response times.'],
+  routing: ['Agency Routing', 'Where complaints were dispatched and how each agency is coping.'],
+  model: ['Model Performance', 'How the sentiment, category and urgency models score on held-out data.'],
+  officers: ['Officers', 'Approve or reject officer accounts.'],
+};
+
 const selectTab = initTabs(consoleTabs, (name) => {
+  const [title, subtitle] = SECTIONS[name];
+  $('#section-title').textContent = title;
+  $('#section-subtitle').textContent = subtitle;
+  document.title = `${title} · CitizenVoice NG Officer Console`;
   loaders[name]().catch(() => {});
 });
 
@@ -628,9 +639,12 @@ async function start() {
   }
   loginView.hidden = true;
   consoleView.hidden = false;
-  $('#sign-out').hidden = false;
   initHeader({ signOutTo: '/admin' });
+  $('#sidebar-avatar').textContent = me.full_name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+  $('#sidebar-role').textContent = me.is_super ? 'Super administrator' : 'Officer';
+  $('.sidebar__who').title = `${me.full_name} · ${me.is_super ? 'Super administrator' : 'Officer'}`;
   officersTab.hidden = !me.is_super;
+  $('#nav-label-admin').hidden = !me.is_super;
   if (me.is_super) officerApi('/api/admin/officers').then(updatePendingBadge).catch(() => {});
   selectTab('queue');
 }

@@ -21,9 +21,8 @@
         <span class="brand__tag">Government Grievance Desk · Officer Console</span>
       </span>
     </a>
-    <nav class="nav" aria-label="Account">
-      <span class="nav__user" data-user-name></span>
-      <button class="nav__link" type="button" data-action="sign-out" id="sign-out" hidden>Sign out</button>
+    <nav class="nav" aria-label="Site">
+      <a class="nav__link" href="/">Citizen site</a>
     </nav>
   </header>
 
@@ -85,20 +84,55 @@
   </main>
 
   <!-- console -->
-  <main id="main" class="container container--wide" hidden>
-    <section class="kpis" id="kpis" aria-label="Key figures"></section>
+  <div class="console" id="console" hidden>
+    <aside class="sidebar" aria-label="Console navigation">
+      <p class="sidebar__label" id="nav-label-ops">Operations</p>
+      <div class="sidebar__nav console-tabs" role="tablist" aria-orientation="vertical" aria-labelledby="nav-label-ops">
+        <button class="sidebar__link is-active" type="button" role="tab" id="tab-queue" aria-selected="true" aria-controls="panel-queue" data-tab="queue">
+          <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/><path d="M18 16l2 2-2 2"/></svg>
+          <span class="sidebar__text">Triage Queue</span>
+        </button>
+        <button class="sidebar__link" type="button" role="tab" id="tab-analytics" aria-selected="false" aria-controls="panel-analytics" data-tab="analytics" tabindex="-1">
+          <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>
+          <span class="sidebar__text">Analytics</span>
+        </button>
+        <button class="sidebar__link" type="button" role="tab" id="tab-routing" aria-selected="false" aria-controls="panel-routing" data-tab="routing" tabindex="-1">
+          <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3v12"/><path d="M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          <span class="sidebar__text">Agency Routing</span>
+        </button>
+        <button class="sidebar__link" type="button" role="tab" id="tab-model" aria-selected="false" aria-controls="panel-model" data-tab="model" tabindex="-1">
+          <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4z"/><path d="M19 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>
+          <span class="sidebar__text">Model Performance</span>
+        </button>
+        <p class="sidebar__label sidebar__label--admin" id="nav-label-admin" role="presentation" hidden>Administration</p>
+        <button class="sidebar__link" type="button" role="tab" id="tab-officers" aria-selected="false" aria-controls="panel-officers" data-tab="officers" tabindex="-1" hidden>
+          <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          <span class="sidebar__text">Officers</span>
+          <span class="sidebar__badge" id="pending-badge" hidden></span>
+        </button>
+      </div>
 
-    <div class="tabs console-tabs" role="tablist" aria-label="Console sections">
-      <button class="tab is-active" type="button" role="tab" id="tab-queue" aria-selected="true" aria-controls="panel-queue" data-tab="queue">Triage Queue</button>
-      <button class="tab" type="button" role="tab" id="tab-analytics" aria-selected="false" aria-controls="panel-analytics" data-tab="analytics" tabindex="-1">Analytics</button>
-      <button class="tab" type="button" role="tab" id="tab-routing" aria-selected="false" aria-controls="panel-routing" data-tab="routing" tabindex="-1">Agency Routing</button>
-      <button class="tab" type="button" role="tab" id="tab-model" aria-selected="false" aria-controls="panel-model" data-tab="model" tabindex="-1">Model Performance</button>
-      <button class="tab" type="button" role="tab" id="tab-officers" aria-selected="false" aria-controls="panel-officers" data-tab="officers" tabindex="-1" hidden>
-        Officers <span class="tab__badge" id="pending-badge" hidden></span>
-      </button>
-    </div>
+      <div class="sidebar__footer">
+        <span class="sidebar__avatar" id="sidebar-avatar" aria-hidden="true"></span>
+        <span class="sidebar__who">
+          <span class="sidebar__name" data-user-name></span>
+          <span class="sidebar__role" id="sidebar-role"></span>
+        </span>
+        <button class="sidebar__signout" type="button" data-action="sign-out" id="sign-out" aria-label="Sign out" title="Sign out">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        </button>
+      </div>
+    </aside>
 
-    <section id="panel-queue" role="tabpanel" aria-labelledby="tab-queue">
+    <main class="console__main" id="main">
+      <header class="console__header">
+        <h1 class="console__title" id="section-title">Triage Queue</h1>
+        <p class="console__subtitle" id="section-subtitle"></p>
+      </header>
+
+      <section class="kpis" id="kpis" aria-label="Key figures"></section>
+
+    <section id="panel-queue" class="console__panel" role="tabpanel" aria-labelledby="tab-queue">
       <form class="filters" id="filters" role="search">
         <label class="sr-only" for="filter-urgency">Priority</label>
         <select class="select" id="filter-urgency" name="urgency">
@@ -146,11 +180,12 @@
       </div>
     </section>
 
-    <section id="panel-analytics" role="tabpanel" aria-labelledby="tab-analytics" hidden></section>
-    <section id="panel-routing" role="tabpanel" aria-labelledby="tab-routing" hidden></section>
-    <section id="panel-model" role="tabpanel" aria-labelledby="tab-model" hidden></section>
-    <section id="panel-officers" role="tabpanel" aria-labelledby="tab-officers" hidden></section>
-  </main>
+    <section id="panel-analytics" class="console__panel" role="tabpanel" aria-labelledby="tab-analytics" hidden></section>
+    <section id="panel-routing" class="console__panel" role="tabpanel" aria-labelledby="tab-routing" hidden></section>
+    <section id="panel-model" class="console__panel" role="tabpanel" aria-labelledby="tab-model" hidden></section>
+    <section id="panel-officers" class="console__panel" role="tabpanel" aria-labelledby="tab-officers" hidden></section>
+    </main>
+  </div>
 
   <!-- complaint detail drawer -->
   <div class="drawer" id="drawer" hidden>
